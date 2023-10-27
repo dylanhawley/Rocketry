@@ -60,6 +60,7 @@
 		FC7EA8C92ADE23640072BB8F /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		FC7EA8CB2ADE23670072BB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC7EA8CD2ADE23670072BB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC8B49EF2AE5E47E00C1B17A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 		FC7EA89E2ADE19990072BB8F = {
 			isa = PBXGroup;
 			children = (
+				FC8B49EF2AE5E47E00C1B17A /* README.md */,
 				FC7EA8A92ADE19990072BB8F /* Launch Feed */,
 				FC7EA8C22ADE23640072BB8F /* Launch Feed Widget */,
 				FC7EA8BD2ADE23630072BB8F /* Frameworks */,

@@ -51,23 +51,70 @@ class ViewModel: ObservableObject {
     }
 }
 
+struct FormattedDateView: View {
+    let iso8601String: String
+    
+    static let iso8601DateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        return formatter
+    }()
+    
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
+    var body: some View {
+        if let date = Self.iso8601DateFormatter.date(from: iso8601String) {
+            Text(Self.dateFormatter.string(from: date))
+        } else {
+            Text("Invalid date")
+        }
+    }
+}
+
+
+struct CardView: View {
+    var launch: Launch
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(launch.name)
+                .font(.headline)
+                .padding(.top, 8)
+            FormattedDateView(iso8601String: launch.net)
+            AsyncImage(url: URL(string: launch.image)) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+            } placeholder: {
+                ProgressView()
+            }
+            .cornerRadius(5)
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(15)
+        .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
+    }
+}
+
 struct ContentView: View {
     @StateObject var viewModel = ViewModel()
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.launches, id: \.self) { launch in
-                    HStack {
-                        AsyncImage(url: URL(string: launch.image))
-                            .frame(width: 120, height: 70)
-                            .background(Color.gray)
-                            .clipped()
-                        Text(launch.name)
-                            .bold()
+            ScrollView {
+                LazyVStack(spacing: 20) {
+                    ForEach(viewModel.launches, id: \.self) { launch in
+                        CardView(launch: launch)
                     }
                 }
+                .padding()
             }
+            .background(Color.gray.opacity(0.1))
             .navigationTitle("Launches")
             .onAppear {
                 viewModel.fetch()
