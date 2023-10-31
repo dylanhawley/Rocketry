@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Launch: Hashable, Codable {
+struct Launch: Hashable, Decodable {
     var id: String
     var name: String
     var last_updated: String
@@ -16,10 +16,50 @@ struct Launch: Hashable, Codable {
     var window_start: String
     var holdreason: String
     var failreason: String
+    var rocket: Rocket
+    var mission: Mission
+    var pad: Pad
     var image: String
+    
+    struct Rocket: Hashable, Decodable {
+        var configuration: RocketConfiguration
+        
+        struct RocketConfiguration: Hashable, Decodable {
+            var url: String
+            var name: String
+            var family: String
+            var full_name: String
+            var variant: String
+        }
+    }
+    
+    struct Mission: Hashable, Decodable {
+        var name: String
+        var description: String
+        var type: String
+        
+        struct Orbit: Hashable, Decodable {
+            var name: String
+            var abbrev: String
+        }
+    }
+
+    struct Pad: Hashable, Decodable {
+        var name: String
+        var map_url: String
+        var latitude: String
+        var longitude: String
+        var location: Location
+        
+        struct Location: Hashable, Decodable {
+            var name: String
+            var country_code: String
+            var timezone_name: String
+        }
+    }
 }
 
-struct LL2Response: Hashable, Codable {
+struct LL2Response: Decodable {
     var results: [Launch]
 }
 
@@ -62,16 +102,37 @@ struct FormattedDateView: View {
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-        formatter.timeStyle = .short
+        return formatter
+    }()
+    
+    static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mma z"
+        formatter.amSymbol = "am"
+        formatter.pmSymbol = "pm"
         return formatter
     }()
     
     var body: some View {
-        if let date = Self.iso8601DateFormatter.date(from: iso8601String) {
-            Text(Self.dateFormatter.string(from: date))
-        } else {
-            Text("Invalid date")
+        VStack(alignment: .leading) {
+            if let date = Self.iso8601DateFormatter.date(from: iso8601String) {
+                HStack {
+                    Image(systemName: "calendar")
+                    Text(Self.dateFormatter.string(from: date))
+                }
+            } else {
+                Text("Invalid date")
+            }
+            if let time = Self.iso8601DateFormatter.date(from: iso8601String) {
+                HStack {
+                    Image(systemName: "clock")
+                    Text(Self.timeFormatter.string(from: time))
+                }
+            } else {
+                Text("Invalid date")
+            }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -84,6 +145,8 @@ struct CardView: View {
             Text(launch.name)
                 .font(.headline)
                 .padding(.top, 8)
+            Divider()
+            Text(launch.mission.description)
             FormattedDateView(iso8601String: launch.net)
             AsyncImage(url: URL(string: launch.image)) { image in
                 image
@@ -95,9 +158,9 @@ struct CardView: View {
             .cornerRadius(5)
         }
         .padding()
+        .frame(maxWidth: .infinity)
         .background(Color.white)
         .cornerRadius(15)
-        .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
     }
 }
 
