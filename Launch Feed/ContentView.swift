@@ -59,26 +59,23 @@ struct FormattedDateView: View {
     }()
     
     var body: some View {
-        VStack(alignment: .leading) {
-            if let date = Self.iso8601DateFormatter.date(from: iso8601String) {
-                HStack {
-                    Image(systemName: "calendar")
-                    Text(Self.dateFormatter.string(from: date))
-                }
-            } else {
-                Text("Invalid date")
-            }
-            if let time = Self.iso8601DateFormatter.date(from: iso8601String) {
-                HStack {
-                    Image(systemName: "clock")
-                    Text(Self.timeFormatter.string(from: time))
-                }
-            } else {
-                Text("Invalid date")
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
+      VStack(alignment: .leading) {
+          let date = Self.iso8601DateFormatter.date(from: iso8601String)
+          if let date = date {
+              HStack {
+                  Image(systemName: "calendar")
+                  Text(Self.dateFormatter.string(from: date))
+              }
+              HStack {
+                  Image(systemName: "clock")
+                  Text(Self.timeFormatter.string(from: date))
+              }
+          } else {
+              Text("Invalid date")
+          }
+      }
+      .frame(maxWidth: .infinity, alignment: .leading)
+  }
 }
 
 
