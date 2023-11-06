@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC349A672AF0ACD100278E0A /* LL2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349A612AF0A4A500278E0A /* LL2Model.swift */; };
+		FC349A682AF0ACD100278E0A /* LL2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349A612AF0A4A500278E0A /* LL2Model.swift */; };
 		FC7EA8AB2ADE19990072BB8F /* Launch_FeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8AA2ADE19990072BB8F /* Launch_FeedApp.swift */; };
 		FC7EA8AD2ADE19990072BB8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8AC2ADE19990072BB8F /* ContentView.swift */; };
 		FC7EA8AF2ADE199C0072BB8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */; };
@@ -46,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FC349A612AF0A4A500278E0A /* LL2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LL2Model.swift; sourceTree = "<group>"; };
 		FC7EA8A72ADE19990072BB8F /* Launch Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Launch Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7EA8AA2ADE19990072BB8F /* Launch_FeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch_FeedApp.swift; sourceTree = "<group>"; };
 		FC7EA8AC2ADE19990072BB8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +86,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC62898C2AF732E300825A03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FC7EA89E2ADE19990072BB8F = {
 			isa = PBXGroup;
 			children = (
@@ -107,9 +117,11 @@
 			isa = PBXGroup;
 			children = (
 				FC7EA8AA2ADE19990072BB8F /* Launch_FeedApp.swift */,
+				FC62898C2AF732E300825A03 /* Views */,
 				FC7EA8AC2ADE19990072BB8F /* ContentView.swift */,
 				FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */,
 				FC7EA8B02ADE199C0072BB8F /* Preview Content */,
+				FC349A612AF0A4A500278E0A /* LL2Model.swift */,
 			);
 			path = "Launch Feed";
 			sourceTree = "<group>";
@@ -246,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7EA8AD2ADE19990072BB8F /* ContentView.swift in Sources */,
+				FC349A672AF0ACD100278E0A /* LL2Model.swift in Sources */,
 				FC7EA8AB2ADE19990072BB8F /* Launch_FeedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7EA8C82ADE23640072BB8F /* Launch_Feed_Widget.swift in Sources */,
+				FC349A682AF0ACD100278E0A /* LL2Model.swift in Sources */,
 				FC7EA8CA2ADE23640072BB8F /* AppIntent.swift in Sources */,
 				FC7EA8C42ADE23640072BB8F /* Launch_Feed_WidgetBundle.swift in Sources */,
 				FC7EA8C62ADE23640072BB8F /* Launch_Feed_WidgetLiveActivity.swift in Sources */,
