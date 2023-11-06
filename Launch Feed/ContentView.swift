@@ -38,18 +38,15 @@ class ViewModel: ObservableObject {
 
 struct FormattedDateView: View {
     let iso8601String: String
-    
-    static let iso8601DateFormatter: ISO8601DateFormatter = {
-        let formatter = ISO8601DateFormatter()
-        return formatter
-    }()
-    
+
+    static let iso8601DateFormatter: ISO8601DateFormatter = ISO8601DateFormatter()
+
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         return formatter
     }()
-    
+
     static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "h:mma z"
@@ -57,25 +54,29 @@ struct FormattedDateView: View {
         formatter.pmSymbol = "pm"
         return formatter
     }()
-    
+
     var body: some View {
-      VStack(alignment: .leading) {
-          let date = Self.iso8601DateFormatter.date(from: iso8601String)
-          if let date = date {
-              HStack {
-                  Image(systemName: "calendar")
-                  Text(Self.dateFormatter.string(from: date))
-              }
-              HStack {
-                  Image(systemName: "clock")
-                  Text(Self.timeFormatter.string(from: date))
-              }
-          } else {
-              Text("Invalid date")
-          }
-      }
-      .frame(maxWidth: .infinity, alignment: .leading)
-  }
+        let date = Self.iso8601DateFormatter.date(from: iso8601String)
+        if let date = date {
+            DateView(date: date)
+        } else {
+            Text("Invalid date")
+        }
+    }
+
+    private func DateView(date: Date) -> some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: "calendar")
+                Text(Self.dateFormatter.string(from: date))
+            }
+            HStack {
+                Image(systemName: "clock")
+                Text(Self.timeFormatter.string(from: date))
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
 }
 
 
