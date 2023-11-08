@@ -20,7 +20,7 @@
 		FC7EA8C82ADE23640072BB8F /* Launch_Feed_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8C72ADE23640072BB8F /* Launch_Feed_Widget.swift */; };
 		FC7EA8CA2ADE23640072BB8F /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8C92ADE23640072BB8F /* AppIntent.swift */; };
 		FC7EA8CC2ADE23670072BB8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7EA8CB2ADE23670072BB8F /* Assets.xcassets */; };
-		FC7EA8D02ADE23670072BB8F /* Launch Feed WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC7EA8BC2ADE23630072BB8F /* Launch Feed WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC7EA8D02ADE23670072BB8F /* T Minus Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC7EA8BC2ADE23630072BB8F /* T Minus Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,7 @@
 			containerPortal = FC7EA89F2ADE19990072BB8F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FC7EA8BB2ADE23630072BB8F;
-			remoteInfo = "Launch Feed WidgetExtension";
+			remoteInfo = "T Minus WidgetExtension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FC7EA8D02ADE23670072BB8F /* Launch Feed WidgetExtension.appex in Embed Foundation Extensions */,
+				FC7EA8D02ADE23670072BB8F /* T Minus Widget.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,12 +49,12 @@
 
 /* Begin PBXFileReference section */
 		FC349A612AF0A4A500278E0A /* LL2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LL2Model.swift; sourceTree = "<group>"; };
-		FC7EA8A72ADE19990072BB8F /* Launch Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Launch Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC7EA8A72ADE19990072BB8F /* T Minus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T Minus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7EA8AA2ADE19990072BB8F /* Launch_FeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch_FeedApp.swift; sourceTree = "<group>"; };
 		FC7EA8AC2ADE19990072BB8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC7EA8B12ADE199C0072BB8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FC7EA8BC2ADE23630072BB8F /* Launch Feed WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Launch Feed WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC7EA8BC2ADE23630072BB8F /* T Minus Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "T Minus Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7EA8BE2ADE23630072BB8F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		FC7EA8C02ADE23640072BB8F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		FC7EA8C32ADE23640072BB8F /* Launch_Feed_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch_Feed_WidgetBundle.swift; sourceTree = "<group>"; };
@@ -86,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC12E7AE2AF8A5B80069C6E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC349A612AF0A4A500278E0A /* LL2Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FC62898C2AF732E300825A03 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				FC8B49EF2AE5E47E00C1B17A /* README.md */,
-				FC7EA8A92ADE19990072BB8F /* Launch Feed */,
-				FC7EA8C22ADE23640072BB8F /* Launch Feed Widget */,
+				FC7EA8A92ADE19990072BB8F /* T Minus */,
+				FC7EA8C22ADE23640072BB8F /* T Minus Widget */,
 				FC7EA8BD2ADE23630072BB8F /* Frameworks */,
 				FC7EA8A82ADE19990072BB8F /* Products */,
 			);
@@ -107,23 +115,23 @@
 		FC7EA8A82ADE19990072BB8F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC7EA8A72ADE19990072BB8F /* Launch Feed.app */,
-				FC7EA8BC2ADE23630072BB8F /* Launch Feed WidgetExtension.appex */,
+				FC7EA8A72ADE19990072BB8F /* T Minus.app */,
+				FC7EA8BC2ADE23630072BB8F /* T Minus Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC7EA8A92ADE19990072BB8F /* Launch Feed */ = {
+		FC7EA8A92ADE19990072BB8F /* T Minus */ = {
 			isa = PBXGroup;
 			children = (
+				FC12E7AE2AF8A5B80069C6E2 /* Models */,
 				FC7EA8AA2ADE19990072BB8F /* Launch_FeedApp.swift */,
 				FC62898C2AF732E300825A03 /* Views */,
 				FC7EA8AC2ADE19990072BB8F /* ContentView.swift */,
 				FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */,
 				FC7EA8B02ADE199C0072BB8F /* Preview Content */,
-				FC349A612AF0A4A500278E0A /* LL2Model.swift */,
 			);
-			path = "Launch Feed";
+			path = "T Minus";
 			sourceTree = "<group>";
 		};
 		FC7EA8B02ADE199C0072BB8F /* Preview Content */ = {
@@ -143,7 +151,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FC7EA8C22ADE23640072BB8F /* Launch Feed Widget */ = {
+		FC7EA8C22ADE23640072BB8F /* T Minus Widget */ = {
 			isa = PBXGroup;
 			children = (
 				FC7EA8C32ADE23640072BB8F /* Launch_Feed_WidgetBundle.swift */,
@@ -153,15 +161,15 @@
 				FC7EA8CB2ADE23670072BB8F /* Assets.xcassets */,
 				FC7EA8CD2ADE23670072BB8F /* Info.plist */,
 			);
-			path = "Launch Feed Widget";
+			path = "T Minus Widget";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC7EA8A62ADE19990072BB8F /* Launch Feed */ = {
+		FC7EA8A62ADE19990072BB8F /* T Minus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC7EA8B52ADE199C0072BB8F /* Build configuration list for PBXNativeTarget "Launch Feed" */;
+			buildConfigurationList = FC7EA8B52ADE199C0072BB8F /* Build configuration list for PBXNativeTarget "T Minus" */;
 			buildPhases = (
 				FC7EA8A32ADE19990072BB8F /* Sources */,
 				FC7EA8A42ADE19990072BB8F /* Frameworks */,
@@ -173,14 +181,14 @@
 			dependencies = (
 				FC7EA8CF2ADE23670072BB8F /* PBXTargetDependency */,
 			);
-			name = "Launch Feed";
-			productName = "Launch Feed";
-			productReference = FC7EA8A72ADE19990072BB8F /* Launch Feed.app */;
+			name = "T Minus";
+			productName = "T Minus";
+			productReference = FC7EA8A72ADE19990072BB8F /* T Minus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FC7EA8BB2ADE23630072BB8F /* Launch Feed WidgetExtension */ = {
+		FC7EA8BB2ADE23630072BB8F /* T Minus Widget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC7EA8D12ADE23670072BB8F /* Build configuration list for PBXNativeTarget "Launch Feed WidgetExtension" */;
+			buildConfigurationList = FC7EA8D12ADE23670072BB8F /* Build configuration list for PBXNativeTarget "T Minus Widget" */;
 			buildPhases = (
 				FC7EA8B82ADE23630072BB8F /* Sources */,
 				FC7EA8B92ADE23630072BB8F /* Frameworks */,
@@ -190,9 +198,9 @@
 			);
 			dependencies = (
 			);
-			name = "Launch Feed WidgetExtension";
-			productName = "Launch Feed WidgetExtension";
-			productReference = FC7EA8BC2ADE23630072BB8F /* Launch Feed WidgetExtension.appex */;
+			name = "T Minus Widget";
+			productName = "T Minus WidgetExtension";
+			productReference = FC7EA8BC2ADE23630072BB8F /* T Minus Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +221,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FC7EA8A22ADE19990072BB8F /* Build configuration list for PBXProject "Launch Feed" */;
+			buildConfigurationList = FC7EA8A22ADE19990072BB8F /* Build configuration list for PBXProject "T Minus" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -226,8 +234,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC7EA8A62ADE19990072BB8F /* Launch Feed */,
-				FC7EA8BB2ADE23630072BB8F /* Launch Feed WidgetExtension */,
+				FC7EA8A62ADE19990072BB8F /* T Minus */,
+				FC7EA8BB2ADE23630072BB8F /* T Minus Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -280,7 +288,7 @@
 /* Begin PBXTargetDependency section */
 		FC7EA8CF2ADE23670072BB8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FC7EA8BB2ADE23630072BB8F /* Launch Feed WidgetExtension */;
+			target = FC7EA8BB2ADE23630072BB8F /* T Minus Widget */;
 			targetProxy = FC7EA8CE2ADE23670072BB8F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -413,7 +421,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Launch Feed/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"T Minus/Preview Content\"";
 				DEVELOPMENT_TEAM = QCYB8YLNNQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -427,7 +435,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.Launch-Feed";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.T-Minus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -443,7 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Launch Feed/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"T Minus/Preview Content\"";
 				DEVELOPMENT_TEAM = QCYB8YLNNQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -457,7 +465,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.Launch-Feed";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.T-Minus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -474,8 +482,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QCYB8YLNNQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Launch Feed Widget/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Launch Feed Widget";
+				INFOPLIST_FILE = "T Minus Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "T Minus Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,7 +491,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.Launch-Feed.Launch-Feed-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.T-Minus.T-Minus-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -501,8 +509,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QCYB8YLNNQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Launch Feed Widget/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Launch Feed Widget";
+				INFOPLIST_FILE = "T Minus Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "T Minus Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -510,7 +518,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.Launch-Feed.Launch-Feed-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.T-Minus.T-Minus-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -522,7 +530,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC7EA8A22ADE19990072BB8F /* Build configuration list for PBXProject "Launch Feed" */ = {
+		FC7EA8A22ADE19990072BB8F /* Build configuration list for PBXProject "T Minus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC7EA8B32ADE199C0072BB8F /* Debug */,
@@ -531,7 +539,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC7EA8B52ADE199C0072BB8F /* Build configuration list for PBXNativeTarget "Launch Feed" */ = {
+		FC7EA8B52ADE199C0072BB8F /* Build configuration list for PBXNativeTarget "T Minus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC7EA8B62ADE199C0072BB8F /* Debug */,
@@ -540,7 +548,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC7EA8D12ADE23670072BB8F /* Build configuration list for PBXNativeTarget "Launch Feed WidgetExtension" */ = {
+		FC7EA8D12ADE23670072BB8F /* Build configuration list for PBXNativeTarget "T Minus Widget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC7EA8D22ADE23670072BB8F /* Debug */,
