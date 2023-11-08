@@ -1,6 +1,6 @@
 //
-//  Launch_Feed_WidgetLiveActivity.swift
-//  Launch Feed Widget
+//  T_Minus_WidgetLiveActivity.swift
+//  T Minus Widget
 //
 //  Created by Dylan Hawley on 10/16/23.
 //
@@ -9,7 +9,7 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct Launch_Feed_WidgetAttributes: ActivityAttributes {
+struct T_Minus_WidgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var emoji: String
@@ -19,9 +19,9 @@ struct Launch_Feed_WidgetAttributes: ActivityAttributes {
     var name: String
 }
 
-struct Launch_Feed_WidgetLiveActivity: Widget {
+struct T_Minus_WidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: Launch_Feed_WidgetAttributes.self) { context in
+        ActivityConfiguration(for: T_Minus_WidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
                 Text("Hello \(context.state.emoji)")
@@ -56,25 +56,25 @@ struct Launch_Feed_WidgetLiveActivity: Widget {
     }
 }
 
-extension Launch_Feed_WidgetAttributes {
-    fileprivate static var preview: Launch_Feed_WidgetAttributes {
-        Launch_Feed_WidgetAttributes(name: "World")
+extension T_Minus_WidgetAttributes {
+    fileprivate static var preview: T_Minus_WidgetAttributes {
+        T_Minus_WidgetAttributes(name: "World")
     }
 }
 
-extension Launch_Feed_WidgetAttributes.ContentState {
-    fileprivate static var smiley: Launch_Feed_WidgetAttributes.ContentState {
-        Launch_Feed_WidgetAttributes.ContentState(emoji: "😀")
+extension T_Minus_WidgetAttributes.ContentState {
+    fileprivate static var smiley: T_Minus_WidgetAttributes.ContentState {
+        T_Minus_WidgetAttributes.ContentState(emoji: "😀")
      }
      
-     fileprivate static var starEyes: Launch_Feed_WidgetAttributes.ContentState {
-         Launch_Feed_WidgetAttributes.ContentState(emoji: "🤩")
+     fileprivate static var starEyes: T_Minus_WidgetAttributes.ContentState {
+         T_Minus_WidgetAttributes.ContentState(emoji: "🤩")
      }
 }
 
-#Preview("Notification", as: .content, using: Launch_Feed_WidgetAttributes.preview) {
-   Launch_Feed_WidgetLiveActivity()
+#Preview("Notification", as: .content, using: T_Minus_WidgetAttributes.preview) {
+   T_Minus_WidgetLiveActivity()
 } contentStates: {
-    Launch_Feed_WidgetAttributes.ContentState.smiley
-    Launch_Feed_WidgetAttributes.ContentState.starEyes
+    T_Minus_WidgetAttributes.ContentState.smiley
+    T_Minus_WidgetAttributes.ContentState.starEyes
 }

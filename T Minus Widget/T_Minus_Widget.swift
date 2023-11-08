@@ -1,6 +1,6 @@
 //
-//  Launch_Feed_Widget.swift
-//  Launch Feed Widget
+//  T_Minus_Widget.swift
+//  T Minus Widget
 //
 //  Created by Dylan Hawley on 10/16/23.
 //
@@ -37,7 +37,7 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationAppIntent
 }
 
-struct Launch_Feed_WidgetEntryView : View {
+struct T_Minus_WidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
@@ -51,12 +51,12 @@ struct Launch_Feed_WidgetEntryView : View {
     }
 }
 
-struct Launch_Feed_Widget: Widget {
+struct T_Minus_Widget: Widget {
     let kind: String = "Launch_Feed_Widget"
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-            Launch_Feed_WidgetEntryView(entry: entry)
+            T_Minus_WidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
     }
@@ -77,7 +77,7 @@ extension ConfigurationAppIntent {
 }
 
 #Preview(as: .systemSmall) {
-    Launch_Feed_Widget()
+    T_Minus_Widget()
 } timeline: {
     SimpleEntry(date: .now, configuration: .smiley)
     SimpleEntry(date: .now, configuration: .starEyes)
