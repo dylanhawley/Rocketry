@@ -51,6 +51,8 @@
 		FC349A612AF0A4A500278E0A /* LL2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LL2Model.swift; sourceTree = "<group>"; };
 		FC7EA8A72ADE19990072BB8F /* T Minus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T Minus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7EA8AA2ADE19990072BB8F /* T_MinusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_MinusApp.swift; sourceTree = "<group>"; };
+		FC7EA8A72ADE19990072BB8F /* T Minus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T Minus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC7EA8AA2ADE19990072BB8F /* Launch_FeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch_FeedApp.swift; sourceTree = "<group>"; };
 		FC7EA8AC2ADE19990072BB8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC7EA8B12ADE199C0072BB8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -126,6 +128,8 @@
 			children = (
 				FC12E7AE2AF8A5B80069C6E2 /* Models */,
 				FC7EA8AA2ADE19990072BB8F /* T_MinusApp.swift */,
+				FC12E7AE2AF8A5B80069C6E2 /* Models */,
+				FC7EA8AA2ADE19990072BB8F /* Launch_FeedApp.swift */,
 				FC62898C2AF732E300825A03 /* Views */,
 				FC7EA8AC2ADE19990072BB8F /* ContentView.swift */,
 				FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */,
