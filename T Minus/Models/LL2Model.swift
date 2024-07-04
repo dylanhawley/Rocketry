@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Launch: Hashable, Decodable {
+struct Launch: Decodable {
     var id: String
     var name: String
     var status: LaunchStatus
@@ -24,22 +24,22 @@ struct Launch: Hashable, Decodable {
     var pad: Pad
     var image: String
     
-    struct LaunchStatus: Hashable, Decodable {
+    struct LaunchStatus: Decodable {
         var name: String
         var abbrev: String
         var description: String
     }
     
-    struct NetPrecision: Hashable, Decodable {
+    struct NetPrecision: Decodable {
         var name: String
         var abbrev: String
         var description: String
     }
     
-    struct Rocket: Hashable, Decodable {
+    struct Rocket: Decodable {
         var configuration: RocketConfiguration
         
-        struct RocketConfiguration: Hashable, Decodable {
+        struct RocketConfiguration: Decodable {
             var url: String
             var name: String
             var family: String
@@ -48,26 +48,26 @@ struct Launch: Hashable, Decodable {
         }
     }
     
-    struct Mission: Hashable, Decodable {
+    struct Mission: Decodable {
         var name: String
         var description: String
         var type: String
         var orbit: Orbit
         
-        struct Orbit: Hashable, Decodable {
+        struct Orbit: Decodable {
             var name: String
             var abbrev: String
         }
     }
 
-    struct Pad: Hashable, Decodable {
+    struct Pad: Decodable {
         var name: String
         var map_url: String?
         var latitude: String
         var longitude: String
         var location: Location
         
-        struct Location: Hashable, Decodable {
+        struct Location: Decodable {
             var name: String
             var country_code: String
             var timezone_name: String

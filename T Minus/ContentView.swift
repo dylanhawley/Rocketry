@@ -148,7 +148,7 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 LazyVStack(spacing: 20) {
-                    ForEach(viewModel.launches, id: \.self) { launch in
+                    ForEach(viewModel.launches, id: \.id) { launch in
                         CardView(launch: launch)
                     }
                 }
