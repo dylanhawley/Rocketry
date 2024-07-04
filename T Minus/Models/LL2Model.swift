@@ -9,72 +9,72 @@ import Foundation
 
 
 struct Launch: Decodable {
-    var id: String
-    var name: String
-    var status: LaunchStatus
-    var last_updated: String
-    var net: String
-    var window_end: String
-    var window_start: String
-    var net_precision: NetPrecision
-    var holdreason: String
-    var failreason: String
-    var rocket: Rocket
-    var mission: Mission
-    var pad: Pad
-    var image: String
+    let id: String
+    let name: String
+    let status: LaunchStatus
+    let last_updated: String
+    let net: String
+    let window_end: String
+    let window_start: String
+    let net_precision: NetPrecision
+    let holdreason: String
+    let failreason: String
+    let rocket: Rocket
+    let mission: Mission
+    let pad: Pad
+    let image: String
     
     struct LaunchStatus: Decodable {
-        var name: String
-        var abbrev: String
-        var description: String
+        let name: String
+        let abbrev: String
+        let description: String
     }
     
     struct NetPrecision: Decodable {
-        var name: String
-        var abbrev: String
-        var description: String
+        let name: String
+        let abbrev: String
+        let description: String
     }
     
     struct Rocket: Decodable {
-        var configuration: RocketConfiguration
+        let configuration: RocketConfiguration
         
         struct RocketConfiguration: Decodable {
-            var url: String
-            var name: String
-            var family: String
-            var full_name: String
-            var variant: String
+            let url: String
+            let name: String
+            let family: String
+            let full_name: String
+            let variant: String
         }
     }
     
     struct Mission: Decodable {
-        var name: String
-        var description: String
-        var type: String
-        var orbit: Orbit
+        let name: String
+        let description: String
+        let type: String
+        let orbit: Orbit
         
         struct Orbit: Decodable {
-            var name: String
-            var abbrev: String
+            let name: String
+            let abbrev: String
         }
     }
 
     struct Pad: Decodable {
-        var name: String
-        var map_url: String?
-        var latitude: String
-        var longitude: String
-        var location: Location
+        let name: String
+        let map_url: String?
+        let latitude: String
+        let longitude: String
+        let location: Location
         
         struct Location: Decodable {
-            var name: String
-            var country_code: String
-            var timezone_name: String
+            let name: String
+            let country_code: String
+            let timezone_name: String
         }
     }
 }
 
 struct LL2Response: Decodable {
-    var results: [Launch]
+    let results: [Launch]
 }
