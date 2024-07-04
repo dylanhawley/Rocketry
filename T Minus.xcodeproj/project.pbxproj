@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A916062D2C36386100A2740E /* mockLaunches.json in Resources */ = {isa = PBXBuildFile; fileRef = A916062C2C36386100A2740E /* mockLaunches.json */; };
+		A916062E2C36386100A2740E /* mockLaunches.json in Resources */ = {isa = PBXBuildFile; fileRef = A916062C2C36386100A2740E /* mockLaunches.json */; };
 		FC349A672AF0ACD100278E0A /* LL2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349A612AF0A4A500278E0A /* LL2Model.swift */; };
 		FC349A682AF0ACD100278E0A /* LL2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349A612AF0A4A500278E0A /* LL2Model.swift */; };
 		FC7EA8AB2ADE19990072BB8F /* T_MinusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8AA2ADE19990072BB8F /* T_MinusApp.swift */; };
@@ -48,10 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A916062C2C36386100A2740E /* mockLaunches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockLaunches.json; sourceTree = "<group>"; };
 		FC349A612AF0A4A500278E0A /* LL2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LL2Model.swift; sourceTree = "<group>"; };
 		FC7EA8A72ADE19990072BB8F /* T Minus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T Minus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7EA8AA2ADE19990072BB8F /* T_MinusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_MinusApp.swift; sourceTree = "<group>"; };
-		FC7EA8A72ADE19990072BB8F /* T Minus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T Minus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7EA8AC2ADE19990072BB8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC7EA8B12ADE199C0072BB8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		FC7EA89E2ADE19990072BB8F = {
 			isa = PBXGroup;
 			children = (
+				A916062C2C36386100A2740E /* mockLaunches.json */,
 				FC8B49EF2AE5E47E00C1B17A /* README.md */,
 				FC7EA8A92ADE19990072BB8F /* T Minus */,
 				FC7EA8C22ADE23640072BB8F /* T Minus Widget */,
@@ -125,7 +128,6 @@
 		FC7EA8A92ADE19990072BB8F /* T Minus */ = {
 			isa = PBXGroup;
 			children = (
-				FC12E7AE2AF8A5B80069C6E2 /* Models */,
 				FC7EA8AA2ADE19990072BB8F /* T_MinusApp.swift */,
 				FC12E7AE2AF8A5B80069C6E2 /* Models */,
 				FC62898C2AF732E300825A03 /* Views */,
@@ -248,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7EA8B22ADE199C0072BB8F /* Preview Assets.xcassets in Resources */,
+				A916062D2C36386100A2740E /* mockLaunches.json in Resources */,
 				FC7EA8AF2ADE199C0072BB8F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A916062E2C36386100A2740E /* mockLaunches.json in Resources */,
 				FC7EA8CC2ADE23670072BB8F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

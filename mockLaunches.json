@@ -1,0 +1,1215 @@
+{
+    "count": 142,
+    "next": "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?limit=10&offset=10",
+    "previous": null,
+    "results": [
+        {
+            "id": "37d99477-d60a-486a-9fa0-3c533fe19fd9",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/37d99477-d60a-486a-9fa0-3c533fe19fd9/",
+            "slug": "falcon-9-block-5-starlink-group-8-9",
+            "name": "Falcon 9 Block 5 | Starlink Group 8-9",
+            "status": {
+                "id": 8,
+                "name": "To Be Confirmed",
+                "abbrev": "TBC",
+                "description": "Awaiting official confirmation - current date is known with some certainty."
+            },
+            "last_updated": "2024-06-30T20:46:53Z",
+            "net": "2024-07-03T06:01:00Z",
+            "window_end": "2024-07-03T10:31:00Z",
+            "window_start": "2024-07-03T06:01:00Z",
+            "net_precision": {
+                "id": 0,
+                "name": "Second",
+                "abbrev": "SEC",
+                "description": "The T-0 is accurate to the second."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 121,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
+                "name": "SpaceX",
+                "type": "Commercial"
+            },
+            "rocket": {
+                "id": 8201,
+                "configuration": {
+                    "id": 164,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/164/",
+                    "name": "Falcon 9",
+                    "family": "Falcon",
+                    "full_name": "Falcon 9 Block 5",
+                    "variant": "Block 5"
+                }
+            },
+            "mission": {
+                "id": 6772,
+                "name": "Starlink Group 8-9",
+                "description": "A batch of satellites for the Starlink mega-constellation - SpaceX's project for space-based Internet communication system.",
+                "launch_designator": null,
+                "type": "Communications",
+                "orbit": {
+                    "id": 8,
+                    "name": "Low Earth Orbit",
+                    "abbrev": "LEO"
+                },
+                "agencies": [
+                    {
+                        "id": 121,
+                        "url": "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
+                        "name": "SpaceX",
+                        "featured": true,
+                        "type": "Commercial",
+                        "country_code": "USA",
+                        "abbrev": "SpX",
+                        "description": "Space Exploration Technologies Corp., known as SpaceX, is an American aerospace manufacturer and space transport services company headquartered in Hawthorne, California. It was founded in 2002 by entrepreneur Elon Musk with the goal of reducing space transportation costs and enabling the colonization of Mars. SpaceX operates from many pads, on the East Coast of the US they operate from SLC-40 at Cape Canaveral Space Force Station and historic LC-39A at Kennedy Space Center. They also operate from SLC-4E at Vandenberg Space Force Base, California, usually for polar launches. Another launch site is being developed at Boca Chica, Texas.",
+                        "administrator": "CEO: Elon Musk",
+                        "founding_year": "2002",
+                        "launchers": "Falcon | Starship",
+                        "spacecraft": "Dragon",
+                        "launch_library_url": null,
+                        "total_launch_count": 380,
+                        "consecutive_successful_launches": 81,
+                        "successful_launches": 369,
+                        "failed_launches": 11,
+                        "pending_launches": 128,
+                        "consecutive_successful_landings": 44,
+                        "successful_landings": 332,
+                        "failed_landings": 24,
+                        "attempted_landings": 355,
+                        "info_url": "http://www.spacex.com/",
+                        "wiki_url": "http://en.wikipedia.org/wiki/SpaceX",
+                        "logo_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/spacex_logo_20220826094919.png",
+                        "image_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/spacex_image_20190207032501.jpeg",
+                        "nation_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/spacex_nation_20230531064544.jpg"
+                    }
+                ],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 80,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/80/",
+                "agency_id": 121,
+                "name": "Space Launch Complex 40",
+                "description": null,
+                "info_url": null,
+                "wiki_url": "https://en.wikipedia.org/wiki/Cape_Canaveral_Air_Force_Station_Space_Launch_Complex_40",
+                "map_url": "https://www.google.com/maps?q=28.56194122,-80.57735736",
+                "latitude": "28.56194122",
+                "longitude": "-80.57735736",
+                "location": {
+                    "id": 12,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/12/",
+                    "name": "Cape Canaveral, FL, USA",
+                    "country_code": "USA",
+                    "description": "",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_12_20200803142519.jpg",
+                    "timezone_name": "America/New_York",
+                    "total_launch_count": 962,
+                    "total_landing_count": 53
+                },
+                "country_code": "USA",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_80_20200803143323.jpg",
+                "total_launch_count": 250,
+                "orbital_launch_attempt_count": 250
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png",
+            "infographic": null,
+            "program": [
+                {
+                    "id": 25,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/program/25/",
+                    "name": "Starlink",
+                    "description": "Starlink is a satellite internet constellation operated by American aerospace company SpaceX",
+                    "agencies": [
+                        {
+                            "id": 121,
+                            "url": "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
+                            "name": "SpaceX",
+                            "type": "Commercial"
+                        }
+                    ],
+                    "image_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/starlink_program_20231228154508.jpeg",
+                    "start_date": "2018-02-22T14:17:00Z",
+                    "end_date": null,
+                    "info_url": "https://starlink.com",
+                    "wiki_url": "https://en.wikipedia.org/wiki/Starlink",
+                    "mission_patches": [
+                        {
+                            "id": 7,
+                            "name": "Space X Starlink Mission Patch",
+                            "priority": 10,
+                            "image_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/mission_patch_images/space2520x252_mission_patch_20221011205756.png",
+                            "agency": {
+                                "id": 121,
+                                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
+                                "name": "SpaceX",
+                                "type": "Commercial"
+                            }
+                        }
+                    ],
+                    "type": {
+                        "id": 3,
+                        "name": "Communication Constellation"
+                    }
+                }
+            ],
+            "orbital_launch_attempt_count": 6707,
+            "location_launch_attempt_count": 963,
+            "pad_launch_attempt_count": 251,
+            "agency_launch_attempt_count": 381,
+            "orbital_launch_attempt_count_year": 128,
+            "location_launch_attempt_count_year": 36,
+            "pad_launch_attempt_count_year": 33,
+            "agency_launch_attempt_count_year": 70,
+            "type": "normal"
+        },
+        {
+            "id": "3c89db1e-82d7-413d-8e34-bbc01bbc5eaa",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/3c89db1e-82d7-413d-8e34-bbc01bbc5eaa/",
+            "slug": "long-march-6a-unknown-payload",
+            "name": "Long March 6A | Unknown Payload",
+            "status": {
+                "id": 1,
+                "name": "Go for Launch",
+                "abbrev": "Go",
+                "description": "Current T-0 confirmed by official or reliable sources."
+            },
+            "last_updated": "2024-06-25T22:14:29Z",
+            "net": "2024-07-04T23:00:00Z",
+            "window_end": "2024-07-04T23:33:00Z",
+            "window_start": "2024-07-04T22:41:00Z",
+            "net_precision": {
+                "id": 2,
+                "name": "Hour",
+                "abbrev": "HR",
+                "description": "The T-0 is accurate to the hour."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 88,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/88/",
+                "name": "China Aerospace Science and Technology Corporation",
+                "type": "Government"
+            },
+            "rocket": {
+                "id": 8276,
+                "configuration": {
+                    "id": 478,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/478/",
+                    "name": "Long March 6A",
+                    "family": "Long March",
+                    "full_name": "Long March 6A",
+                    "variant": ""
+                }
+            },
+            "mission": {
+                "id": 6857,
+                "name": "Unknown Payload",
+                "description": "Details TBD.",
+                "launch_designator": null,
+                "type": "Unknown",
+                "orbit": {
+                    "id": 25,
+                    "name": "Unknown",
+                    "abbrev": "N/A"
+                },
+                "agencies": [],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 200,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/200/",
+                "agency_id": null,
+                "name": "Launch Complex 9A",
+                "description": null,
+                "info_url": null,
+                "wiki_url": null,
+                "map_url": "https://www.google.com/maps?q=38.8583,111.5802",
+                "latitude": "38.8583",
+                "longitude": "111.5802",
+                "location": {
+                    "id": 19,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/19/",
+                    "name": "Taiyuan Satellite Launch Center, People's Republic of China",
+                    "country_code": "CHN",
+                    "description": "",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_19_20200803142421.jpg",
+                    "timezone_name": "Asia/Shanghai",
+                    "total_launch_count": 127,
+                    "total_landing_count": 0
+                },
+                "country_code": "CHN",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_launch_complex_9a_20220330003717.jpg",
+                "total_launch_count": 6,
+                "orbital_launch_attempt_count": 6
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/long_march_6a_image_20221109174525.png",
+            "infographic": null,
+            "program": [],
+            "orbital_launch_attempt_count": 6708,
+            "location_launch_attempt_count": 128,
+            "pad_launch_attempt_count": 7,
+            "agency_launch_attempt_count": 477,
+            "orbital_launch_attempt_count_year": 129,
+            "location_launch_attempt_count_year": 4,
+            "pad_launch_attempt_count_year": 3,
+            "agency_launch_attempt_count_year": 23,
+            "type": "normal"
+        },
+        {
+            "id": "ae5db3d2-1162-41b3-8f19-697150f483a3",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/ae5db3d2-1162-41b3-8f19-697150f483a3/",
+            "slug": "falcon-9-block-5-turksat-6a",
+            "name": "Falcon 9 Block 5 | Türksat 6A",
+            "status": {
+                "id": 1,
+                "name": "Go for Launch",
+                "abbrev": "Go",
+                "description": "Current T-0 confirmed by official or reliable sources."
+            },
+            "last_updated": "2024-06-28T08:41:05Z",
+            "net": "2024-07-08T21:20:00Z",
+            "window_end": "2024-07-08T21:20:00Z",
+            "window_start": "2024-07-08T21:20:00Z",
+            "net_precision": {
+                "id": 1,
+                "name": "Minute",
+                "abbrev": "MIN",
+                "description": "The T-0 is accurate to the minute."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 121,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
+                "name": "SpaceX",
+                "type": "Commercial"
+            },
+            "rocket": {
+                "id": 7455,
+                "configuration": {
+                    "id": 164,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/164/",
+                    "name": "Falcon 9",
+                    "family": "Falcon",
+                    "full_name": "Falcon 9 Block 5",
+                    "variant": "Block 5"
+                }
+            },
+            "mission": {
+                "id": 5853,
+                "name": "Türksat 6A",
+                "description": "Türksat 6A is Turkey's first domestically manufactured geostationary communications satellite. It is to reside in 42° East orbital slot, providing services to customers in Turkey, as well as in Europe, Northern coast of Africa, Middle East, India and Indonesia.",
+                "launch_designator": null,
+                "type": "Communications",
+                "orbit": {
+                    "id": 2,
+                    "name": "Geostationary Transfer Orbit",
+                    "abbrev": "GTO"
+                },
+                "agencies": [],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 80,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/80/",
+                "agency_id": 121,
+                "name": "Space Launch Complex 40",
+                "description": null,
+                "info_url": null,
+                "wiki_url": "https://en.wikipedia.org/wiki/Cape_Canaveral_Air_Force_Station_Space_Launch_Complex_40",
+                "map_url": "https://www.google.com/maps?q=28.56194122,-80.57735736",
+                "latitude": "28.56194122",
+                "longitude": "-80.57735736",
+                "location": {
+                    "id": 12,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/12/",
+                    "name": "Cape Canaveral, FL, USA",
+                    "country_code": "USA",
+                    "description": "",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_12_20200803142519.jpg",
+                    "timezone_name": "America/New_York",
+                    "total_launch_count": 962,
+                    "total_landing_count": 53
+                },
+                "country_code": "USA",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_80_20200803143323.jpg",
+                "total_launch_count": 250,
+                "orbital_launch_attempt_count": 250
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg",
+            "infographic": null,
+            "program": [],
+            "orbital_launch_attempt_count": 6709,
+            "location_launch_attempt_count": 964,
+            "pad_launch_attempt_count": 252,
+            "agency_launch_attempt_count": 382,
+            "orbital_launch_attempt_count_year": 130,
+            "location_launch_attempt_count_year": 37,
+            "pad_launch_attempt_count_year": 34,
+            "agency_launch_attempt_count_year": 71,
+            "type": "normal"
+        },
+        {
+            "id": "3e461ec0-8b64-4804-b9aa-e1e1f066065a",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/3e461ec0-8b64-4804-b9aa-e1e1f066065a/",
+            "slug": "ariane-62-maiden-flight",
+            "name": "Ariane 62 | Maiden Flight",
+            "status": {
+                "id": 1,
+                "name": "Go for Launch",
+                "abbrev": "Go",
+                "description": "Current T-0 confirmed by official or reliable sources."
+            },
+            "last_updated": "2024-06-25T11:48:16Z",
+            "net": "2024-07-09T18:00:00Z",
+            "window_end": "2024-07-09T21:00:00Z",
+            "window_start": "2024-07-09T18:00:00Z",
+            "net_precision": {
+                "id": 1,
+                "name": "Minute",
+                "abbrev": "MIN",
+                "description": "The T-0 is accurate to the minute."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 27,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/27/",
+                "name": "European Space Agency",
+                "type": "Multinational"
+            },
+            "rocket": {
+                "id": 2226,
+                "configuration": {
+                    "id": 121,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/121/",
+                    "name": "Ariane 62",
+                    "family": "Ariane",
+                    "full_name": "Ariane 62",
+                    "variant": "62"
+                }
+            },
+            "mission": {
+                "id": 6520,
+                "name": "Maiden Flight",
+                "description": "Maiden Flight of the Ariane 62 launcher from Korou.",
+                "launch_designator": null,
+                "type": "Test Flight",
+                "orbit": {
+                    "id": 25,
+                    "name": "Unknown",
+                    "abbrev": "N/A"
+                },
+                "agencies": [
+                    {
+                        "id": 27,
+                        "url": "https://lldev.thespacedevs.com/2.2.0/agencies/27/",
+                        "name": "European Space Agency",
+                        "featured": false,
+                        "type": "Multinational",
+                        "country_code": "FRA,ITA,DEU,ESP,CHE,GBR,AUT,SWE,BEL,PRT,NLD,HUN,POL,DNK,CZE,ROU,NOR,FIN,GRC,EST,IRL,LUX",
+                        "abbrev": "ESA",
+                        "description": "The European Space Agency is an intergovernmental organisation of 22 member states. Established in 1975 and headquartered in Paris, France, ESA has a worldwide staff of about 2,000 employees.\r\n\r\nESA's space flight programme includes human spaceflight (mainly through participation in the International Space Station program); the launch and operation of unmanned exploration missions to other planets and the Moon; Earth observation, science and telecommunication; designing launch vehicles; and maintaining a major spaceport, the Guiana Space Centre at Kourou, French Guiana.",
+                        "administrator": "Director General: Josef Aschbacher",
+                        "founding_year": "1975",
+                        "launchers": "",
+                        "spacecraft": "",
+                        "launch_library_url": null,
+                        "total_launch_count": 6,
+                        "consecutive_successful_launches": 4,
+                        "successful_launches": 5,
+                        "failed_launches": 1,
+                        "pending_launches": 1,
+                        "consecutive_successful_landings": 0,
+                        "successful_landings": 0,
+                        "failed_landings": 0,
+                        "attempted_landings": 0,
+                        "info_url": "http://www.esa.int/",
+                        "wiki_url": "http://en.wikipedia.org/wiki/European_Space_Agency",
+                        "logo_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/european2520space2520agency_logo_20221130101442.png",
+                        "image_url": null,
+                        "nation_url": null
+                    }
+                ],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 67,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/67/",
+                "agency_id": 115,
+                "name": "Ariane Launch Area 4",
+                "description": "ELA-4, is a launch pad and associated facilities at the Centre Spatial Guyanais in French Guiana. The complex is composed of a launch pad with mobile gantry, an horizontal assembly building and a dedicated launch operations building. ELA-4 is operated by Arianespace as part of the Ariane 6 program.",
+                "info_url": null,
+                "wiki_url": "https://en.wikipedia.org/wiki/Guiana_Space_Centre",
+                "map_url": "https://www.google.com/maps?q=5.256319,-52.786838",
+                "latitude": "5.256319",
+                "longitude": "-52.786838",
+                "location": {
+                    "id": 13,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/13/",
+                    "name": "Guiana Space Centre, French Guiana",
+                    "country_code": "GUF",
+                    "description": "The Guiana Space Centre is a European spaceport to the northwest of Kourou in French Guiana, a region of France in South America. Kourou is located at a latitude of 5°. In operation since 1968, it is a suitable location for a spaceport because of its equatorial location and open sea to the east.",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_13_20200803142412.jpg",
+                    "timezone_name": "America/Cayenne",
+                    "total_launch_count": 320,
+                    "total_landing_count": 0
+                },
+                "country_code": "GUF",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_67_20200803143559.jpg",
+                "total_launch_count": 0,
+                "orbital_launch_attempt_count": 0
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/ariane252062_image_20190224012339.jpeg",
+            "infographic": null,
+            "program": [],
+            "orbital_launch_attempt_count": 6710,
+            "location_launch_attempt_count": 321,
+            "pad_launch_attempt_count": 1,
+            "agency_launch_attempt_count": 7,
+            "orbital_launch_attempt_count_year": 131,
+            "location_launch_attempt_count_year": 1,
+            "pad_launch_attempt_count_year": 1,
+            "agency_launch_attempt_count_year": 1,
+            "type": "normal"
+        },
+        {
+            "id": "d61c53c4-669a-44cd-a905-cea38e8e21d6",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/d61c53c4-669a-44cd-a905-cea38e8e21d6/",
+            "slug": "falcon-9-block-5-transporter-11-dedicated-sso-ride",
+            "name": "Falcon 9 Block 5 | Transporter 11 (Dedicated SSO Rideshare)",
+            "status": {
+                "id": 2,
+                "name": "To Be Determined",
+                "abbrev": "TBD",
+                "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+            },
+            "last_updated": "2024-06-27T20:01:16Z",
+            "net": "2024-07-10T00:00:00Z",
+            "window_end": "2024-07-10T00:00:00Z",
+            "window_start": "2024-07-10T00:00:00Z",
+            "net_precision": {
+                "id": 5,
+                "name": "Day",
+                "abbrev": "DAY",
+                "description": "The T-0 is expected on the given day."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 121,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
+                "name": "SpaceX",
+                "type": "Commercial"
+            },
+            "rocket": {
+                "id": 7853,
+                "configuration": {
+                    "id": 164,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/164/",
+                    "name": "Falcon 9",
+                    "family": "Falcon",
+                    "full_name": "Falcon 9 Block 5",
+                    "variant": "Block 5"
+                }
+            },
+            "mission": {
+                "id": 6361,
+                "name": "Transporter 11 (Dedicated SSO Rideshare)",
+                "description": "Dedicated rideshare flight to a sun-synchronous orbit with dozens of small microsatellites and nanosatellites for commercial and government customers.",
+                "launch_designator": null,
+                "type": "Dedicated Rideshare",
+                "orbit": {
+                    "id": 17,
+                    "name": "Sun-Synchronous Orbit",
+                    "abbrev": "SSO"
+                },
+                "agencies": [
+                    {
+                        "id": 121,
+                        "url": "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
+                        "name": "SpaceX",
+                        "featured": true,
+                        "type": "Commercial",
+                        "country_code": "USA",
+                        "abbrev": "SpX",
+                        "description": "Space Exploration Technologies Corp., known as SpaceX, is an American aerospace manufacturer and space transport services company headquartered in Hawthorne, California. It was founded in 2002 by entrepreneur Elon Musk with the goal of reducing space transportation costs and enabling the colonization of Mars. SpaceX operates from many pads, on the East Coast of the US they operate from SLC-40 at Cape Canaveral Space Force Station and historic LC-39A at Kennedy Space Center. They also operate from SLC-4E at Vandenberg Space Force Base, California, usually for polar launches. Another launch site is being developed at Boca Chica, Texas.",
+                        "administrator": "CEO: Elon Musk",
+                        "founding_year": "2002",
+                        "launchers": "Falcon | Starship",
+                        "spacecraft": "Dragon",
+                        "launch_library_url": null,
+                        "total_launch_count": 380,
+                        "consecutive_successful_launches": 81,
+                        "successful_launches": 369,
+                        "failed_launches": 11,
+                        "pending_launches": 128,
+                        "consecutive_successful_landings": 44,
+                        "successful_landings": 332,
+                        "failed_landings": 24,
+                        "attempted_landings": 355,
+                        "info_url": "http://www.spacex.com/",
+                        "wiki_url": "http://en.wikipedia.org/wiki/SpaceX",
+                        "logo_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/spacex_logo_20220826094919.png",
+                        "image_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/spacex_image_20190207032501.jpeg",
+                        "nation_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/spacex_nation_20230531064544.jpg"
+                    }
+                ],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 16,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/16/",
+                "agency_id": null,
+                "name": "Space Launch Complex 4E",
+                "description": "Space Launch Complex 4 East (SLC-4E) is a launch site at Vandenberg Space Force Base, California, U.S.\r\n\r\nThe pad was previously used by Atlas and Titan rockets between 1963 and 2005. The pad was built for use by Atlas-Agena rockets, but was later rebuilt to handle Titan rockets.",
+                "info_url": null,
+                "wiki_url": "https://en.wikipedia.org/wiki/Vandenberg_Space_Launch_Complex_4#SLC-4E",
+                "map_url": "https://www.google.com/maps?q=34.632,-120.611",
+                "latitude": "34.632",
+                "longitude": "-120.611",
+                "location": {
+                    "id": 11,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/11/",
+                    "name": "Vandenberg SFB, CA, USA",
+                    "country_code": "USA",
+                    "description": "",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_11_20200803142416.jpg",
+                    "timezone_name": "America/Los_Angeles",
+                    "total_launch_count": 761,
+                    "total_landing_count": 19
+                },
+                "country_code": "USA",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_16_20200803143532.jpg",
+                "total_launch_count": 150,
+                "orbital_launch_attempt_count": 150
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg",
+            "infographic": null,
+            "program": [],
+            "orbital_launch_attempt_count": 6711,
+            "location_launch_attempt_count": 763,
+            "pad_launch_attempt_count": 151,
+            "agency_launch_attempt_count": 383,
+            "orbital_launch_attempt_count_year": 132,
+            "location_launch_attempt_count_year": 24,
+            "pad_launch_attempt_count_year": 23,
+            "agency_launch_attempt_count_year": 72,
+            "type": "normal"
+        },
+        {
+            "id": "3ecc1d59-470f-49a3-9508-35f0b6797454",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/3ecc1d59-470f-49a3-9508-35f0b6797454/",
+            "slug": "falcon-9-block-5-worldview-legion-3-4",
+            "name": "Falcon 9 Block 5 | WorldView Legion 3 & 4",
+            "status": {
+                "id": 2,
+                "name": "To Be Determined",
+                "abbrev": "TBD",
+                "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+            },
+            "last_updated": "2024-05-30T23:48:07Z",
+            "net": "2024-07-15T00:00:00Z",
+            "window_end": "2024-07-15T00:00:00Z",
+            "window_start": "2024-07-15T00:00:00Z",
+            "net_precision": {
+                "id": 5,
+                "name": "Day",
+                "abbrev": "DAY",
+                "description": "The T-0 is expected on the given day."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 121,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
+                "name": "SpaceX",
+                "type": "Commercial"
+            },
+            "rocket": {
+                "id": 7546,
+                "configuration": {
+                    "id": 164,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/164/",
+                    "name": "Falcon 9",
+                    "family": "Falcon",
+                    "full_name": "Falcon 9 Block 5",
+                    "variant": "Block 5"
+                }
+            },
+            "mission": {
+                "id": 5973,
+                "name": "WorldView Legion 3 & 4",
+                "description": "WorldView Legion is a constellation of Earth observation satellites built and operated by Maxar. Constellation is planned to consist of 6 satellites in both polar and mid-inclination orbits, providing 30 cm-class resolution.",
+                "launch_designator": null,
+                "type": "Earth Science",
+                "orbit": {
+                    "id": 17,
+                    "name": "Sun-Synchronous Orbit",
+                    "abbrev": "SSO"
+                },
+                "agencies": [
+                    {
+                        "id": 1057,
+                        "url": "https://lldev.thespacedevs.com/2.2.0/agencies/1057/",
+                        "name": "Maxar Technologies",
+                        "featured": false,
+                        "type": "Commercial",
+                        "country_code": "USA",
+                        "abbrev": "Maxar",
+                        "description": "Maxar Technologies Inc. is a space technology company headquartered in Westminster, Colorado, United States, specializing in manufacturing communication, Earth observation, radar, and on-orbit servicing satellites, satellite products, and related services.",
+                        "administrator": "President & CEO: Daniel Jablonsky",
+                        "founding_year": "2017",
+                        "launchers": "",
+                        "spacecraft": "",
+                        "launch_library_url": null,
+                        "total_launch_count": 0,
+                        "consecutive_successful_launches": 0,
+                        "successful_launches": 0,
+                        "failed_launches": 0,
+                        "pending_launches": 0,
+                        "consecutive_successful_landings": 0,
+                        "successful_landings": 0,
+                        "failed_landings": 0,
+                        "attempted_landings": 0,
+                        "info_url": "https://maxar.com",
+                        "wiki_url": "https://en.wikipedia.org/wiki/Maxar_Technologies",
+                        "logo_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/maxar2520technologies_logo_20230806171500.png",
+                        "image_url": null,
+                        "nation_url": null
+                    }
+                ],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 72,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/72/",
+                "agency_id": null,
+                "name": "Unknown Pad",
+                "description": null,
+                "info_url": null,
+                "wiki_url": "",
+                "map_url": "https://www.google.com/maps?q=28.458,-80.528",
+                "latitude": "28.458",
+                "longitude": "-80.528",
+                "location": {
+                    "id": 12,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/12/",
+                    "name": "Cape Canaveral, FL, USA",
+                    "country_code": "USA",
+                    "description": "",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_12_20200803142519.jpg",
+                    "timezone_name": "America/New_York",
+                    "total_launch_count": 962,
+                    "total_landing_count": 53
+                },
+                "country_code": "USA",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_72_20200803143403.jpg",
+                "total_launch_count": 0,
+                "orbital_launch_attempt_count": 0
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg",
+            "infographic": null,
+            "program": [],
+            "orbital_launch_attempt_count": 6712,
+            "location_launch_attempt_count": 965,
+            "pad_launch_attempt_count": 1,
+            "agency_launch_attempt_count": 384,
+            "orbital_launch_attempt_count_year": 133,
+            "location_launch_attempt_count_year": 38,
+            "pad_launch_attempt_count_year": 1,
+            "agency_launch_attempt_count_year": 73,
+            "type": "normal"
+        },
+        {
+            "id": "f7b56f6c-4ff8-4569-bacb-d752fece8450",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/f7b56f6c-4ff8-4569-bacb-d752fece8450/",
+            "slug": "atlas-v-551-ussf-51",
+            "name": "Atlas V 551 | USSF-51",
+            "status": {
+                "id": 2,
+                "name": "To Be Determined",
+                "abbrev": "TBD",
+                "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+            },
+            "last_updated": "2024-06-21T18:45:43Z",
+            "net": "2024-07-31T00:00:00Z",
+            "window_end": "2024-07-31T00:00:00Z",
+            "window_start": "2024-07-31T00:00:00Z",
+            "net_precision": {
+                "id": 7,
+                "name": "Month",
+                "abbrev": "M",
+                "description": "The T-0 is expected in the given month."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 124,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/124/",
+                "name": "United Launch Alliance",
+                "type": "Commercial"
+            },
+            "rocket": {
+                "id": 2742,
+                "configuration": {
+                    "id": 27,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/27/",
+                    "name": "Atlas V 551",
+                    "family": "Atlas",
+                    "full_name": "Atlas V 551",
+                    "variant": "551"
+                }
+            },
+            "mission": {
+                "id": 6154,
+                "name": "USSF-51",
+                "description": "Classified payload for the US Space Force.",
+                "launch_designator": null,
+                "type": "Government/Top Secret",
+                "orbit": {
+                    "id": 25,
+                    "name": "Unknown",
+                    "abbrev": "N/A"
+                },
+                "agencies": [
+                    {
+                        "id": 1041,
+                        "url": "https://lldev.thespacedevs.com/2.2.0/agencies/1041/",
+                        "name": "United States Space Force",
+                        "featured": false,
+                        "type": "Government",
+                        "country_code": "USA",
+                        "abbrev": "USSF",
+                        "description": "The United States Space Force (USSF) is the space service branch of the U.S. Armed Forces, one of the eight U.S. uniformed services.",
+                        "administrator": null,
+                        "founding_year": "2019",
+                        "launchers": "",
+                        "spacecraft": "",
+                        "launch_library_url": null,
+                        "total_launch_count": 0,
+                        "consecutive_successful_launches": 0,
+                        "successful_launches": 0,
+                        "failed_launches": 0,
+                        "pending_launches": 0,
+                        "consecutive_successful_landings": 0,
+                        "successful_landings": 0,
+                        "failed_landings": 0,
+                        "attempted_landings": 0,
+                        "info_url": "https://www.spaceforce.mil/",
+                        "wiki_url": "https://en.wikipedia.org/wiki/United_States_Space_Force",
+                        "logo_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/united2520states2520space2520force_logo_20221102113048.png",
+                        "image_url": null,
+                        "nation_url": null
+                    }
+                ],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 29,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/29/",
+                "agency_id": null,
+                "name": "Space Launch Complex 41",
+                "description": null,
+                "info_url": null,
+                "wiki_url": "https://en.wikipedia.org/wiki/Cape_Canaveral_Air_Force_Station_Space_Launch_Complex_41",
+                "map_url": "https://www.google.com/maps?q=28.58341025,-80.58303644",
+                "latitude": "28.58341025",
+                "longitude": "-80.58303644",
+                "location": {
+                    "id": 12,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/12/",
+                    "name": "Cape Canaveral, FL, USA",
+                    "country_code": "USA",
+                    "description": "",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_12_20200803142519.jpg",
+                    "timezone_name": "America/New_York",
+                    "total_launch_count": 962,
+                    "total_landing_count": 53
+                },
+                "country_code": "USA",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_29_20200803143528.jpg",
+                "total_launch_count": 112,
+                "orbital_launch_attempt_count": 112
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/atlas2520v2520551_image_20190224012316.jpeg",
+            "infographic": null,
+            "program": [],
+            "orbital_launch_attempt_count": 6729,
+            "location_launch_attempt_count": 972,
+            "pad_launch_attempt_count": 113,
+            "agency_launch_attempt_count": 163,
+            "orbital_launch_attempt_count_year": 150,
+            "location_launch_attempt_count_year": 45,
+            "pad_launch_attempt_count_year": 3,
+            "agency_launch_attempt_count_year": 4,
+            "type": "normal"
+        },
+        {
+            "id": "9a5fe2ad-1089-4b16-bf94-273b0f426741",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/9a5fe2ad-1089-4b16-bf94-273b0f426741/",
+            "slug": "ceres-1s-unknown-payload",
+            "name": "Ceres-1S | Unknown Payload",
+            "status": {
+                "id": 2,
+                "name": "To Be Determined",
+                "abbrev": "TBD",
+                "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+            },
+            "last_updated": "2024-06-29T05:03:27Z",
+            "net": "2024-07-31T00:00:00Z",
+            "window_end": "2024-07-31T00:00:00Z",
+            "window_start": "2024-07-31T00:00:00Z",
+            "net_precision": {
+                "id": 7,
+                "name": "Month",
+                "abbrev": "M",
+                "description": "The T-0 is expected in the given month."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 1021,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/1021/",
+                "name": "Galactic Energy",
+                "type": "Commercial"
+            },
+            "rocket": {
+                "id": 8273,
+                "configuration": {
+                    "id": 500,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/500/",
+                    "name": "Ceres-1S",
+                    "family": "Ceres-1",
+                    "full_name": "Ceres-1S",
+                    "variant": "Ceres-1S"
+                }
+            },
+            "mission": {
+                "id": 6854,
+                "name": "Unknown Payload",
+                "description": "Details TBD.",
+                "launch_designator": null,
+                "type": "Unknown",
+                "orbit": {
+                    "id": 25,
+                    "name": "Unknown",
+                    "abbrev": "N/A"
+                },
+                "agencies": [],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 212,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/212/",
+                "agency_id": 88,
+                "name": "Haiyang Spaceport",
+                "description": "Sea-based spaceport",
+                "info_url": null,
+                "wiki_url": null,
+                "map_url": null,
+                "latitude": "36.676794",
+                "longitude": "121.235103",
+                "location": {
+                    "id": 3,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/3/",
+                    "name": "Sea Launch",
+                    "country_code": "???",
+                    "description": "",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_3_20200803142448.jpg",
+                    "timezone_name": "",
+                    "total_launch_count": 50,
+                    "total_landing_count": 0
+                },
+                "country_code": "CHN",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_haiyang_spaceport_20230827174240.jpg",
+                "total_launch_count": 1,
+                "orbital_launch_attempt_count": 1
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/ceres-1s_image_20230905114324.jpeg",
+            "infographic": null,
+            "program": [],
+            "orbital_launch_attempt_count": 6729,
+            "location_launch_attempt_count": 51,
+            "pad_launch_attempt_count": 2,
+            "agency_launch_attempt_count": 15,
+            "orbital_launch_attempt_count_year": 150,
+            "location_launch_attempt_count_year": 4,
+            "pad_launch_attempt_count_year": 2,
+            "agency_launch_attempt_count_year": 4,
+            "type": "normal"
+        },
+        {
+            "id": "848b8e10-e5a4-4e46-9896-0c2299360588",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/848b8e10-e5a4-4e46-9896-0c2299360588/",
+            "slug": "electron-capella-acadia-3",
+            "name": "Electron | Capella Acadia 3",
+            "status": {
+                "id": 2,
+                "name": "To Be Determined",
+                "abbrev": "TBD",
+                "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+            },
+            "last_updated": "2024-06-26T04:16:39Z",
+            "net": "2024-07-31T00:00:00Z",
+            "window_end": "2024-07-31T00:00:00Z",
+            "window_start": "2024-07-31T00:00:00Z",
+            "net_precision": {
+                "id": 7,
+                "name": "Month",
+                "abbrev": "M",
+                "description": "The T-0 is expected in the given month."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 147,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/147/",
+                "name": "Rocket Lab",
+                "type": "Commercial"
+            },
+            "rocket": {
+                "id": 7797,
+                "configuration": {
+                    "id": 26,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/26/",
+                    "name": "Electron",
+                    "family": "",
+                    "full_name": "Electron",
+                    "variant": ""
+                }
+            },
+            "mission": {
+                "id": 6315,
+                "name": "Capella Acadia 3",
+                "description": "Payload consists of a single SAR Earth-imaging Acadia satellite, a new generation satellite designed, manufactured, and operated by Capella Space.",
+                "launch_designator": null,
+                "type": "Earth Science",
+                "orbit": {
+                    "id": 8,
+                    "name": "Low Earth Orbit",
+                    "abbrev": "LEO"
+                },
+                "agencies": [
+                    {
+                        "id": 1059,
+                        "url": "https://lldev.thespacedevs.com/2.2.0/agencies/1059/",
+                        "name": "Capella Space",
+                        "featured": false,
+                        "type": "Private",
+                        "country_code": "USA",
+                        "abbrev": "",
+                        "description": "Capella Space is an American space company. It is developing space-based radar Earth observation satellites equipped with synthetic-aperture radar that can penetrate clouds and work at night.",
+                        "administrator": "CEO: Payam Banazadeh",
+                        "founding_year": "2016",
+                        "launchers": "",
+                        "spacecraft": "",
+                        "launch_library_url": null,
+                        "total_launch_count": 0,
+                        "consecutive_successful_launches": 0,
+                        "successful_launches": 0,
+                        "failed_launches": 0,
+                        "pending_launches": 0,
+                        "consecutive_successful_landings": 0,
+                        "successful_landings": 0,
+                        "failed_landings": 0,
+                        "attempted_landings": 0,
+                        "info_url": "http://capellaspace.com/",
+                        "wiki_url": "https://en.wikipedia.org/wiki/Capella_Space",
+                        "logo_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/capella2520space_logo_20230806180121.png",
+                        "image_url": null,
+                        "nation_url": null
+                    }
+                ],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 210,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/210/",
+                "agency_id": null,
+                "name": "Unknown Pad",
+                "description": null,
+                "info_url": null,
+                "wiki_url": null,
+                "map_url": null,
+                "latitude": "-39.260881",
+                "longitude": "177.865826",
+                "location": {
+                    "id": 10,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/10/",
+                    "name": "Onenui Station, Mahia Peninsula, New Zealand",
+                    "country_code": "NZL",
+                    "description": "",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_10_20200803142509.jpg",
+                    "timezone_name": "Pacific/Auckland",
+                    "total_launch_count": 46,
+                    "total_landing_count": 17
+                },
+                "country_code": "NZL",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_210_20230819165718.jpg",
+                "total_launch_count": 0,
+                "orbital_launch_attempt_count": 0
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/electron_image_20190705175640.jpeg",
+            "infographic": null,
+            "program": [],
+            "orbital_launch_attempt_count": 6729,
+            "location_launch_attempt_count": 47,
+            "pad_launch_attempt_count": 1,
+            "agency_launch_attempt_count": 51,
+            "orbital_launch_attempt_count_year": 150,
+            "location_launch_attempt_count_year": 8,
+            "pad_launch_attempt_count_year": 1,
+            "agency_launch_attempt_count_year": 9,
+            "type": "normal"
+        },
+        {
+            "id": "670b2644-8952-484d-a402-8a75b7f907ae",
+            "url": "https://lldev.thespacedevs.com/2.2.0/launch/670b2644-8952-484d-a402-8a75b7f907ae/",
+            "slug": "falcon-9-block-5-arctic-satellite-broadband-missio",
+            "name": "Falcon 9 Block 5 | Arctic Satellite Broadband Mission (ASBM)",
+            "status": {
+                "id": 2,
+                "name": "To Be Determined",
+                "abbrev": "TBD",
+                "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+            },
+            "last_updated": "2024-04-29T14:36:14Z",
+            "net": "2024-07-31T00:00:00Z",
+            "window_end": "2024-07-31T00:00:00Z",
+            "window_start": "2024-07-31T00:00:00Z",
+            "net_precision": {
+                "id": 7,
+                "name": "Month",
+                "abbrev": "M",
+                "description": "The T-0 is expected in the given month."
+            },
+            "probability": null,
+            "weather_concerns": null,
+            "holdreason": "",
+            "failreason": "",
+            "hashtag": null,
+            "launch_service_provider": {
+                "id": 121,
+                "url": "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
+                "name": "SpaceX",
+                "type": "Commercial"
+            },
+            "rocket": {
+                "id": 7604,
+                "configuration": {
+                    "id": 164,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/config/launcher/164/",
+                    "name": "Falcon 9",
+                    "family": "Falcon",
+                    "full_name": "Falcon 9 Block 5",
+                    "variant": "Block 5"
+                }
+            },
+            "mission": {
+                "id": 6092,
+                "name": "Arctic Satellite Broadband Mission (ASBM)",
+                "description": "ASBM (Arctic Satellite Broadband Mission) 1 & 2 are two twin satellites built by Northrop Grumman for Space Norway, in cooperation with Inmarsat and the Norwegian Ministry of Defence.\r\n\r\nThey are designed to bring mobile broadband coverage in the Arctic for both civilians and military.\r\n\r\nThe US Air Force provides the Extremely High Frequency eXtended Data Rate payloads on ASBM satellites as part of the Enhanced Polar System Recapitalization (EPS-R) program.",
+                "launch_designator": null,
+                "type": "Communications",
+                "orbit": {
+                    "id": 0,
+                    "name": "Elliptical Orbit",
+                    "abbrev": "Elliptical"
+                },
+                "agencies": [],
+                "info_urls": [],
+                "vid_urls": []
+            },
+            "pad": {
+                "id": 16,
+                "url": "https://lldev.thespacedevs.com/2.2.0/pad/16/",
+                "agency_id": null,
+                "name": "Space Launch Complex 4E",
+                "description": "Space Launch Complex 4 East (SLC-4E) is a launch site at Vandenberg Space Force Base, California, U.S.\r\n\r\nThe pad was previously used by Atlas and Titan rockets between 1963 and 2005. The pad was built for use by Atlas-Agena rockets, but was later rebuilt to handle Titan rockets.",
+                "info_url": null,
+                "wiki_url": "https://en.wikipedia.org/wiki/Vandenberg_Space_Launch_Complex_4#SLC-4E",
+                "map_url": "https://www.google.com/maps?q=34.632,-120.611",
+                "latitude": "34.632",
+                "longitude": "-120.611",
+                "location": {
+                    "id": 11,
+                    "url": "https://lldev.thespacedevs.com/2.2.0/location/11/",
+                    "name": "Vandenberg SFB, CA, USA",
+                    "country_code": "USA",
+                    "description": "",
+                    "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_11_20200803142416.jpg",
+                    "timezone_name": "America/Los_Angeles",
+                    "total_launch_count": 761,
+                    "total_landing_count": 19
+                },
+                "country_code": "USA",
+                "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_16_20200803143532.jpg",
+                "total_launch_count": 150,
+                "orbital_launch_attempt_count": 150
+            },
+            "webcast_live": false,
+            "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg",
+            "infographic": null,
+            "program": [],
+            "orbital_launch_attempt_count": 6729,
+            "location_launch_attempt_count": 770,
+            "pad_launch_attempt_count": 158,
+            "agency_launch_attempt_count": 398,
+            "orbital_launch_attempt_count_year": 150,
+            "location_launch_attempt_count_year": 31,
+            "pad_launch_attempt_count_year": 30,
+            "agency_launch_attempt_count_year": 87,
+            "type": "normal"
+        }
+    ]
+}

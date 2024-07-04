@@ -11,12 +11,32 @@ import SwiftUI
 class ViewModel: ObservableObject {
     @Published var launches: [Launch] = []
 
+    private let dataService: DataService
+
+    init(dataService: DataService = NetworkDataService()) {
+        self.dataService = dataService
+    }
+
     func fetch() {
+        dataService.fetchLaunches { [weak self] launches in
+            DispatchQueue.main.async {
+                self?.launches = launches
+            }
+        }
+    }
+}
+
+protocol DataService {
+    func fetchLaunches(completion: @escaping ([Launch]) -> Void)
+}
+
+class NetworkDataService: DataService {
+    func fetchLaunches(completion: @escaping ([Launch]) -> Void) {
         guard let url = URL(string: "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/") else {
             return
         }
-        
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 return
             }
@@ -24,15 +44,30 @@ class ViewModel: ObservableObject {
             // Convert to JSON
             do {
                 let launches = try JSONDecoder().decode(LL2Response.self, from: data)
-                DispatchQueue.main.async {
-                    self?.launches = launches.results
-                }
-            }
-            catch {
+                completion(launches.results)
+            } catch {
                 print(error)
             }
         }
         task.resume()
+    }
+}
+
+class MockDataService: DataService {
+    func fetchLaunches(completion: @escaping ([Launch]) -> Void) {
+        if let url = Bundle.main.url(forResource: "mockLaunches", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let launches = try JSONDecoder().decode(LL2Response.self, from: data)
+                completion(launches.results)
+            } catch {
+                print("Error reading or decoding mockLaunches.json: \(error)")
+                completion([])
+            }
+        } else {
+            print("mockLaunches.json not found")
+            completion([])
+        }
     }
 }
 
@@ -79,10 +114,9 @@ struct FormattedDateView: View {
     }
 }
 
-
 struct CardView: View {
     var launch: Launch
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(launch.name)
@@ -108,8 +142,8 @@ struct CardView: View {
 }
 
 struct ContentView: View {
-    @StateObject var viewModel = ViewModel()
-    
+    @StateObject var viewModel: ViewModel
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -130,5 +164,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: ViewModel(dataService: MockDataService()))
 }
