@@ -62,7 +62,7 @@ struct Launch: Hashable, Decodable {
 
     struct Pad: Hashable, Decodable {
         var name: String
-        var map_url: String
+        var map_url: String?
         var latitude: String
         var longitude: String
         var location: Location
