@@ -52,7 +52,7 @@ struct T_Minus_WidgetEntryView : View {
 }
 
 struct T_Minus_Widget: Widget {
-    let kind: String = "Launch_Feed_Widget"
+    let kind: String = "T_Minus_Widget"
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
