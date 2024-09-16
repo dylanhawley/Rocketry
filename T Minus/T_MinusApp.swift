@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct T_MinusApp: App {
+    @State private var viewModel = ViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: ViewModel())
+            ContentView()
+                .environment(viewModel)
         }
+        .modelContainer(for: Launch.self)
     }
 }

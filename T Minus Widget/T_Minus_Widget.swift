@@ -39,15 +39,29 @@ struct SimpleEntry: TimelineEntry {
 
 struct T_Minus_WidgetEntryView : View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) var family
 
+    @ViewBuilder
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+        VStack(alignment: .leading) {
+            HStack {
+                Text("5")
+                    .font(.title)
+                    .bold()
+                Text("DAYS")
+                Spacer()
+            }
+            .padding(.bottom, 2)
+            Text("Nov 14, 4:49PM")
+                .font(.caption)
+                .padding(.bottom, 8)
+            Spacer()
+            Text("Crew-1")
+                .font(.headline)
         }
+        .padding()
+        .foregroundColor(.white)
+        .background(.black)
     }
 }
 
@@ -59,6 +73,8 @@ struct T_Minus_Widget: Widget {
             T_Minus_WidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+//        .contentMarginsDisabled()
+//        .supportedFamilies([.systemSmall])
     }
 }
 
