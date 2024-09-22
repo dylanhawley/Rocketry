@@ -23,7 +23,6 @@ struct LaunchRow: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .background(Color.white)
         .cornerRadius(15)
     }
 }

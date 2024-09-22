@@ -15,7 +15,7 @@ class ViewModel {
 //    var sortParameter: SortParameter = .net
 
     /// The sort direction for quakes in the list view.
-    var sortOrder: SortOrder = .reverse
+    var sortOrder: SortOrder = .forward
 
     /// A location name to use when filtering quakes.
     var searchText: String = ""

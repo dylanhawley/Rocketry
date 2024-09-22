@@ -18,7 +18,7 @@ struct LaunchList: View {
 
     init(
         selectedId: Binding<Launch.ID?>,
-        sortOrder: SortOrder = .reverse
+        sortOrder: SortOrder = .forward
     ) {
         _selectedId = selectedId
         _launches = Query(sort: \Launch.net, order: sortOrder)
