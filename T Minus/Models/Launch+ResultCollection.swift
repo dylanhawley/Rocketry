@@ -8,9 +8,8 @@
 import SwiftData
 import OSLog
 
-// A mapping from items in the result collection to launch items.
+
 extension Launch {
-    /// Creates a new quake instance from a decoded feature.
     convenience init(from result: LaunchResultCollection.Result) {
         self.init(
             code: result.id,
@@ -26,9 +25,8 @@ extension Launch {
     }
 }
 
-// Helper methods for loading feature data and storing it as launches.
+
 extension LaunchResultCollection {
-    /// A logger for debugging.
     fileprivate static let logger = Logger(subsystem: "com.example.apple-samplecode.DataCache", category: "parsing")
 
     /// Loads new launches and deletes outdated ones.

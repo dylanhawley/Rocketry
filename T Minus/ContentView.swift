@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-/// The app's top level navigation split view.
+
 struct ContentView: View {
     @Environment(ViewModel.self) private var viewModel
     @Environment(\.modelContext) private var modelContext

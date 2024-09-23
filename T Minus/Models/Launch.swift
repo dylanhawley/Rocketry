@@ -46,13 +46,13 @@ class Launch {
 
 /// A convenience for accessing a launch in an array by its identifier.
 extension Array where Element: Launch {
-    /// Gets the first launch in the array with the specified ID, if any.
+    // Gets the first launch in the array with the specified ID, if any.
     subscript(id: Launch.ID?) -> Launch? {
         first { $0.id == id }
     }
 }
 
-/// A string represenation of the launch.
+// A string represenation of the launch.
 extension Launch: CustomStringConvertible {
     var description: String {
         "\(mission) \(vehicle) \(pad)"
@@ -76,7 +76,7 @@ extension Launch {
         }
     }
 
-    /// Report the range of dates over which there are earthquakes.
+    /// Report the range of dates over which there are launches.
     static func dateRange(modelContext: ModelContext) -> ClosedRange<Date> {
         let descriptor = FetchDescriptor<Launch>(sortBy: [.init(\.net, order: .forward)])
         guard let launches = try? modelContext.fetch(descriptor),
@@ -85,7 +85,7 @@ extension Launch {
         return first ... last
     }
 
-    /// Reports the total number of quakes.
+    /// Reports the total number of launches.
     static func totalLaunches(modelContext: ModelContext) -> Int {
         (try? modelContext.fetchCount(FetchDescriptor<Launch>())) ?? 0
     }
