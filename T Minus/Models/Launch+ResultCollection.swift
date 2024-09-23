@@ -44,6 +44,7 @@ extension LaunchResultCollection {
 
                 logger.debug("Inserting \(launch)")
                 modelContext.insert(launch)
+                try? modelContext.save()
             }
 
             logger.debug("Refresh complete.")

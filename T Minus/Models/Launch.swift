@@ -55,7 +55,7 @@ extension Array where Element: Launch {
 // A string represenation of the launch.
 extension Launch: CustomStringConvertible {
     var description: String {
-        "\(mission) \(vehicle) \(pad)"
+        "\(code) \(mission) \(vehicle) \(pad)"
     }
 }
 
