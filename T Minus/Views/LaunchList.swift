@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-/// The sorted and filtered list of earthquakes that the app stores.
+
 struct LaunchList: View {
     @Environment(ViewModel.self) private var viewModel
     @Environment(\.modelContext) private var modelContext

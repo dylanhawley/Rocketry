@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// A single row in the list of earthquakes.
+
 struct LaunchRow: View {
     var launch: Launch
 
@@ -16,7 +16,6 @@ struct LaunchRow: View {
             Text(launch.mission)
                 .font(.headline)
                 .padding(.top, 8)
-//            Divider()
             ScrollView(.horizontal) {
                 HStack {
                     Text(launch.vehicle)

@@ -102,7 +102,6 @@ extension LaunchResultCollection {
         }
 
         do {
-            // Decode the GeoJSON into a data model.
             let jsonDecoder = JSONDecoder()
             jsonDecoder.dateDecodingStrategy = .iso8601
             return try jsonDecoder.decode(LaunchResultCollection.self, from: data)
@@ -112,7 +111,7 @@ extension LaunchResultCollection {
     }
 }
 
-/// The kinds of errors that occur when loading result data.
+
 enum DownloadError: Error {
     case wrongDataFormat(error: Error)
     case missingData

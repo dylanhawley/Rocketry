@@ -24,7 +24,7 @@ struct Location: Codable {
     }
 }
 
-// A string represenation of the location.
+/// A string represenation of the location.
 extension Location: CustomStringConvertible {
     /// A string represenation of the location coordinate.
     var description: String {
