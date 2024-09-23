@@ -21,11 +21,11 @@ struct LaunchRow: View {
                 HStack {
                     Text(launch.vehicle)
                         .padding(5)
-                        .background(Color("LabelColor"))
+                        .background(Color("LaunchLabelColor"))
                         .cornerRadius(5)
                     Text(launch.pad)
                         .padding(5)
-                        .background(Color("LabelColor"))
+                        .background(Color("LaunchLabelColor"))
                         .cornerRadius(5)
                 }
             }

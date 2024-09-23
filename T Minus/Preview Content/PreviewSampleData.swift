@@ -15,6 +15,7 @@ actor PreviewSampleData {
         return try! inMemoryContainer()
     }()
 
+    @MainActor
     static var inMemoryContainer: () throws -> ModelContainer = {
         let schema = Schema([Launch.self])
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
@@ -31,7 +32,7 @@ actor PreviewSampleData {
 
 // Sample launches for use in previews
 extension Launch {
-    static var sampleLaunches: [Launch] = [
+    @MainActor static let sampleLaunches: [Launch] = [
         .init(
             code: "1",
             net: ISO8601DateFormatter().date(from: "2024-07-03T06:01:00Z") ?? .now,
