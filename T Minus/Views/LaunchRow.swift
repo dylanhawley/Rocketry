@@ -16,14 +16,22 @@ struct LaunchRow: View {
             Text(launch.mission)
                 .font(.headline)
                 .padding(.top, 8)
-            Divider()
-            Text(launch.vehicle)
+//            Divider()
+            ScrollView(.horizontal) {
+                HStack {
+                    Text(launch.vehicle)
+                        .padding(5)
+                        .background(Color("LabelColor"))
+                        .cornerRadius(5)
+                    Text(launch.pad)
+                        .padding(5)
+                        .background(Color("LabelColor"))
+                        .cornerRadius(5)
+                }
+            }
             Text(launch.details)
             FormattedDateView(date: launch.net)
         }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .cornerRadius(15)
     }
 }
 

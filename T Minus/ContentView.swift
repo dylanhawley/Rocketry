@@ -21,21 +21,25 @@ struct ContentView: View {
     var body: some View {
         @Bindable var viewModel = viewModel
 
-        LaunchList(
-            selectedId: $selectedId,
-            sortOrder: viewModel.sortOrder
-        )
-        .navigationTitle("Launches")
-        .refreshable {
-            await refreshData()
-        }
-        .onChange(of: scenePhase) { _, newPhase in
-            if newPhase == .active {
-                Task { await refreshData() }
+        NavigationStack {
+            LaunchList(
+                selectedId: $selectedId,
+                searchText: viewModel.searchText,
+                sortOrder: viewModel.sortOrder
+            )
+            .searchable(text: $viewModel.searchText, prompt: "Search Launches")
+            .navigationTitle("Launches")
+            .refreshable {
+                await refreshData()
             }
-        }
-        .task {
-            await refreshData()
+            .onChange(of: scenePhase) { _, newPhase in
+                if newPhase == .active {
+                    Task { await refreshData() }
+                }
+            }
+            .task {
+                await refreshData()
+            }
         }
     }
 

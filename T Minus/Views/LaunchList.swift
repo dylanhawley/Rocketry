@@ -18,10 +18,15 @@ struct LaunchList: View {
 
     init(
         selectedId: Binding<Launch.ID?>,
+        searchText: String = "",
         sortOrder: SortOrder = .forward
     ) {
         _selectedId = selectedId
         _launches = Query(sort: \Launch.net, order: sortOrder)
+        
+        let predicate = Launch.predicate(searchText: searchText)
+        _launches = Query(filter: predicate, sort: \Launch.net, order: .forward)
+        
     }
 
     var body: some View {
