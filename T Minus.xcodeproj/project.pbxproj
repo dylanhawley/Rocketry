@@ -10,6 +10,10 @@
 		A92D4B3C2C3E5B7700DA7E2C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3B2C3E5B7700DA7E2C /* Location.swift */; };
 		A92D4B3E2C40A38F00DA7E2C /* Launch+ResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */; };
 		A96CAC8B2C3751DF001AC10B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
+		A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
+		A9F1E2A52CA27F8C0048BC1A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3B2C3E5B7700DA7E2C /* Location.swift */; };
+		A9F1E2A82CA283F80048BC1A /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F5722C7D934E007A4A11 /* PreviewSampleData.swift */; };
+		A9F1E2A92CA284120048BC1A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F5742C7D9436007A4A11 /* ViewModel.swift */; };
 		A9F2F5732C7D934E007A4A11 /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F5722C7D934E007A4A11 /* PreviewSampleData.swift */; };
 		A9F2F5752C7D9436007A4A11 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F5742C7D9436007A4A11 /* ViewModel.swift */; };
 		A9F2F5772C7D976A007A4A11 /* LaunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F5762C7D976A007A4A11 /* LaunchList.swift */; };
@@ -307,11 +311,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F1E2A82CA283F80048BC1A /* PreviewSampleData.swift in Sources */,
+				A9F1E2A92CA284120048BC1A /* ViewModel.swift in Sources */,
 				FC7EA8C82ADE23640072BB8F /* T_Minus_Widget.swift in Sources */,
 				FC349A682AF0ACD100278E0A /* LaunchResultCollection.swift in Sources */,
 				FC7EA8CA2ADE23640072BB8F /* AppIntent.swift in Sources */,
 				FC7EA8C42ADE23640072BB8F /* T_Minus_WidgetBundle.swift in Sources */,
+				A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */,
 				FC7EA8C62ADE23640072BB8F /* T_Minus_WidgetLiveActivity.swift in Sources */,
+				A9F1E2A52CA27F8C0048BC1A /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

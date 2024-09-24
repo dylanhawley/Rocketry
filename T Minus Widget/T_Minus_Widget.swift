@@ -7,33 +7,38 @@
 
 import WidgetKit
 import SwiftUI
+import SwiftData
 
 struct Provider: AppIntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+    @MainActor func placeholder(in context: Context) -> SimpleEntry {
+        SimpleEntry(date: Date(), launches: getLaunches(), configuration: ConfigurationAppIntent())
     }
 
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+    @MainActor func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
+        SimpleEntry(date: Date(), launches: getLaunches(), configuration: configuration)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
+        let entries: [SimpleEntry] = await [SimpleEntry(date: .now, launches: getLaunches(), configuration: configuration)]
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+        return Timeline(entries: entries, policy: .after(.now.advanced(by: 60)))
+    }
+    
+    @MainActor
+    private func getLaunches() -> [Launch] {
+        guard let modelContainer = try? ModelContainer(for: Launch.self) else {
+            return []
         }
-
-        return Timeline(entries: entries, policy: .atEnd)
+        let descriptor = FetchDescriptor<Launch>()
+        let launches = try? modelContainer.mainContext.fetch(descriptor)
+        
+        return launches ?? []
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
+    let launches: [Launch]
     let configuration: ConfigurationAppIntent
 }
 
@@ -52,16 +57,22 @@ struct T_Minus_WidgetEntryView : View {
                 Spacer()
             }
             .padding(.bottom, 2)
-            Text("Nov 14, 4:49PM")
+            Text(formatDate(entry.launches.first!.net))
                 .font(.caption)
                 .padding(.bottom, 8)
             Spacer()
-            Text("Crew-1")
+            Text(entry.launches.first!.mission)
                 .font(.headline)
         }
         .padding()
         .foregroundColor(.white)
         .background(.black)
+    }
+    
+    private func formatDate(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, h:mm a" // Format: Nov 14, 4:49 PM
+        return dateFormatter.string(from: date)
     }
 }
 
@@ -73,8 +84,8 @@ struct T_Minus_Widget: Widget {
             T_Minus_WidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-//        .contentMarginsDisabled()
-//        .supportedFamilies([.systemSmall])
+        .contentMarginsDisabled()
+        .supportedFamilies([.systemSmall])
     }
 }
 
@@ -95,6 +106,6 @@ extension ConfigurationAppIntent {
 #Preview(as: .systemSmall) {
     T_Minus_Widget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    SimpleEntry(date: .now, launches: Launch.sampleLaunches, configuration: .smiley)
+//    SimpleEntry(date: .now, configuration: .starEyes)
 }
