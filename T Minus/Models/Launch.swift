@@ -70,7 +70,7 @@ extension Launch {
 //        let end = calendar.date(byAdding: .init(day: 1), to: start) ?? start
 
         return #Predicate<Launch> { launch in
-            (searchText.isEmpty || launch.vehicle.contains(searchText) || launch.details.contains(searchText) || launch.mission.contains(searchText))
+            (searchText.isEmpty || launch.vehicle.localizedStandardContains(searchText) || launch.details.localizedStandardContains(searchText) || launch.mission.localizedStandardContains(searchText))
 //            &&
 //            (launch.net > start && launch.net < end)
         }
