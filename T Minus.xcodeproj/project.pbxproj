@@ -63,6 +63,8 @@
 		A92D4B3B2C3E5B7700DA7E2C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+ResultCollection.swift"; sourceTree = "<group>"; };
 		A96CAC8A2C3751DF001AC10B /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		A9F1E2AA2CA6A9ED0048BC1A /* T Minus Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T Minus Widget.entitlements"; sourceTree = "<group>"; };
+		A9F1E2AB2CA6AAFA0048BC1A /* T Minus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T Minus.entitlements"; sourceTree = "<group>"; };
 		A9F2F5722C7D934E007A4A11 /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
 		A9F2F5742C7D9436007A4A11 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A9F2F5762C7D976A007A4A11 /* LaunchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchList.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		FC7EA8A92ADE19990072BB8F /* T Minus */ = {
 			isa = PBXGroup;
 			children = (
+				A9F1E2AB2CA6AAFA0048BC1A /* T Minus.entitlements */,
 				FC7EA8AA2ADE19990072BB8F /* T_MinusApp.swift */,
 				FC12E7AE2AF8A5B80069C6E2 /* Models */,
 				FC7EA8AC2ADE19990072BB8F /* ContentView.swift */,
@@ -182,6 +185,7 @@
 		FC7EA8C22ADE23640072BB8F /* T Minus Widget */ = {
 			isa = PBXGroup;
 			children = (
+				A9F1E2AA2CA6A9ED0048BC1A /* T Minus Widget.entitlements */,
 				FC7EA8C32ADE23640072BB8F /* T_Minus_WidgetBundle.swift */,
 				FC7EA8C52ADE23640072BB8F /* T_Minus_WidgetLiveActivity.swift */,
 				FC7EA8C72ADE23640072BB8F /* T_Minus_Widget.swift */,
@@ -458,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "T Minus/T Minus.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"T Minus/Preview Content\"";
@@ -488,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "T Minus/T Minus.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"T Minus/Preview Content\"";
@@ -518,6 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "T Minus Widget/T Minus Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QCYB8YLNNQ;
@@ -545,6 +552,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "T Minus Widget/T Minus Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QCYB8YLNNQ;

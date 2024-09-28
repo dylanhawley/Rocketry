@@ -60,19 +60,18 @@ extension Launch: CustomStringConvertible {
 }
 
 extension Launch {
-    /// A filter that checks for a date and text in the launch's location name.
+    /// A filter that checks for text in the launch's location name.
     static func predicate(
-        searchText: String
-//        searchDate: Date
+        searchText: String,
+        onlyFutureLaunches: Bool
     ) -> Predicate<Launch> {
-//        let calendar = Calendar.autoupdatingCurrent
-//        let start = calendar.startOfDay(for: searchDate)
-//        let end = calendar.date(byAdding: .init(day: 1), to: start) ?? start
-
+        let currentDate = Date()
+        
         return #Predicate<Launch> { launch in
-            (searchText.isEmpty || launch.vehicle.localizedStandardContains(searchText) || launch.details.localizedStandardContains(searchText) || launch.mission.localizedStandardContains(searchText))
-//            &&
-//            (launch.net > start && launch.net < end)
+            (searchText.isEmpty || launch.vehicle.localizedStandardContains(searchText) ||
+             launch.details.localizedStandardContains(searchText) ||
+             launch.mission.localizedStandardContains(searchText)) &&
+            (!onlyFutureLaunches || launch.net > currentDate)
         }
     }
 

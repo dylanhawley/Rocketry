@@ -9,64 +9,70 @@ import WidgetKit
 import SwiftUI
 import SwiftData
 
-struct Provider: AppIntentTimelineProvider {
-    @MainActor func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), launches: getLaunches(), configuration: ConfigurationAppIntent())
-    }
-
-    @MainActor func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), launches: getLaunches(), configuration: configuration)
+struct Provider: TimelineProvider {
+    let modelContext = ModelContext(try! ModelContainer(for: Launch.self))
+    
+    func placeholder(in context: Context) -> SimpleEntry {
+        let launch = try! modelContext.fetch(
+            FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true),
+                                    sortBy: [SortDescriptor(\Launch.net, order: .forward)])
+        ).first!
+        return SimpleEntry(date: Date(), launch: launch)
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        let entries: [SimpleEntry] = await [SimpleEntry(date: .now, launches: getLaunches(), configuration: configuration)]
-
-        return Timeline(entries: entries, policy: .after(.now.advanced(by: 60)))
+    func getSnapshot(in context: Context, completion: @escaping @Sendable (SimpleEntry) -> Void) {
+        let launch = try! modelContext.fetch(
+            FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true),
+                                    sortBy: [SortDescriptor(\Launch.net, order: .forward)])
+        ).first!
+        let entry = SimpleEntry(date: Date(), launch: launch)
+        completion(entry)
     }
     
-    @MainActor
-    private func getLaunches() -> [Launch] {
-        guard let modelContainer = try? ModelContainer(for: Launch.self) else {
-            return []
-        }
-        let descriptor = FetchDescriptor<Launch>()
-        let launches = try? modelContainer.mainContext.fetch(descriptor)
+    func getTimeline(in context: Context, completion: @escaping @Sendable (Timeline<SimpleEntry>) -> Void) {
+        var entries: [SimpleEntry] = []
+        let launch = try! modelContext.fetch(
+            FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true),
+                                    sortBy: [SortDescriptor(\Launch.net, order: .forward)])
+        ).first!
+        let entry = SimpleEntry(date: .now, launch: launch)
+        entries.append(entry)
         
-        return launches ?? []
+        let timeline = Timeline(entries: entries, policy: .atEnd)
+        completion(timeline)
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let launches: [Launch]
-    let configuration: ConfigurationAppIntent
+    let launch: Launch
 }
 
-struct T_Minus_WidgetEntryView : View {
+struct T_Minus_WidgetEntryView: View {
     var entry: Provider.Entry
-    @Environment(\.widgetFamily) var family
-
+    
     @ViewBuilder
     var body: some View {
+        let timeRemaining = calculateTimeRemaining(from: entry.launch.net)
+        
         VStack(alignment: .leading) {
             HStack {
-                Text("5")
+                Text(timeRemaining.number)
                     .font(.title)
                     .bold()
-                Text("DAYS")
+                Text(timeRemaining.unit)
                 Spacer()
             }
             .padding(.bottom, 2)
-            Text(formatDate(entry.launches.first!.net))
+            Text(formatDate(entry.launch.net))
                 .font(.caption)
                 .padding(.bottom, 8)
             Spacer()
-            Text(entry.launches.first!.mission)
+            Text(entry.launch.mission)
                 .font(.headline)
         }
         .padding()
         .foregroundColor(.white)
-        .background(.black)
     }
     
     private func formatDate(_ date: Date) -> String {
@@ -74,38 +80,49 @@ struct T_Minus_WidgetEntryView : View {
         dateFormatter.dateFormat = "MMM d, h:mm a" // Format: Nov 14, 4:49 PM
         return dateFormatter.string(from: date)
     }
+    
+    func calculateTimeRemaining(from targetDate: Date) -> (number: String, unit: String) {
+        let now = Date()
+        let remainingTime = targetDate.timeIntervalSince(now)
+        
+        if remainingTime <= 0 {
+            return ("0", "PASSED")
+        }
+        
+        let days = Int(remainingTime) / (3600 * 24)
+        let hours = (Int(remainingTime) % (3600 * 24)) / 3600
+        let minutes = (Int(remainingTime) % 3600) / 60
+        let seconds = Int(remainingTime) % 60
+        
+        if days > 0 {
+            return ("\(days)", days == 1 ? "DAY" : "DAYS")
+        } else if hours > 0 {
+            return ("\(hours)", hours == 1 ? "HOUR" : "HOURS")
+        } else if minutes > 0 {
+            return ("\(minutes)", minutes == 1 ? "MINUTE" : "MINUTES")
+        } else {
+            return ("\(seconds)", seconds == 1 ? "SECOND" : "SECONDS")
+        }
+    }
 }
 
 struct T_Minus_Widget: Widget {
-    let kind: String = "T_Minus_Widget"
+    let kind: String = "T Minus Widget"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
             T_Minus_WidgetEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+                .containerBackground(Color.black, for: .widget)
         }
         .contentMarginsDisabled()
         .supportedFamilies([.systemSmall])
-    }
-}
-
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
+        .configurationDisplayName("Upcoming Launch")
+        .description("Keep track of the next space launch.")
     }
 }
 
 #Preview(as: .systemSmall) {
     T_Minus_Widget()
 } timeline: {
-    SimpleEntry(date: .now, launches: Launch.sampleLaunches, configuration: .smiley)
-//    SimpleEntry(date: .now, configuration: .starEyes)
+    SimpleEntry(date: .now, launch: Launch.sampleLaunches.last!)
 }
