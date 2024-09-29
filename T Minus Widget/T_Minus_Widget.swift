@@ -21,19 +21,19 @@ struct Provider: TimelineProvider {
     }
     
     func placeholder(in context: Context) -> SimpleEntry {
-        let launch = try! fetchLaunch() // Use the new function
+        let launch = try! fetchLaunch()
         return SimpleEntry(date: Date(), launch: launch)
     }
     
     func getSnapshot(in context: Context, completion: @escaping @Sendable (SimpleEntry) -> Void) {
-        let launch = try! fetchLaunch() // Use the new function
+        let launch = try! fetchLaunch()
         let entry = SimpleEntry(date: Date(), launch: launch)
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping @Sendable (Timeline<SimpleEntry>) -> Void) {
         var entries: [SimpleEntry] = []
-        let launch = try! fetchLaunch() // Use the new function
+        let launch = try! fetchLaunch()
         let entry = SimpleEntry(date: .now, launch: launch)
         entries.append(entry)
         
@@ -85,13 +85,12 @@ struct T_Minus_WidgetEntryView: View {
         let remainingTime = targetDate.timeIntervalSince(now)
         
         if remainingTime <= 0 {
-            return ("0", "PASSED")
+            return ("-", "")
         }
         
         let days = Int(remainingTime) / (3600 * 24)
         let hours = (Int(remainingTime) % (3600 * 24)) / 3600
         let minutes = (Int(remainingTime) % 3600) / 60
-        let seconds = Int(remainingTime) % 60
         
         if days > 0 {
             return ("\(days)", days == 1 ? "DAY" : "DAYS")
@@ -100,7 +99,7 @@ struct T_Minus_WidgetEntryView: View {
         } else if minutes > 0 {
             return ("\(minutes)", minutes == 1 ? "MINUTE" : "MINUTES")
         } else {
-            return ("\(seconds)", seconds == 1 ? "SECOND" : "SECONDS")
+            return ("Now", "")
         }
     }
 }
