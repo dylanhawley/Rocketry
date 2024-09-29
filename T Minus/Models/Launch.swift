@@ -19,6 +19,7 @@ class Launch {
     var details: String
     var orbit: String
     var pad: String
+    var country_code: String
     var location: Location
 
     /// Creates a new launch from the specified values.
@@ -30,6 +31,7 @@ class Launch {
         details: String,
         orbit: String,
         pad: String,
+        country_code: String,
         longitude: Double,
         latitude: Double
     ) {
@@ -40,6 +42,7 @@ class Launch {
         self.details = details
         self.orbit = orbit
         self.pad = pad
+        self.country_code = country_code
         self.location = Location(name: pad, longitude: longitude, latitude: latitude)
     }
 }
@@ -63,7 +66,8 @@ extension Launch {
     /// A filter that checks for text in the launch's location name.
     static func predicate(
         searchText: String,
-        onlyFutureLaunches: Bool
+        onlyFutureLaunches: Bool = true,
+        onlyUSLaunches: Bool = true
     ) -> Predicate<Launch> {
         let currentDate = Date()
         
@@ -71,7 +75,8 @@ extension Launch {
             (searchText.isEmpty || launch.vehicle.localizedStandardContains(searchText) ||
              launch.details.localizedStandardContains(searchText) ||
              launch.mission.localizedStandardContains(searchText)) &&
-            (!onlyFutureLaunches || launch.net > currentDate)
+            (!onlyFutureLaunches || launch.net > currentDate) &&
+            (!onlyUSLaunches || launch.country_code == "USA")
         }
     }
 

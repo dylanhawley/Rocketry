@@ -41,6 +41,7 @@ extension Launch {
             details: "A batch of satellites for the Starlink mega-constellation - SpaceX's project for space-based Internet communication system.",
             orbit: "Low Earth Orbit",
             pad: "Space Launch Complex 40",
+            country_code: "USA",
             longitude: -80.57735736,
             latitude: 28.56194122
         ),
@@ -52,6 +53,7 @@ extension Launch {
             details: "Details TBD.",
             orbit: "Unknown",
             pad: "Launch Complex 9A",
+            country_code: "USA",
             longitude: 111.5802,
             latitude: 38.8583
         ),
@@ -63,6 +65,7 @@ extension Launch {
             details: "Türksat 6A is Turkey's first domestically manufactured geostationary communications satellite. It is to reside in 42° East orbital slot, providing services to customers in Turkey, as well as in Europe, Northern coast of Africa, Middle East, India and Indonesia.",
             orbit: "Geostationary Transfer Orbit",
             pad: "Space Launch Complex 40",
+            country_code: "USA",
             longitude: -80.57735736,
             latitude: 28.56194122
         ),
@@ -74,6 +77,7 @@ extension Launch {
             details: "Maiden Flight of the Ariane 62 launcher from Korou.",
             orbit: "Unknown",
             pad: "Ariane Launch Area 4",
+            country_code: "?",
             longitude: -52.786838,
             latitude: 5.256319
         ),
@@ -85,6 +89,7 @@ extension Launch {
             details: "WorldView Legion is a constellation of Earth observation satellites built and operated by Maxar. Constellation is planned to consist of 6 satellites in both polar and mid-inclination orbits, providing 30 cm-class resolution.",
             orbit: "Sun-Synchronous Orbit",
             pad: "Space Launch Complex 4E",
+            country_code: "USA",
             longitude: -120.611,
             latitude: 34.632
         ),
@@ -96,6 +101,7 @@ extension Launch {
             details: "Classified payload for the US Space Force.",
             orbit: "Unknown",
             pad: "Space Launch Complex 41",
+            country_code: "USA",
             longitude: -80.58303644,
             latitude: 28.58341025
         ),
@@ -107,6 +113,7 @@ extension Launch {
             details: "Details TBD.",
             orbit: "Unknown",
             pad: "Haiyang Spaceport",
+            country_code: "?",
             longitude: 121.235103,
             latitude: 36.676794
         ),
@@ -118,6 +125,7 @@ extension Launch {
             details: "Payload consists of a single SAR Earth-imaging Acadia satellite, a new generation satellite designed, manufactured, and operated by Capella Space.",
             orbit: "Low Earth Orbit",
             pad: "Unknown Pad",
+            country_code: "USA",
             longitude: 177.865826,
             latitude: -39.260881
         )

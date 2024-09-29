@@ -41,6 +41,7 @@ struct LaunchResultCollection: Decodable {
             let name: String
             let latitude: String
             let longitude: String
+            let country_code: String
         }
     }
 }
@@ -67,6 +68,7 @@ extension LaunchResultCollection.Result: CustomStringConvertible {
             name: \(pad.name),
             latitude: \(pad.latitude),
             longitude: \(pad.longitude),
+            country_code: \(pad.country_code)
         },
         image: \(image)
     }

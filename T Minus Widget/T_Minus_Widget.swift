@@ -15,7 +15,7 @@ struct Provider: TimelineProvider {
     // New function to fetch the launch
     private func fetchLaunch() throws -> Launch {
         return try modelContext.fetch(
-            FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true),
+            FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true, onlyUSLaunches: true),
                                     sortBy: [SortDescriptor(\Launch.net, order: .forward)])
         ).first!
     }
