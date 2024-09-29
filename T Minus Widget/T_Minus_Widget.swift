@@ -12,29 +12,28 @@ import SwiftData
 struct Provider: TimelineProvider {
     let modelContext = ModelContext(try! ModelContainer(for: Launch.self))
     
-    func placeholder(in context: Context) -> SimpleEntry {
-        let launch = try! modelContext.fetch(
+    // New function to fetch the launch
+    private func fetchLaunch() throws -> Launch {
+        return try modelContext.fetch(
             FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true),
                                     sortBy: [SortDescriptor(\Launch.net, order: .forward)])
         ).first!
+    }
+    
+    func placeholder(in context: Context) -> SimpleEntry {
+        let launch = try! fetchLaunch() // Use the new function
         return SimpleEntry(date: Date(), launch: launch)
     }
     
     func getSnapshot(in context: Context, completion: @escaping @Sendable (SimpleEntry) -> Void) {
-        let launch = try! modelContext.fetch(
-            FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true),
-                                    sortBy: [SortDescriptor(\Launch.net, order: .forward)])
-        ).first!
+        let launch = try! fetchLaunch() // Use the new function
         let entry = SimpleEntry(date: Date(), launch: launch)
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping @Sendable (Timeline<SimpleEntry>) -> Void) {
         var entries: [SimpleEntry] = []
-        let launch = try! modelContext.fetch(
-            FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true),
-                                    sortBy: [SortDescriptor(\Launch.net, order: .forward)])
-        ).first!
+        let launch = try! fetchLaunch() // Use the new function
         let entry = SimpleEntry(date: .now, launch: launch)
         entries.append(entry)
         
