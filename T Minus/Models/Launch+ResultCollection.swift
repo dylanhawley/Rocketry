@@ -28,7 +28,7 @@ extension Launch {
 
 
 extension LaunchResultCollection {
-    fileprivate static let logger = Logger(subsystem: "com.example.apple-samplecode.DataCache", category: "parsing")
+    fileprivate static let logger = Logger(subsystem: "com.dhawley.T-Minus", category: "parsing")
 
     /// Loads new launches and deletes outdated ones.
     @MainActor
