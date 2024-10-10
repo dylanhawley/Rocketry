@@ -13,11 +13,16 @@ struct Provider: TimelineProvider {
     let modelContext = ModelContext(try! ModelContainer(for: Launch.self))
     
     // New function to fetch the launch
-    private func fetchLaunch() throws -> Launch {
-        return try modelContext.fetch(
-            FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true, onlyUSLaunches: true),
-                                    sortBy: [SortDescriptor(\Launch.net, order: .forward)])
-        ).first!
+    private func fetchLaunch() throws -> Launch? {
+        do {
+            return try modelContext.fetch(
+                FetchDescriptor<Launch>(predicate: Launch.predicate(searchText: "", onlyFutureLaunches: true, onlyUSLaunches: true),
+                                        sortBy: [SortDescriptor(\Launch.net, order: .forward)])
+            ).first!
+        } catch {
+            print("Error fetching launch: \(error)")
+            return nil
+        }
     }
     
     func placeholder(in context: Context) -> SimpleEntry {
@@ -44,7 +49,7 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let launch: Launch
+    let launch: Launch?
 }
 
 struct T_Minus_WidgetEntryView: View {
@@ -52,26 +57,31 @@ struct T_Minus_WidgetEntryView: View {
     
     @ViewBuilder
     var body: some View {
-        let timeRemaining = calculateTimeRemaining(from: entry.launch.net)
-        
-        VStack(alignment: .leading) {
-            HStack {
-                Text(timeRemaining.number)
-                    .font(.title)
-                    .bold()
-                Text(timeRemaining.unit)
+        if entry.launch != nil {
+            let timeRemaining = calculateTimeRemaining(from: entry.launch!.net)
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(timeRemaining.number)
+                        .font(.title)
+                        .bold()
+                    Text(timeRemaining.unit)
+                    Spacer()
+                }
+                .padding(.bottom, 2)
+                Text(formatDate(entry.launch!.net))
+                    .font(.caption)
+                    .padding(.bottom, 8)
                 Spacer()
+                Text(entry.launch!.mission)
+                    .font(.headline)
             }
-            .padding(.bottom, 2)
-            Text(formatDate(entry.launch.net))
-                .font(.caption)
-                .padding(.bottom, 8)
-            Spacer()
-            Text(entry.launch.mission)
-                .font(.headline)
+            .padding()
+            .foregroundColor(.white)
+        } else {
+            Text("Unable to Load")
+                .foregroundColor(.gray)
         }
-        .padding()
-        .foregroundColor(.white)
     }
     
     private func formatDate(_ date: Date) -> String {
@@ -80,7 +90,7 @@ struct T_Minus_WidgetEntryView: View {
         return dateFormatter.string(from: date)
     }
     
-    func calculateTimeRemaining(from targetDate: Date) -> (number: String, unit: String) {
+    private func calculateTimeRemaining(from targetDate: Date) -> (number: String, unit: String) {
         let now = Date()
         let remainingTime = targetDate.timeIntervalSince(now)
         
