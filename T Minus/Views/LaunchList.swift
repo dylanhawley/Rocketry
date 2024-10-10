@@ -28,7 +28,9 @@ struct LaunchList: View {
     var body: some View {
         List(launches, selection: $selectedId) { launch in
             LaunchRow(launch: launch)
+            .listRowSeparator(.hidden)
         }
+        .listStyle(.plain)
    }
 }
 

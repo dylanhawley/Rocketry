@@ -20,17 +20,21 @@ struct LaunchRow: View {
                 HStack {
                     Text(launch.vehicle)
                         .padding(5)
-                        .background(Color("LaunchLabelColor"))
+                        .background(Color(.tertiarySystemFill))
                         .cornerRadius(5)
                     Text(launch.pad)
                         .padding(5)
-                        .background(Color("LaunchLabelColor"))
+                        .background(Color(.tertiarySystemFill))
                         .cornerRadius(5)
                 }
             }
             Text(launch.details)
+            Divider()
             FormattedDateView(date: launch.net)
         }
+        .padding(12)
+        .background(Color(.secondarySystemBackground))
+        .cornerRadius(12)
     }
 }
 
@@ -52,17 +56,12 @@ struct FormattedDateView: View {
     }()
 
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Image(systemName: "calendar")
-                Text(Self.dateFormatter.string(from: date))
-            }
-            HStack {
-                Image(systemName: "clock")
-                Text(Self.timeFormatter.string(from: date))
-            }
+        HStack {
+            Text(Self.dateFormatter.string(from: date))
+            Spacer()
+            Text(Self.timeFormatter.string(from: date))
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .foregroundStyle(Color(.systemBlue))
     }
 }
 
