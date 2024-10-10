@@ -34,8 +34,10 @@ struct LaunchList: View {
    }
 }
 
+#if DEBUG
 #Preview {
     LaunchList(selectedId: .constant(nil))
         .environment(ViewModel.preview)
         .modelContainer(PreviewSampleData.container)
 }
+#endif

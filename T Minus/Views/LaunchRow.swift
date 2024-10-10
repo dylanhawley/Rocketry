@@ -65,6 +65,7 @@ struct FormattedDateView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     ModelContainerPreview(PreviewSampleData.inMemoryContainer) {
         VStack {
@@ -76,3 +77,4 @@ struct FormattedDateView: View {
         .frame(minWidth: 300, alignment: .leading)
     }
 }
+#endif
