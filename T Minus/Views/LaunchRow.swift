@@ -29,6 +29,7 @@ struct LaunchRow: View {
                 }
             }
             Text(launch.details)
+                .lineLimit(3)
             Divider()
             FormattedDateView(date: launch.net)
         }
@@ -61,7 +62,7 @@ struct FormattedDateView: View {
             Spacer()
             Text(Self.timeFormatter.string(from: date))
         }
-        .foregroundStyle(Color(.systemBlue))
+        .foregroundStyle(Color(.systemGray))
     }
 }
 
