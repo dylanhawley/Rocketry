@@ -40,6 +40,7 @@ struct ContentView: View {
             .task {
                 await refreshData()
             }
+            .preferredColorScheme(.dark)
         }
     }
 

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		A92D4B3C2C3E5B7700DA7E2C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3B2C3E5B7700DA7E2C /* Location.swift */; };
 		A92D4B3E2C40A38F00DA7E2C /* Launch+ResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */; };
+		A93D3F432CC0BB4200933171 /* Color-Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F422CC0BB3100933171 /* Color-Custom.swift */; };
+		A93D3F482CC0BBDE00933171 /* Array-GradientStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */; };
+		A93D3F4A2CC0BC0200933171 /* Color-Interpolated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */; };
+		A93D3F4B2CC0C12500933171 /* Color-Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F422CC0BB3100933171 /* Color-Custom.swift */; };
+		A93D3F4C2CC0C12B00933171 /* Color-Interpolated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */; };
+		A93D3F4D2CC0C13100933171 /* Array-GradientStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */; };
 		A96CAC8B2C3751DF001AC10B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
 		A9D0243C2CAFBDCF001902E7 /* Launch+ResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */; };
 		A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
@@ -63,6 +69,9 @@
 /* Begin PBXFileReference section */
 		A92D4B3B2C3E5B7700DA7E2C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+ResultCollection.swift"; sourceTree = "<group>"; };
+		A93D3F422CC0BB3100933171 /* Color-Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Custom.swift"; sourceTree = "<group>"; };
+		A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array-GradientStop.swift"; sourceTree = "<group>"; };
+		A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Interpolated.swift"; sourceTree = "<group>"; };
 		A96CAC8A2C3751DF001AC10B /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		A9F1E2AA2CA6A9ED0048BC1A /* T Minus Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T Minus Widget.entitlements"; sourceTree = "<group>"; };
 		A9F1E2AB2CA6AAFA0048BC1A /* T Minus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T Minus.entitlements"; sourceTree = "<group>"; };
@@ -153,6 +162,9 @@
 		FC7EA8A92ADE19990072BB8F /* T Minus */ = {
 			isa = PBXGroup;
 			children = (
+				A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */,
+				A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */,
+				A93D3F422CC0BB3100933171 /* Color-Custom.swift */,
 				A9F1E2AB2CA6AAFA0048BC1A /* T Minus.entitlements */,
 				FC7EA8AA2ADE19990072BB8F /* T_MinusApp.swift */,
 				FC12E7AE2AF8A5B80069C6E2 /* Models */,
@@ -304,8 +316,11 @@
 				FC7EA8AD2ADE19990072BB8F /* ContentView.swift in Sources */,
 				A92D4B3C2C3E5B7700DA7E2C /* Location.swift in Sources */,
 				A92D4B3E2C40A38F00DA7E2C /* Launch+ResultCollection.swift in Sources */,
+				A93D3F4A2CC0BC0200933171 /* Color-Interpolated.swift in Sources */,
+				A93D3F482CC0BBDE00933171 /* Array-GradientStop.swift in Sources */,
 				A9F2F5732C7D934E007A4A11 /* PreviewSampleData.swift in Sources */,
 				FC349A672AF0ACD100278E0A /* LaunchResultCollection.swift in Sources */,
+				A93D3F432CC0BB4200933171 /* Color-Custom.swift in Sources */,
 				A9F2F5772C7D976A007A4A11 /* LaunchList.swift in Sources */,
 				A9F2F5752C7D9436007A4A11 /* ViewModel.swift in Sources */,
 				FC7EA8AB2ADE19990072BB8F /* T_MinusApp.swift in Sources */,
@@ -322,9 +337,12 @@
 				FC349A682AF0ACD100278E0A /* LaunchResultCollection.swift in Sources */,
 				FC7EA8CA2ADE23640072BB8F /* AppIntent.swift in Sources */,
 				FC7EA8C42ADE23640072BB8F /* T_Minus_WidgetBundle.swift in Sources */,
+				A93D3F4D2CC0C13100933171 /* Array-GradientStop.swift in Sources */,
+				A93D3F4B2CC0C12500933171 /* Color-Custom.swift in Sources */,
 				A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */,
 				FC7EA8C62ADE23640072BB8F /* T_Minus_WidgetLiveActivity.swift in Sources */,
 				A9F1E2A52CA27F8C0048BC1A /* Location.swift in Sources */,
+				A93D3F4C2CC0C12B00933171 /* Color-Interpolated.swift in Sources */,
 				A9D0243C2CAFBDCF001902E7 /* Launch+ResultCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
