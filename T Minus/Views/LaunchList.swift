@@ -28,7 +28,7 @@ struct LaunchList: View {
     var body: some View {
         List(launches, selection: $selectedId) { launch in
             LaunchRow(launch: launch)
-            .listRowInsets(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 15))
+            .padding(.vertical, -6)
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
