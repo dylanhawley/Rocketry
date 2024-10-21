@@ -22,7 +22,7 @@ struct LaunchList: View {
         sortOrder: SortOrder = .forward
     ) {
         _selectedId = selectedId
-        _launches = Query(filter: Launch.predicate(searchText: searchText, onlyFutureLaunches: false), sort: \Launch.net, order: sortOrder)
+        _launches = Query(filter: Launch.predicate(searchText: searchText, onlyFutureLaunches: true), sort: \Launch.net, order: sortOrder)
     }
 
     var body: some View {

@@ -33,6 +33,28 @@ struct LaunchRow: View {
         .init(color: .midnightEnd, location: 1)
     ]
     
+    let cloudTopStops: [Gradient.Stop] = [
+        .init(color: .darkCloudStart, location: 0),
+        .init(color: .darkCloudStart, location: 0.25),
+        .init(color: .sunriseCloudStart, location: 0.33),
+        .init(color: .lightCloudStart, location: 0.38),
+        .init(color: .lightCloudStart, location: 0.7),
+        .init(color: .sunsetCloudStart, location: 0.78),
+        .init(color: .darkCloudStart, location: 0.82),
+        .init(color: .darkCloudStart, location: 1)
+    ]
+
+    let cloudBottomStops: [Gradient.Stop] = [
+        .init(color: .darkCloudEnd, location: 0),
+        .init(color: .darkCloudEnd, location: 0.25),
+        .init(color: .sunriseCloudEnd, location: 0.33),
+        .init(color: .lightCloudEnd, location: 0.38),
+        .init(color: .lightCloudEnd, location: 0.7),
+        .init(color: .sunsetCloudEnd, location: 0.78),
+        .init(color: .darkCloudEnd, location: 0.82),
+        .init(color: .darkCloudEnd, location: 1)
+    ]
+    
     func timeIntervalFromDate(_ date: Date) -> Double {
         let startOfDay = Calendar.current.startOfDay(for: date)
         let timeInterval = date.timeIntervalSince(startOfDay)
@@ -64,14 +86,19 @@ struct LaunchRow: View {
                 .opacity(0.8)
         }
         .foregroundStyle(.white)
-        .padding(12.0)
+        .padding()
         .background(
-            LinearGradient(colors: [
-                backgroundTopStops.interpolated(amount: timeIntervalFromDate(launch.net)),
-                backgroundBottomStops.interpolated(amount: timeIntervalFromDate(launch.net))
-            ], startPoint: .top, endPoint: .bottom)
+            ZStack {
+                LinearGradient(colors: [
+                    backgroundTopStops.interpolated(amount: timeIntervalFromDate(launch.net)),
+                    backgroundBottomStops.interpolated(amount: timeIntervalFromDate(launch.net))
+                ], startPoint: .top, endPoint: .bottom)
+//                CloudsView(thickness: Cloud.Thickness.allCases.randomElement() ?? .regular,
+//                           topTint: cloudTopStops.interpolated(amount: timeIntervalFromDate(launch.net)),
+//                           bottomTint: cloudBottomStops.interpolated(amount: timeIntervalFromDate(launch.net)))
+            }
         )
-        .cornerRadius(12)
+        .cornerRadius(15)
     }
 }
 

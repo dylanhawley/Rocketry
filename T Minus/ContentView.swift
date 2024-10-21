@@ -16,7 +16,6 @@ struct ContentView: View {
 
     @Query private var launches: [Launch]
     @State private var selectedId: Launch.ID? = nil
-    @State private var selectedIdMap: Launch.ID? = nil
 
     var body: some View {
         @Bindable var viewModel = viewModel
