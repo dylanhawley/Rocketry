@@ -42,6 +42,11 @@ struct LaunchResultCollection: Decodable {
             let latitude: String
             let longitude: String
             let country_code: String
+            let location: LocalTimeZone
+            
+            struct LocalTimeZone: Decodable {
+                let timezone_name: String
+            }
         }
     }
 }

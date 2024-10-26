@@ -21,7 +21,8 @@ extension Launch {
             pad: result.pad.name,
             country_code: result.pad.country_code,
             longitude: Double(result.pad.longitude) ?? 0,
-            latitude: Double(result.pad.latitude) ?? 0
+            latitude: Double(result.pad.latitude) ?? 0,
+            timezone_name: result.pad.location.timezone_name
         )
     }
 }

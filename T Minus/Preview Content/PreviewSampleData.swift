@@ -43,7 +43,8 @@ extension Launch {
             pad: "Space Launch Complex 40",
             country_code: "USA",
             longitude: -80.57735736,
-            latitude: 28.56194122
+            latitude: 28.56194122,
+            timezone_name: "America/New_York"
         ),
         .init(
             code: "2",
@@ -55,7 +56,8 @@ extension Launch {
             pad: "Launch Complex 9A",
             country_code: "USA",
             longitude: 111.5802,
-            latitude: 38.8583
+            latitude: 38.8583,
+            timezone_name: "America/New_York"
         ),
         .init(
             code: "3",
@@ -67,7 +69,8 @@ extension Launch {
             pad: "Space Launch Complex 40",
             country_code: "USA",
             longitude: -80.57735736,
-            latitude: 28.56194122
+            latitude: 28.56194122,
+            timezone_name: "America/New_York"
         ),
         .init(
             code: "4",
@@ -79,7 +82,8 @@ extension Launch {
             pad: "Ariane Launch Area 4",
             country_code: "?",
             longitude: -52.786838,
-            latitude: 5.256319
+            latitude: 5.256319,
+            timezone_name: ""
         ),
         .init(
             code: "5",
@@ -91,7 +95,8 @@ extension Launch {
             pad: "Space Launch Complex 4E",
             country_code: "USA",
             longitude: -120.611,
-            latitude: 34.632
+            latitude: 34.632,
+            timezone_name: ""
         ),
         .init(
             code: "6",
@@ -103,7 +108,8 @@ extension Launch {
             pad: "Space Launch Complex 41",
             country_code: "USA",
             longitude: -80.58303644,
-            latitude: 28.58341025
+            latitude: 28.58341025,
+            timezone_name: "America/New_York"
         ),
         .init(
             code: "7",
@@ -115,7 +121,8 @@ extension Launch {
             pad: "Haiyang Spaceport",
             country_code: "?",
             longitude: 121.235103,
-            latitude: 36.676794
+            latitude: 36.676794,
+            timezone_name: ""
         ),
         .init(
             code: "8",
@@ -127,7 +134,8 @@ extension Launch {
             pad: "Unknown Pad",
             country_code: "USA",
             longitude: 177.865826,
-            latitude: -39.260881
+            latitude: -39.260881,
+            timezone_name: ""
         )
     ]
 }

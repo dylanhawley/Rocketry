@@ -122,7 +122,7 @@ struct T_Minus_Widget: Widget {
             T_Minus_WidgetEntryView(entry: entry)
                 .containerBackground(for: .widget) {
                     if let launch = entry.launch {
-                        SkyView(date: launch.net, location: launch.location.coordinate)
+                        SkyView(date: launch.net, location: launch.location.coordinate, timezone_name: launch.timezone_name)
                     } else {
                         Color.black
                     }

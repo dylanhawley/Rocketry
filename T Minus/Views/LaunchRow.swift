@@ -40,7 +40,7 @@ struct LaunchRow: View {
         .padding()
         .background(
             ZStack {
-                SkyView(date: launch.net, location: launch.location.coordinate)
+                SkyView(date: launch.net, location: launch.location.coordinate, timezone_name: launch.timezone_name)
                 SunView(progress: normalizedTimeOfDay)
 //                CloudsView(thickness: Cloud.Thickness.allCases.randomElement() ?? .regular,
 //                           topTint: cloudTopStops.interpolated(amount: timeIntervalFromDate(launch.net)),
@@ -49,10 +49,8 @@ struct LaunchRow: View {
         )
         .cornerRadius(15)
         .onAppear {
-            SolarTime.getTimeZone(location: launch.location.coordinate) { timeZone in
-                let normalizedTime = SolarTime.normalizeTimeOfDay(launch.net, timeZone)
-                self.normalizedTimeOfDay = normalizedTime
-            }
+            let timezone = TimeZone(identifier: launch.timezone_name) ?? .current
+            self.normalizedTimeOfDay = SolarTime.normalizeTimeOfDay(launch.net, timezone)
         }
     }
 }
