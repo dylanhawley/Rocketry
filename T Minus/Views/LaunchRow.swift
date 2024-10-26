@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LaunchRow: View {
     var launch: Launch
+    @State private var normalizedTimeOfDay: Double = 0
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -40,12 +41,19 @@ struct LaunchRow: View {
         .background(
             ZStack {
                 SkyView(date: launch.net, location: launch.location.coordinate)
+                SunView(progress: normalizedTimeOfDay)
 //                CloudsView(thickness: Cloud.Thickness.allCases.randomElement() ?? .regular,
 //                           topTint: cloudTopStops.interpolated(amount: timeIntervalFromDate(launch.net)),
 //                           bottomTint: cloudBottomStops.interpolated(amount: timeIntervalFromDate(launch.net)))
             }
         )
         .cornerRadius(15)
+        .onAppear {
+            SolarTime.getTimeZone(location: launch.location.coordinate) { timeZone in
+                let normalizedTime = SolarTime.normalizeTimeOfDay(launch.net, timeZone)
+                self.normalizedTimeOfDay = normalizedTime
+            }
+        }
     }
 }
 
