@@ -12,7 +12,8 @@ import SwiftData
 struct LaunchList: View {
     @Environment(ViewModel.self) private var viewModel
     @Environment(\.modelContext) private var modelContext
-    @Query private var launches: [Launch]
+    @Query private var futureLaunches: [Launch]
+    @Query private var pastLaunches: [Launch]
 
     @Binding var selectedId: Launch.ID?
 
@@ -22,14 +23,29 @@ struct LaunchList: View {
         sortOrder: SortOrder = .forward
     ) {
         _selectedId = selectedId
-        _launches = Query(filter: Launch.predicate(searchText: searchText, onlyFutureLaunches: true), sort: \Launch.net, order: sortOrder)
+        _futureLaunches = Query(filter: Launch.predicate(searchText: searchText, onlyFutureLaunches: true), sort: \Launch.net, order: sortOrder)
+        _pastLaunches = Query(filter: Launch.predicate(searchText: searchText, onlyPastLaunches: true), sort: \Launch.net, order: sortOrder)
     }
 
     var body: some View {
-        List(launches, selection: $selectedId) { launch in
-            LaunchRow(launch: launch)
-            .padding(.vertical, -6)
-            .listRowSeparator(.hidden)
+        List(selection: $selectedId) {
+            ForEach(futureLaunches) { launch in
+                LaunchRow(launch: launch)
+                    .padding(.vertical, -6)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+                
+            }
+            if !pastLaunches.isEmpty {
+                Section("Past Launches") {
+                    ForEach(pastLaunches) { launch in
+                        LaunchRow(launch: launch)
+                            .padding(.vertical, -6)
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+                    }
+                }
+            }
         }
         .listStyle(.plain)
    }

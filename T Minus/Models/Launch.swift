@@ -69,7 +69,8 @@ extension Launch {
     /// A filter that checks for text in the launch's location name.
     static func predicate(
         searchText: String,
-        onlyFutureLaunches: Bool = true,
+        onlyFutureLaunches: Bool = false,
+        onlyPastLaunches: Bool = false,
         onlyUSLaunches: Bool = true
     ) -> Predicate<Launch> {
         let currentDate = Date()
@@ -79,6 +80,7 @@ extension Launch {
              launch.details.localizedStandardContains(searchText) ||
              launch.mission.localizedStandardContains(searchText)) &&
             (!onlyFutureLaunches || launch.net > currentDate) &&
+            (!onlyPastLaunches || launch.net < currentDate) &&
             (!onlyUSLaunches || launch.country_code == "USA")
         }
     }
