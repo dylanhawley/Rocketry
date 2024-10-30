@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Solar
 
 
 struct LaunchRow: View {
     var launch: Launch
     @State private var normalizedTimeOfDay: Double = 0
+    @State private var isAstroNight: Bool = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -42,6 +44,8 @@ struct LaunchRow: View {
             ZStack {
                 SkyView(date: launch.net, location: launch.location.coordinate, timezone_name: launch.timezone_name)
                 SunView(progress: normalizedTimeOfDay)
+                if isAstroNight { StarsView() }
+//                else if Bool.random() { }
 //                CloudsView(thickness: Cloud.Thickness.allCases.randomElement() ?? .regular,
 //                           topTint: cloudTopStops.interpolated(amount: timeIntervalFromDate(launch.net)),
 //                           bottomTint: cloudBottomStops.interpolated(amount: timeIntervalFromDate(launch.net)))
@@ -51,7 +55,13 @@ struct LaunchRow: View {
         .onAppear {
             let timezone = TimeZone(identifier: launch.timezone_name) ?? .current
             self.normalizedTimeOfDay = SolarTime.normalizeTimeOfDay(launch.net, timezone)
+            fetchSolarEvents()
         }
+    }
+    
+    private func fetchSolarEvents() {
+        let solar = Solar(for: launch.net, coordinate: self.launch.location.coordinate)
+        if let sunrise = solar?.astronomicalSunrise, let sunset = solar?.astronomicalSunset, launch.net < sunrise || launch.net > sunset { isAstroNight = true }
     }
 }
 
