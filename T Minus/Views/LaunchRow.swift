@@ -60,8 +60,12 @@ struct LaunchRow: View {
     }
     
     private func fetchSolarEvents() {
-        let solar = Solar(for: launch.net, coordinate: self.launch.location.coordinate)
-        if let sunrise = solar?.astronomicalSunrise, let sunset = solar?.astronomicalSunset, launch.net < sunrise || launch.net > sunset { isAstroNight = true }
+        let solar = Solar(for: launch.net, coordinate: launch.location.coordinate)
+        if let sunrise = solar?.astronomicalSunrise,
+           let sunset = solar?.astronomicalSunset,
+           launch.net < sunrise || launch.net > sunset {
+            isAstroNight = true
+        }
     }
 }
 
