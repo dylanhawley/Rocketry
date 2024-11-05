@@ -12,7 +12,7 @@ import Solar
 struct LaunchRow: View {
     var launch: Launch
     @State private var normalizedTimeOfDay: Double = 0
-    @State private var isAstroNight: Bool = false
+    @State private var isAstronomicalNight: Bool = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -44,7 +44,7 @@ struct LaunchRow: View {
             ZStack {
                 SkyView(date: launch.net, location: launch.location.coordinate, timezone_name: launch.timezone_name)
                 SunView(progress: normalizedTimeOfDay)
-                if isAstroNight { StarsView() }
+                if isAstronomicalNight { StarsView() }
 //                else if Bool.random() { }
 //                CloudsView(thickness: Cloud.Thickness.allCases.randomElement() ?? .regular,
 //                           topTint: cloudTopStops.interpolated(amount: timeIntervalFromDate(launch.net)),
@@ -64,7 +64,7 @@ struct LaunchRow: View {
         if let sunrise = solar?.astronomicalSunrise,
            let sunset = solar?.astronomicalSunset,
            launch.net < sunrise || launch.net > sunset {
-            isAstroNight = true
+            isAstronomicalNight = true
         }
     }
 }
