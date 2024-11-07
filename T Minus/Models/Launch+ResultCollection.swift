@@ -7,6 +7,8 @@
 
 import SwiftData
 import OSLog
+@preconcurrency import WeatherKit
+import CoreLocation
 
 
 extension Launch {
@@ -39,10 +41,17 @@ extension LaunchResultCollection {
             logger.debug("Refreshing the data store...")
             let resultCollection = try await fetchResults()
             logger.debug("Loaded result collection:\n\(resultCollection)")
+            
+            let weatherService = WeatherService.shared
 
             // Add the content to the data store.
             for result in resultCollection.results {
                 let launch = Launch(from: result)
+                
+                let location = CLLocation(latitude: launch.location.latitude, longitude: launch.location.longitude)
+                if let weather = try? await weatherService.weather(for: location, including: .hourly(startDate: launch.net, endDate: launch.net.addingTimeInterval(3600))).first {
+                    launch.weather = PadWeather(cloudCover: weather.cloudCover, symbolName: weather.symbolName, precipitationChance: weather.precipitationChance, temperature: weather.temperature.value)
+                }
 
                 logger.debug("Inserting \(launch)")
                 modelContext.insert(launch)

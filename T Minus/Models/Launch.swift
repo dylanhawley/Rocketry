@@ -22,6 +22,7 @@ class Launch {
     var country_code: String
     var location: Location
     var timezone_name: String
+    var weather: PadWeather?
 
     /// Creates a new launch from the specified values.
     init(
@@ -35,7 +36,8 @@ class Launch {
         country_code: String,
         longitude: Double,
         latitude: Double,
-        timezone_name: String
+        timezone_name: String,
+        weather: PadWeather? = nil
     ) {
         self.code = code
         self.net = net
@@ -47,6 +49,7 @@ class Launch {
         self.country_code = country_code
         self.location = Location(name: pad, longitude: longitude, latitude: latitude)
         self.timezone_name = timezone_name
+        self.weather = weather
     }
 }
 

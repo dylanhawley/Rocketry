@@ -57,24 +57,30 @@ struct T_Minus_WidgetEntryView: View {
     
     @ViewBuilder
     var body: some View {
-        if entry.launch != nil {
-            let timeRemaining = calculateTimeRemaining(from: entry.launch!.net)
+        if let launch = entry.launch {
+            let timeRemaining = calculateTimeRemaining(from: launch.net)
             
             VStack(alignment: .leading) {
                 HStack {
                     Text(timeRemaining.number)
                         .font(.title)
                         .bold()
+                        .minimumScaleFactor(0.1)
                     Text(timeRemaining.unit)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.1)
                     Spacer()
+                    if let weather = launch.weather { Image(systemName: weather.symbolName) }
                 }
                 .padding(.bottom, 2)
-                Text(formatDate(entry.launch!.net))
+                Text(formatDate(launch.net))
                     .font(.caption)
                     .padding(.bottom, 8)
                 Spacer()
-                Text(entry.launch!.mission)
+                Text(launch.mission)
                     .font(.headline)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.8)
             }
             .padding()
             .foregroundColor(.white)
@@ -107,7 +113,7 @@ struct T_Minus_WidgetEntryView: View {
         } else if hours > 0 {
             return ("\(hours)", hours == 1 ? "HOUR" : "HOURS")
         } else if minutes > 0 {
-            return ("\(minutes)", minutes == 1 ? "MINUTE" : "MINUTES")
+            return ("\(minutes)", minutes == 1 ? "MINS" : "MINUTES")
         } else {
             return ("Now", "")
         }
