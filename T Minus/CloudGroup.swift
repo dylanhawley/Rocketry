@@ -58,7 +58,7 @@ class CloudGroup {
     }
 
     func update(date: Date) {
-        let delta = date.timeIntervalSince1970 - lastUpdate.timeIntervalSince1970
+        let delta = min(date.timeIntervalSince1970 - lastUpdate.timeIntervalSince1970, 0.02)
 
         for cloud in clouds {
             cloud.position.x -= delta * cloud.speed
