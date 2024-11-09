@@ -1,47 +1,71 @@
 //
-//  LaunchRow.swift
+//  LaunchDetailView.swift
 //  T Minus
 //
-//  Created by Dylan Hawley on 8/27/24.
+//  Created by Dylan Hawley on 11/7/24.
 //
 
 import SwiftUI
 import Solar
 
-
-struct LaunchRow: View {
-    var launch: Launch
+struct LaunchDetailView: View {
+    let launch: Launch
+    @Environment(\.dismiss) private var dismiss
     @State private var normalizedTimeOfDay: Double = 0
     @State private var isAstronomicalNight: Bool = false
     @State private var cloudTopStops: [Gradient.Stop] = []
     @State private var cloudBottomStops: [Gradient.Stop] = []
-
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(launch.mission)
-                .font(.headline)
-            ScrollView(.horizontal) {
-                HStack {
-                    Text(launch.vehicle)
-                        .padding(5)
-                        .background(Color(.tertiarySystemFill))
-                        .cornerRadius(5)
-                    Text(launch.pad)
-                        .padding(5)
-                        .background(Color(.tertiarySystemFill))
-                        .cornerRadius(5)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                // Header with background
+                VStack(alignment: .leading) {
+                    Text(launch.mission)
+                        .font(.largeTitle)
+                        .bold()
+                    FormattedDateView(date: launch.net)
+                        .font(.title3)
                 }
-                .font(.system(size: 16, weight: .light))
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .frame(height: 200)
+                
+                // Launch details
+                VStack(alignment: .leading, spacing: 24) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Vehicle")
+                            .font(.headline)
+                        Text(launch.vehicle)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Launch Site")
+                            .font(.headline)
+                        Text(launch.pad)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Orbit")
+                            .font(.headline)
+                        Text(launch.orbit)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Mission Details")
+                            .font(.headline)
+                        Text(launch.details)
+                    }
+                }
+                .padding()
             }
-            Text(launch.details)
-                .font(.system(size: 16, weight: .light))
-                .lineLimit(3)
-            FormattedDateView(date: launch.net)
-                .font(.system(size: 16, weight: .light))
-                .opacity(0.8)
         }
         .foregroundStyle(.white)
-        .padding()
+        .onAppear {
+            fetchSolarEvents()
+        }
+        .frame(maxWidth: .infinity)
         .background(
             ZStack {
                 SkyView(date: launch.net, location: launch.location.coordinate, timezone_name: launch.timezone_name)
@@ -51,11 +75,8 @@ struct LaunchRow: View {
                     CloudsView(thickness: weather.cloudThickness, topTint: cloudTopStops.interpolated(amount: normalizedTimeOfDay), bottomTint: cloudTopStops.interpolated(amount: normalizedTimeOfDay))
                 }
             }
+            .ignoresSafeArea()
         )
-        .cornerRadius(15)
-        .onAppear {
-            fetchSolarEvents()
-        }
     }
     
     private func fetchSolarEvents() {
@@ -101,42 +122,8 @@ struct LaunchRow: View {
     }
 }
 
-struct FormattedDateView: View {
-    let date: Date
-
-    private static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        return formatter
-    }()
-
-    private static let timeFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "h:mma z"
-        formatter.amSymbol = "am"
-        formatter.pmSymbol = "pm"
-        return formatter
-    }()
-
-    var body: some View {
-        HStack {
-            Text(Self.dateFormatter.string(from: date))
-            Spacer()
-            Text(Self.timeFormatter.string(from: date))
-        }
-    }
-}
-
-#if DEBUG
-#Preview {
-    ModelContainerPreview(PreviewSampleData.inMemoryContainer) {
-        VStack {
-            ForEach(Launch.sampleLaunches.prefix(1), id: \.code) { launch in
-                LaunchRow(launch: launch)
-            }
-        }
-        .padding()
-        .frame(minWidth: 300, alignment: .leading)
-    }
-}
-#endif
+//#Preview {
+//    ModelContainerPreview(PreviewSampleData.inMemoryContainer) {
+//        LaunchDetailView(launch: Launch.sampleLaunches[2])
+//    }
+//}

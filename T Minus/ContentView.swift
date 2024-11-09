@@ -41,6 +41,7 @@ struct ContentView: View {
             }
             .preferredColorScheme(.dark)
         }
+        .accentColor(.white)
     }
 
     private func refreshData() async {

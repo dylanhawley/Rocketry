@@ -34,7 +34,9 @@ struct LaunchList: View {
                     .padding(.vertical, -6)
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
-                
+                    .background(
+                        NavigationLink("", destination: LaunchDetailView(launch: launch)).opacity(0)
+                    )
             }
             if !pastLaunches.isEmpty {
                 Section("Past Launches") {
@@ -43,6 +45,9 @@ struct LaunchList: View {
                             .padding(.vertical, -6)
                             .listRowSeparator(.hidden)
                             .listRowBackground(Color.clear)
+                            .background(
+                                NavigationLink("", destination: LaunchDetailView(launch: launch)).opacity(0)
+                            )
                     }
                 }
             }
