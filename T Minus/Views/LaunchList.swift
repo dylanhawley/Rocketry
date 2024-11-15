@@ -24,7 +24,7 @@ struct LaunchList: View {
     ) {
         _selectedId = selectedId
         _futureLaunches = Query(filter: Launch.predicate(searchText: searchText, onlyFutureLaunches: true), sort: \Launch.net, order: sortOrder)
-        _pastLaunches = Query(filter: Launch.predicate(searchText: searchText, onlyPastLaunches: true), sort: \Launch.net, order: sortOrder)
+        _pastLaunches = Query(filter: Launch.predicate(searchText: searchText, onlyPastLaunches: true, startDate: Calendar.current.date(byAdding: .day, value: -7, to: Date()), endDate: Date()), sort: \Launch.net, order: .reverse)
     }
 
     var body: some View {

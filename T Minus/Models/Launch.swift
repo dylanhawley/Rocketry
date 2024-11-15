@@ -74,7 +74,9 @@ extension Launch {
         searchText: String,
         onlyFutureLaunches: Bool = false,
         onlyPastLaunches: Bool = false,
-        onlyUSLaunches: Bool = true
+        onlyUSLaunches: Bool = true,
+        startDate: Date? = nil,
+        endDate: Date? = nil
     ) -> Predicate<Launch> {
         let currentDate = Date()
         
@@ -84,7 +86,9 @@ extension Launch {
              launch.mission.localizedStandardContains(searchText)) &&
             (!onlyFutureLaunches || launch.net > currentDate) &&
             (!onlyPastLaunches || launch.net < currentDate) &&
-            (!onlyUSLaunches || launch.country_code == "USA")
+            (!onlyUSLaunches || launch.country_code == "USA") &&
+            (startDate == nil || launch.net >= startDate!) &&
+            (endDate == nil || launch.net <= endDate!)
         }
     }
 
