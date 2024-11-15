@@ -139,11 +139,3 @@ extension Launch {
         )
     ]
 }
-
-extension ViewModel {
-    static var preview: ViewModel {
-        let model = ViewModel()
-        model.totalLaunches = 8
-        return model
-    }
-}
