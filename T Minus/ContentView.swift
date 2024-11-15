@@ -40,6 +40,7 @@ struct ContentView: View {
                 await refreshData()
             }
             .preferredColorScheme(.dark)
+            .scrollIndicators(.never)
         }
         .accentColor(.white)
     }
