@@ -122,8 +122,10 @@ struct LaunchDetailView: View {
     }
 }
 
-//#Preview {
-//    ModelContainerPreview(PreviewSampleData.inMemoryContainer) {
-//        LaunchDetailView(launch: Launch.sampleLaunches[2])
-//    }
-//}
+#if DEBUG
+#Preview {
+    ModelContainerPreview(PreviewSampleData.inMemoryContainer) {
+        LaunchDetailView(launch: Launch.sampleLaunches[2])
+    }
+}
+#endif
