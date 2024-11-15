@@ -51,6 +51,7 @@ struct LaunchList: View {
                     }
                 }
             }
+            AttributionView()
         }
         .listStyle(.plain)
    }
