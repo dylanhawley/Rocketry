@@ -98,7 +98,7 @@ extension LaunchResultCollection: CustomStringConvertible {
 extension LaunchResultCollection {
     /// Gets and decodes the latest launch data from the server.
     static func fetchResults() async throws -> LaunchResultCollection {
-        let url = URL(string: "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/")!
+        let url = URL(string: "https://ll.thespacedevs.com/2.2.0/launch/upcoming/")!
 
         let session = URLSession.shared
         guard let (data, response) = try? await session.data(from: url),
