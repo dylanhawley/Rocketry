@@ -26,41 +26,45 @@ struct LaunchDetailView: View {
                         .bold()
                     FormattedDateView(date: launch.net)
                         .font(.title3)
+                    ScrollView(.horizontal) {
+                        HStack {
+                            Text(launch.vehicle)
+                                .padding(5)
+                                .background(Color(.tertiarySystemFill))
+                                .cornerRadius(5)
+                            Text(launch.pad)
+                                .padding(5)
+                                .background(Color(.tertiarySystemFill))
+                                .cornerRadius(5)
+                        }
+                        .font(.system(size: 16, weight: .light))
+                    }
                 }
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
-                .frame(height: 200)
                 
                 // Launch details
                 VStack(alignment: .leading, spacing: 24) {
+                    PadMapView(location: launch.location.coordinate, name: launch.pad)
+                    Text("Mission")
+                        .font(.title)
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Vehicle")
-                            .font(.headline)
-                        Text(launch.vehicle)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Launch Site")
-                            .font(.headline)
-                        Text(launch.pad)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Orbit")
-                            .font(.headline)
-                        Text(launch.orbit)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Mission Details")
+                        (Text(Image(systemName: "globe.americas")) + Text(" ") + Text(launch.orbit))
+                            .padding(5)
+                            .background(Color(.tertiarySystemFill))
+                            .cornerRadius(5)
+                        Text(launch.mission)
                             .font(.headline)
                         Text(launch.details)
                     }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
                 }
-                .padding()
             }
         }
+        .padding()
+        .scrollIndicators(.hidden)
         .foregroundStyle(.white)
         .onAppear {
             fetchSolarEvents()

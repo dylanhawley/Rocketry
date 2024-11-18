@@ -15,6 +15,7 @@
 		A935DA502CDDAE79006C8224 /* LaunchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA4F2CDDAE79006C8224 /* LaunchDetailView.swift */; };
 		A935DA5E2CE6F67C006C8224 /* AttributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA5D2CE6F67C006C8224 /* AttributionView.swift */; };
 		A935DA602CE6F6A4006C8224 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA5F2CE6F6A4006C8224 /* WeatherManager.swift */; };
+		A935DA652CE814B2006C8224 /* PadMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA642CE814B2006C8224 /* PadMapView.swift */; };
 		A93D3F432CC0BB4200933171 /* Color-Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F422CC0BB3100933171 /* Color-Custom.swift */; };
 		A93D3F482CC0BBDE00933171 /* Array-GradientStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */; };
 		A93D3F4A2CC0BC0200933171 /* Color-Interpolated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */; };
@@ -90,6 +91,7 @@
 		A935DA4F2CDDAE79006C8224 /* LaunchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailView.swift; sourceTree = "<group>"; };
 		A935DA5D2CE6F67C006C8224 /* AttributionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributionView.swift; sourceTree = "<group>"; };
 		A935DA5F2CE6F6A4006C8224 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		A935DA642CE814B2006C8224 /* PadMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadMapView.swift; sourceTree = "<group>"; };
 		A93D3F422CC0BB3100933171 /* Color-Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Custom.swift"; sourceTree = "<group>"; };
 		A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array-GradientStop.swift"; sourceTree = "<group>"; };
 		A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Interpolated.swift"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				A957629A2CCDF9DF00C2C7F3 /* Meteor.swift */,
 				A957629C2CCDFA1300C2C7F3 /* MeteorShower.swift */,
 				A935DA5F2CE6F6A4006C8224 /* WeatherManager.swift */,
+				A935DA642CE814B2006C8224 /* PadMapView.swift */,
 			);
 			path = "T Minus";
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				A9F2F5732C7D934E007A4A11 /* PreviewSampleData.swift in Sources */,
 				FC349A672AF0ACD100278E0A /* LaunchResultCollection.swift in Sources */,
 				A95762702CC23F6C00C2C7F3 /* Cloud.swift in Sources */,
+				A935DA652CE814B2006C8224 /* PadMapView.swift in Sources */,
 				A93D3F432CC0BB4200933171 /* Color-Custom.swift in Sources */,
 				A9F2F5772C7D976A007A4A11 /* LaunchList.swift in Sources */,
 				FC7EA8AB2ADE19990072BB8F /* T_MinusApp.swift in Sources */,
