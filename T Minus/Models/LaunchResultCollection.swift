@@ -39,12 +39,14 @@ struct LaunchResultCollection: Decodable {
 
         struct Pad: Decodable {
             let name: String
+            let wiki_url: String
             let latitude: String
             let longitude: String
             let country_code: String
-            let location: LocalTimeZone
+            let location: PadLocation
             
-            struct LocalTimeZone: Decodable {
+            struct PadLocation: Decodable {
+                let description: String
                 let timezone_name: String
             }
         }

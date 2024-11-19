@@ -33,6 +33,8 @@ class Launch {
         details: String,
         orbit: String,
         pad: String,
+        pad_wiki_url: String? = nil,
+        pad_description: String? = nil,
         country_code: String,
         longitude: Double,
         latitude: Double,
@@ -47,7 +49,7 @@ class Launch {
         self.orbit = orbit
         self.pad = pad
         self.country_code = country_code
-        self.location = Location(name: pad, longitude: longitude, latitude: latitude)
+        self.location = Location(name: pad, longitude: longitude, latitude: latitude, wiki_url: pad_wiki_url, details: pad_description)
         self.timezone_name = timezone_name
         self.weather = weather
     }

@@ -9,8 +9,7 @@ import SwiftUI
 import MapKit
 
 struct PadMapView: View {
-    let location: CLLocationCoordinate2D
-    let name: String
+    let location: Location
     @State private var position: MapCameraPosition = .automatic
 
     var body: some View {
@@ -20,23 +19,41 @@ struct PadMapView: View {
                 .fontWeight(.medium)
                 .shadow(radius: 1)
 
-            Map(position: $position) {
-                Marker(name, coordinate: location)
+            Map(position: $position, interactionModes: []) {
+                Marker(location.name, coordinate: location.coordinate)
                     .tint(.red)
             }
+            .scrollDisabled(true)
             .cornerRadius(10)
             .mapStyle(.hybrid)
             .mapControlVisibility(.hidden)
             .frame(height: 400)
+            .onTapGesture {
+                let mapItem = MKMapItem(
+                    placemark: .init(
+                        coordinate: location.coordinate
+                    )
+                )
+                mapItem.name = location.name
+                mapItem.pointOfInterestCategory = .airport
+                if let url = location.wiki_url {
+                    mapItem.url = .init(string: url)
+                }
+                mapItem.openInMaps()
+            }
+            .onAppear {
+                position = .region(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.4, longitudeDelta: 0.4)))
+            }
         }
         .padding()
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
-        .onAppear {
-            position = .region(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)))
-        }
     }
 }
 
+#if DEBUG
 #Preview {
-    PadMapView(location: CLLocationCoordinate2D(latitude: 34.632, longitude: -120.611), name: "39A")
+    ModelContainerPreview(PreviewSampleData.inMemoryContainer) {
+        PadMapView(location: Launch.sampleLaunches[2].location)
+    }
 }
+#endif

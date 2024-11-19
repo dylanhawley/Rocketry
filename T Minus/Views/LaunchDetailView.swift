@@ -40,12 +40,11 @@ struct LaunchDetailView: View {
                         .font(.system(size: 16, weight: .light))
                     }
                 }
-                .foregroundStyle(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // Launch details
                 VStack(alignment: .leading, spacing: 24) {
-                    PadMapView(location: launch.location.coordinate, name: launch.pad)
+                    PadMapView(location: launch.location)
                     Text("Mission")
                         .font(.title)
                     VStack(alignment: .leading, spacing: 8) {
@@ -57,19 +56,18 @@ struct LaunchDetailView: View {
                             .font(.headline)
                         Text(launch.details)
                     }
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
                 }
             }
+            .padding()
         }
-        .padding()
         .scrollIndicators(.hidden)
-        .foregroundStyle(.white)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             fetchSolarEvents()
         }
-        .frame(maxWidth: .infinity)
         .background(
             ZStack {
                 SkyView(date: launch.net, location: launch.location.coordinate, timezone_name: launch.timezone_name)
@@ -81,6 +79,16 @@ struct LaunchDetailView: View {
             }
             .ignoresSafeArea()
         )
+//        .navigationBarBackButtonHidden()
+//        .toolbar {
+//            ToolbarItem(placement: .primaryAction) {
+//                Button {
+//                    dismiss()
+//                } label: {
+//                    Image(systemName: "xmark.circle.fill")
+//                }
+//            }
+//        }
     }
     
     private func fetchSolarEvents() {

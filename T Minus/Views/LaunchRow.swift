@@ -40,7 +40,6 @@ struct LaunchRow: View {
                 .font(.system(size: 16, weight: .light))
                 .opacity(0.8)
         }
-        .foregroundStyle(.white)
         .padding()
         .background(
             ZStack {

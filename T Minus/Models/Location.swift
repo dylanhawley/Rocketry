@@ -17,6 +17,12 @@ struct Location: Codable {
 
     /// The latitude of the location, given in degrees between -90 and 90.
     var latitude: Double
+    
+    /// A link to the location's Wikipedia page.
+    var wiki_url: String?
+    
+    /// A brief text description of the location.
+    var details: String?
 
     /// The longitude and latitude collected into a location coordinate.
     var coordinate: CLLocationCoordinate2D {

@@ -13,6 +13,7 @@ struct LaunchList: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var futureLaunches: [Launch]
     @Query private var pastLaunches: [Launch]
+    @Namespace private var namespace
 
     init(searchText: String = String()) {
         _futureLaunches = Query(filter: Launch.predicate(searchText: searchText, onlyFutureLaunches: true), sort: \Launch.net, order: .forward)
@@ -26,8 +27,9 @@ struct LaunchList: View {
                     .padding(.vertical, -6)
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
-                    .background(
-                        NavigationLink("", destination: LaunchDetailView(launch: launch)).opacity(0)
+//                    .matchedTransitionSource(id: "zoom", in: namespace)
+                    .overlay(
+                        NavigationLink("", value: launch).opacity(0)
                     )
             }
             if !pastLaunches.isEmpty {
@@ -37,13 +39,18 @@ struct LaunchList: View {
                             .padding(.vertical, -6)
                             .listRowSeparator(.hidden)
                             .listRowBackground(Color.clear)
-                            .background(
-                                NavigationLink("", destination: LaunchDetailView(launch: launch)).opacity(0)
+                            .overlay(
+                                NavigationLink("", value: launch).opacity(0)
                             )
                     }
                 }
             }
             AttributionView()
+        }
+        .navigationDestination(for: Launch.self) {launch in
+            LaunchDetailView(launch: launch)
+                .navigationTransition(.zoom(sourceID: "zoom", in: namespace))
+                .navigationBarHidden(true)
         }
         .listStyle(.plain)
    }
