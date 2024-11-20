@@ -45,7 +45,6 @@ struct LaunchResultCollection: Decodable {
             let location: PadLocation
             
             struct PadLocation: Decodable {
-                let description: String
                 let timezone_name: String
             }
         }
