@@ -24,10 +24,11 @@ struct LaunchList: View {
         List() {
             ForEach(futureLaunches) { launch in
                 LaunchRow(launch: launch)
-                    .padding(.vertical, -6)
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
-//                    .matchedTransitionSource(id: "zoom", in: namespace)
+                    .matchedTransitionSource(id: launch.id, in: namespace, configuration: { source in source
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                    })
                     .overlay(
                         NavigationLink("", value: launch).opacity(0)
                     )
@@ -36,9 +37,11 @@ struct LaunchList: View {
                 Section("Past Launches") {
                     ForEach(pastLaunches) { launch in
                         LaunchRow(launch: launch)
-                            .padding(.vertical, -6)
                             .listRowSeparator(.hidden)
                             .listRowBackground(Color.clear)
+                            .matchedTransitionSource(id: launch.id, in: namespace, configuration: { source in source
+                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                            })
                             .overlay(
                                 NavigationLink("", value: launch).opacity(0)
                             )
@@ -49,10 +52,11 @@ struct LaunchList: View {
         }
         .navigationDestination(for: Launch.self) {launch in
             LaunchDetailView(launch: launch)
-                .navigationTransition(.zoom(sourceID: "zoom", in: namespace))
+                .navigationTransition(.zoom(sourceID: launch.id, in: namespace))
                 .navigationBarHidden(true)
         }
         .listStyle(.plain)
+        .listRowSpacing(-6)
    }
 }
 
