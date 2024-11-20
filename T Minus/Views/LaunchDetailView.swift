@@ -44,9 +44,6 @@ struct LaunchDetailView: View {
                 
                 // Launch details
                 VStack(alignment: .leading, spacing: 24) {
-                    PadMapView(location: launch.location)
-                    Text("Mission")
-                        .font(.title)
                     VStack(alignment: .leading, spacing: 8) {
                         (Text(Image(systemName: "globe.americas")) + Text(" ") + Text(launch.orbit))
                             .padding(5)
@@ -59,6 +56,8 @@ struct LaunchDetailView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
+                    
+                    PadMapView(location: launch.location)
                 }
             }
             .padding()
@@ -79,16 +78,6 @@ struct LaunchDetailView: View {
             }
             .ignoresSafeArea()
         )
-//        .navigationBarBackButtonHidden()
-//        .toolbar {
-//            ToolbarItem(placement: .primaryAction) {
-//                Button {
-//                    dismiss()
-//                } label: {
-//                    Image(systemName: "xmark.circle.fill")
-//                }
-//            }
-//        }
     }
     
     private func fetchSolarEvents() {

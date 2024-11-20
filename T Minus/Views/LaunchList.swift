@@ -27,7 +27,7 @@ struct LaunchList: View {
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                     .matchedTransitionSource(id: launch.id, in: namespace, configuration: { source in source
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
                     })
                     .overlay(
                         NavigationLink("", value: launch).opacity(0)
@@ -40,7 +40,7 @@ struct LaunchList: View {
                             .listRowSeparator(.hidden)
                             .listRowBackground(Color.clear)
                             .matchedTransitionSource(id: launch.id, in: namespace, configuration: { source in source
-                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                                .clipShape(RoundedRectangle(cornerRadius: 15))
                             })
                             .overlay(
                                 NavigationLink("", value: launch).opacity(0)
