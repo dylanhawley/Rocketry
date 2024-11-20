@@ -39,7 +39,6 @@ struct LaunchResultCollection: Decodable {
 
         struct Pad: Decodable {
             let name: String
-            let wiki_url: String
             let latitude: String
             let longitude: String
             let country_code: String

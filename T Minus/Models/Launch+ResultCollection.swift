@@ -21,8 +21,6 @@ extension Launch {
             details: result.mission.description,
             orbit: result.mission.orbit.abbrev,
             pad: result.pad.name,
-            pad_wiki_url: result.pad.wiki_url,
-            pad_description: result.pad.location.description,
             country_code: result.pad.country_code,
             longitude: Double(result.pad.longitude) ?? 0,
             latitude: Double(result.pad.latitude) ?? 0,

@@ -36,9 +36,6 @@ struct PadMapView: View {
                 )
                 mapItem.name = location.name
                 mapItem.pointOfInterestCategory = .airport
-                if let url = location.wiki_url {
-                    mapItem.url = .init(string: url)
-                }
                 mapItem.openInMaps()
             }
             .onAppear {
