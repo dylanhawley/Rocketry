@@ -1,0 +1,744 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A92D4B3C2C3E5B7700DA7E2C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3B2C3E5B7700DA7E2C /* Location.swift */; };
+		A92D4B3E2C40A38F00DA7E2C /* Launch+ResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */; };
+		A935DA4C2CDAA9D1006C8224 /* PadWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA4B2CDAA9D1006C8224 /* PadWeather.swift */; };
+		A935DA4D2CDAA9D1006C8224 /* PadWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA4B2CDAA9D1006C8224 /* PadWeather.swift */; };
+		A935DA4E2CDAB334006C8224 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = A957626F2CC23F6C00C2C7F3 /* Cloud.swift */; };
+		A935DA502CDDAE79006C8224 /* LaunchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA4F2CDDAE79006C8224 /* LaunchDetailView.swift */; };
+		A935DA5E2CE6F67C006C8224 /* AttributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA5D2CE6F67C006C8224 /* AttributionView.swift */; };
+		A935DA602CE6F6A4006C8224 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA5F2CE6F6A4006C8224 /* WeatherManager.swift */; };
+		A935DA652CE814B2006C8224 /* PadMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935DA642CE814B2006C8224 /* PadMapView.swift */; };
+		A93D3F432CC0BB4200933171 /* Color-Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F422CC0BB3100933171 /* Color-Custom.swift */; };
+		A93D3F482CC0BBDE00933171 /* Array-GradientStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */; };
+		A93D3F4A2CC0BC0200933171 /* Color-Interpolated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */; };
+		A93D3F4B2CC0C12500933171 /* Color-Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F422CC0BB3100933171 /* Color-Custom.swift */; };
+		A93D3F4C2CC0C12B00933171 /* Color-Interpolated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */; };
+		A93D3F4D2CC0C13100933171 /* Array-GradientStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */; };
+		A95762702CC23F6C00C2C7F3 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = A957626F2CC23F6C00C2C7F3 /* Cloud.swift */; };
+		A95762742CC2414C00C2C7F3 /* CloudGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95762732CC2414C00C2C7F3 /* CloudGroup.swift */; };
+		A95762762CC2438A00C2C7F3 /* CloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95762752CC2438A00C2C7F3 /* CloudsView.swift */; };
+		A957627A2CC6CBC800C2C7F3 /* SkyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95762792CC6CBC800C2C7F3 /* SkyView.swift */; };
+		A957627B2CC6CBC800C2C7F3 /* SkyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95762792CC6CBC800C2C7F3 /* SkyView.swift */; };
+		A957628D2CC787C800C2C7F3 /* Solar in Frameworks */ = {isa = PBXBuildFile; productRef = A957628C2CC787C800C2C7F3 /* Solar */; };
+		A957628F2CC787D000C2C7F3 /* Solar in Frameworks */ = {isa = PBXBuildFile; productRef = A957628E2CC787D000C2C7F3 /* Solar */; };
+		A95762912CC78D5D00C2C7F3 /* SunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95762902CC78D5D00C2C7F3 /* SunView.swift */; };
+		A95762932CCDF8CA00C2C7F3 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95762922CCDF8CA00C2C7F3 /* Star.swift */; };
+		A95762952CCDF94100C2C7F3 /* StarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95762942CCDF94100C2C7F3 /* StarField.swift */; };
+		A95762992CCDF9B900C2C7F3 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95762982CCDF9B900C2C7F3 /* StarsView.swift */; };
+		A957629B2CCDF9DF00C2C7F3 /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A957629A2CCDF9DF00C2C7F3 /* Meteor.swift */; };
+		A957629D2CCDFA1300C2C7F3 /* MeteorShower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A957629C2CCDFA1300C2C7F3 /* MeteorShower.swift */; };
+		A96CAC8B2C3751DF001AC10B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
+		A9D0243C2CAFBDCF001902E7 /* Launch+ResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */; };
+		A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
+		A9F1E2A52CA27F8C0048BC1A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3B2C3E5B7700DA7E2C /* Location.swift */; };
+		A9F1E2A82CA283F80048BC1A /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F5722C7D934E007A4A11 /* PreviewSampleData.swift */; };
+		A9F2F5732C7D934E007A4A11 /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F5722C7D934E007A4A11 /* PreviewSampleData.swift */; };
+		A9F2F5772C7D976A007A4A11 /* LaunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F5762C7D976A007A4A11 /* LaunchList.swift */; };
+		A9F2F57A2C7D98EE007A4A11 /* ModelContainerPreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F5792C7D98EE007A4A11 /* ModelContainerPreviews.swift */; };
+		A9F2F57C2C7D9C45007A4A11 /* LaunchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F57B2C7D9C45007A4A11 /* LaunchRow.swift */; };
+		FC349A672AF0ACD100278E0A /* LaunchResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349A612AF0A4A500278E0A /* LaunchResultCollection.swift */; };
+		FC349A682AF0ACD100278E0A /* LaunchResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349A612AF0A4A500278E0A /* LaunchResultCollection.swift */; };
+		FC7EA8AB2ADE19990072BB8F /* RocketryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8AA2ADE19990072BB8F /* RocketryApp.swift */; };
+		FC7EA8AD2ADE19990072BB8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8AC2ADE19990072BB8F /* ContentView.swift */; };
+		FC7EA8AF2ADE199C0072BB8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */; };
+		FC7EA8B22ADE199C0072BB8F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7EA8B12ADE199C0072BB8F /* Preview Assets.xcassets */; };
+		FC7EA8BF2ADE23640072BB8F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7EA8BE2ADE23630072BB8F /* WidgetKit.framework */; };
+		FC7EA8C12ADE23640072BB8F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7EA8C02ADE23640072BB8F /* SwiftUI.framework */; };
+		FC7EA8C42ADE23640072BB8F /* Rocketry_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8C32ADE23640072BB8F /* Rocketry_WidgetBundle.swift */; };
+		FC7EA8C62ADE23640072BB8F /* Rocketry_WidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8C52ADE23640072BB8F /* Rocketry_WidgetLiveActivity.swift */; };
+		FC7EA8C82ADE23640072BB8F /* Rocketry_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8C72ADE23640072BB8F /* Rocketry_Widget.swift */; };
+		FC7EA8CA2ADE23640072BB8F /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EA8C92ADE23640072BB8F /* AppIntent.swift */; };
+		FC7EA8CC2ADE23670072BB8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7EA8CB2ADE23670072BB8F /* Assets.xcassets */; };
+		FC7EA8D02ADE23670072BB8F /* Rocketry Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC7EA8BC2ADE23630072BB8F /* Rocketry Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC7EA8CE2ADE23670072BB8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7EA89F2ADE19990072BB8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC7EA8BB2ADE23630072BB8F;
+			remoteInfo = "Rocketry WidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC7EA8D42ADE23670072BB8F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FC7EA8D02ADE23670072BB8F /* Rocketry Widget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A92D4B3B2C3E5B7700DA7E2C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+ResultCollection.swift"; sourceTree = "<group>"; };
+		A935DA4B2CDAA9D1006C8224 /* PadWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadWeather.swift; sourceTree = "<group>"; };
+		A935DA4F2CDDAE79006C8224 /* LaunchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailView.swift; sourceTree = "<group>"; };
+		A935DA5D2CE6F67C006C8224 /* AttributionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributionView.swift; sourceTree = "<group>"; };
+		A935DA5F2CE6F6A4006C8224 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		A935DA642CE814B2006C8224 /* PadMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadMapView.swift; sourceTree = "<group>"; };
+		A93D3F422CC0BB3100933171 /* Color-Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Custom.swift"; sourceTree = "<group>"; };
+		A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array-GradientStop.swift"; sourceTree = "<group>"; };
+		A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Interpolated.swift"; sourceTree = "<group>"; };
+		A957626F2CC23F6C00C2C7F3 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		A95762732CC2414C00C2C7F3 /* CloudGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudGroup.swift; sourceTree = "<group>"; };
+		A95762752CC2438A00C2C7F3 /* CloudsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsView.swift; sourceTree = "<group>"; };
+		A95762792CC6CBC800C2C7F3 /* SkyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyView.swift; sourceTree = "<group>"; };
+		A95762902CC78D5D00C2C7F3 /* SunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunView.swift; sourceTree = "<group>"; };
+		A95762922CCDF8CA00C2C7F3 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		A95762942CCDF94100C2C7F3 /* StarField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarField.swift; sourceTree = "<group>"; };
+		A95762982CCDF9B900C2C7F3 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		A957629A2CCDF9DF00C2C7F3 /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
+		A957629C2CCDFA1300C2C7F3 /* MeteorShower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorShower.swift; sourceTree = "<group>"; };
+		A96CAC8A2C3751DF001AC10B /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		A9F1E2AA2CA6A9ED0048BC1A /* Rocketry Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rocketry Widget.entitlements"; sourceTree = "<group>"; };
+		A9F1E2AB2CA6AAFA0048BC1A /* Rocketry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rocketry.entitlements; sourceTree = "<group>"; };
+		A9F2F5722C7D934E007A4A11 /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
+		A9F2F5762C7D976A007A4A11 /* LaunchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchList.swift; sourceTree = "<group>"; };
+		A9F2F5792C7D98EE007A4A11 /* ModelContainerPreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainerPreviews.swift; sourceTree = "<group>"; };
+		A9F2F57B2C7D9C45007A4A11 /* LaunchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRow.swift; sourceTree = "<group>"; };
+		FC349A612AF0A4A500278E0A /* LaunchResultCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResultCollection.swift; sourceTree = "<group>"; };
+		FC7EA8A72ADE19990072BB8F /* Rocketry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocketry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC7EA8AA2ADE19990072BB8F /* RocketryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketryApp.swift; sourceTree = "<group>"; };
+		FC7EA8AC2ADE19990072BB8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC7EA8B12ADE199C0072BB8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC7EA8BC2ADE23630072BB8F /* Rocketry Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Rocketry Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC7EA8BE2ADE23630072BB8F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FC7EA8C02ADE23640072BB8F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FC7EA8C32ADE23640072BB8F /* Rocketry_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocketry_WidgetBundle.swift; sourceTree = "<group>"; };
+		FC7EA8C52ADE23640072BB8F /* Rocketry_WidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocketry_WidgetLiveActivity.swift; sourceTree = "<group>"; };
+		FC7EA8C72ADE23640072BB8F /* Rocketry_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocketry_Widget.swift; sourceTree = "<group>"; };
+		FC7EA8C92ADE23640072BB8F /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		FC7EA8CB2ADE23670072BB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC7EA8CD2ADE23670072BB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC8B49EF2AE5E47E00C1B17A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC7EA8A42ADE19990072BB8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A957628D2CC787C800C2C7F3 /* Solar in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC7EA8B92ADE23630072BB8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A957628F2CC787D000C2C7F3 /* Solar in Frameworks */,
+				FC7EA8C12ADE23640072BB8F /* SwiftUI.framework in Frameworks */,
+				FC7EA8BF2ADE23640072BB8F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9F2F5782C7D9770007A4A11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2F5762C7D976A007A4A11 /* LaunchList.swift */,
+				A9F2F57B2C7D9C45007A4A11 /* LaunchRow.swift */,
+				A935DA4F2CDDAE79006C8224 /* LaunchDetailView.swift */,
+				A935DA5D2CE6F67C006C8224 /* AttributionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC12E7AE2AF8A5B80069C6E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC349A612AF0A4A500278E0A /* LaunchResultCollection.swift */,
+				A96CAC8A2C3751DF001AC10B /* Launch.swift */,
+				A92D4B3B2C3E5B7700DA7E2C /* Location.swift */,
+				A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */,
+				A935DA4B2CDAA9D1006C8224 /* PadWeather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FC7EA89E2ADE19990072BB8F = {
+			isa = PBXGroup;
+			children = (
+				FC8B49EF2AE5E47E00C1B17A /* README.md */,
+				FC7EA8A92ADE19990072BB8F /* Rocketry */,
+				FC7EA8C22ADE23640072BB8F /* Rocketry Widget */,
+				FC7EA8BD2ADE23630072BB8F /* Frameworks */,
+				FC7EA8A82ADE19990072BB8F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC7EA8A82ADE19990072BB8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC7EA8A72ADE19990072BB8F /* Rocketry.app */,
+				FC7EA8BC2ADE23630072BB8F /* Rocketry Widget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC7EA8A92ADE19990072BB8F /* Rocketry */ = {
+			isa = PBXGroup;
+			children = (
+				A957626F2CC23F6C00C2C7F3 /* Cloud.swift */,
+				A95762732CC2414C00C2C7F3 /* CloudGroup.swift */,
+				A95762752CC2438A00C2C7F3 /* CloudsView.swift */,
+				A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */,
+				A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */,
+				A93D3F422CC0BB3100933171 /* Color-Custom.swift */,
+				A9F1E2AB2CA6AAFA0048BC1A /* Rocketry.entitlements */,
+				FC7EA8AA2ADE19990072BB8F /* RocketryApp.swift */,
+				FC12E7AE2AF8A5B80069C6E2 /* Models */,
+				FC7EA8AC2ADE19990072BB8F /* ContentView.swift */,
+				A9F2F5782C7D9770007A4A11 /* Views */,
+				FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */,
+				FC7EA8B02ADE199C0072BB8F /* Preview Content */,
+				A95762792CC6CBC800C2C7F3 /* SkyView.swift */,
+				A95762902CC78D5D00C2C7F3 /* SunView.swift */,
+				A95762922CCDF8CA00C2C7F3 /* Star.swift */,
+				A95762942CCDF94100C2C7F3 /* StarField.swift */,
+				A95762982CCDF9B900C2C7F3 /* StarsView.swift */,
+				A957629A2CCDF9DF00C2C7F3 /* Meteor.swift */,
+				A957629C2CCDFA1300C2C7F3 /* MeteorShower.swift */,
+				A935DA5F2CE6F6A4006C8224 /* WeatherManager.swift */,
+				A935DA642CE814B2006C8224 /* PadMapView.swift */,
+			);
+			path = Rocketry;
+			sourceTree = "<group>";
+		};
+		FC7EA8B02ADE199C0072BB8F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FC7EA8B12ADE199C0072BB8F /* Preview Assets.xcassets */,
+				A9F2F5722C7D934E007A4A11 /* PreviewSampleData.swift */,
+				A9F2F5792C7D98EE007A4A11 /* ModelContainerPreviews.swift */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FC7EA8BD2ADE23630072BB8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC7EA8BE2ADE23630072BB8F /* WidgetKit.framework */,
+				FC7EA8C02ADE23640072BB8F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC7EA8C22ADE23640072BB8F /* Rocketry Widget */ = {
+			isa = PBXGroup;
+			children = (
+				A9F1E2AA2CA6A9ED0048BC1A /* Rocketry Widget.entitlements */,
+				FC7EA8C32ADE23640072BB8F /* Rocketry_WidgetBundle.swift */,
+				FC7EA8C52ADE23640072BB8F /* Rocketry_WidgetLiveActivity.swift */,
+				FC7EA8C72ADE23640072BB8F /* Rocketry_Widget.swift */,
+				FC7EA8C92ADE23640072BB8F /* AppIntent.swift */,
+				FC7EA8CB2ADE23670072BB8F /* Assets.xcassets */,
+				FC7EA8CD2ADE23670072BB8F /* Info.plist */,
+			);
+			path = "Rocketry Widget";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC7EA8A62ADE19990072BB8F /* Rocketry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC7EA8B52ADE199C0072BB8F /* Build configuration list for PBXNativeTarget "Rocketry" */;
+			buildPhases = (
+				FC7EA8A32ADE19990072BB8F /* Sources */,
+				FC7EA8A42ADE19990072BB8F /* Frameworks */,
+				FC7EA8A52ADE19990072BB8F /* Resources */,
+				FC7EA8D42ADE23670072BB8F /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC7EA8CF2ADE23670072BB8F /* PBXTargetDependency */,
+			);
+			name = Rocketry;
+			productName = Rocketry;
+			productReference = FC7EA8A72ADE19990072BB8F /* Rocketry.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC7EA8BB2ADE23630072BB8F /* Rocketry Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC7EA8D12ADE23670072BB8F /* Build configuration list for PBXNativeTarget "Rocketry Widget" */;
+			buildPhases = (
+				FC7EA8B82ADE23630072BB8F /* Sources */,
+				FC7EA8B92ADE23630072BB8F /* Frameworks */,
+				FC7EA8BA2ADE23630072BB8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rocketry Widget";
+			productName = "Rocketry WidgetExtension";
+			productReference = FC7EA8BC2ADE23630072BB8F /* Rocketry Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC7EA89F2ADE19990072BB8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					FC7EA8A62ADE19990072BB8F = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FC7EA8BB2ADE23630072BB8F = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = FC7EA8A22ADE19990072BB8F /* Build configuration list for PBXProject "Rocketry" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC7EA89E2ADE19990072BB8F;
+			packageReferences = (
+				A957628B2CC787B000C2C7F3 /* XCRemoteSwiftPackageReference "Solar" */,
+			);
+			productRefGroup = FC7EA8A82ADE19990072BB8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC7EA8A62ADE19990072BB8F /* Rocketry */,
+				FC7EA8BB2ADE23630072BB8F /* Rocketry Widget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC7EA8A52ADE19990072BB8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC7EA8B22ADE199C0072BB8F /* Preview Assets.xcassets in Resources */,
+				FC7EA8AF2ADE199C0072BB8F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC7EA8BA2ADE23630072BB8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC7EA8CC2ADE23670072BB8F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC7EA8A32ADE19990072BB8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9F2F57A2C7D98EE007A4A11 /* ModelContainerPreviews.swift in Sources */,
+				A957629D2CCDFA1300C2C7F3 /* MeteorShower.swift in Sources */,
+				A95762762CC2438A00C2C7F3 /* CloudsView.swift in Sources */,
+				A935DA4C2CDAA9D1006C8224 /* PadWeather.swift in Sources */,
+				A95762912CC78D5D00C2C7F3 /* SunView.swift in Sources */,
+				A95762932CCDF8CA00C2C7F3 /* Star.swift in Sources */,
+				A95762952CCDF94100C2C7F3 /* StarField.swift in Sources */,
+				A9F2F57C2C7D9C45007A4A11 /* LaunchRow.swift in Sources */,
+				A96CAC8B2C3751DF001AC10B /* Launch.swift in Sources */,
+				FC7EA8AD2ADE19990072BB8F /* ContentView.swift in Sources */,
+				A935DA602CE6F6A4006C8224 /* WeatherManager.swift in Sources */,
+				A935DA502CDDAE79006C8224 /* LaunchDetailView.swift in Sources */,
+				A92D4B3C2C3E5B7700DA7E2C /* Location.swift in Sources */,
+				A957627A2CC6CBC800C2C7F3 /* SkyView.swift in Sources */,
+				A92D4B3E2C40A38F00DA7E2C /* Launch+ResultCollection.swift in Sources */,
+				A957629B2CCDF9DF00C2C7F3 /* Meteor.swift in Sources */,
+				A93D3F4A2CC0BC0200933171 /* Color-Interpolated.swift in Sources */,
+				A93D3F482CC0BBDE00933171 /* Array-GradientStop.swift in Sources */,
+				A9F2F5732C7D934E007A4A11 /* PreviewSampleData.swift in Sources */,
+				FC349A672AF0ACD100278E0A /* LaunchResultCollection.swift in Sources */,
+				A95762702CC23F6C00C2C7F3 /* Cloud.swift in Sources */,
+				A935DA652CE814B2006C8224 /* PadMapView.swift in Sources */,
+				A93D3F432CC0BB4200933171 /* Color-Custom.swift in Sources */,
+				A9F2F5772C7D976A007A4A11 /* LaunchList.swift in Sources */,
+				FC7EA8AB2ADE19990072BB8F /* RocketryApp.swift in Sources */,
+				A935DA5E2CE6F67C006C8224 /* AttributionView.swift in Sources */,
+				A95762992CCDF9B900C2C7F3 /* StarsView.swift in Sources */,
+				A95762742CC2414C00C2C7F3 /* CloudGroup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC7EA8B82ADE23630072BB8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A957627B2CC6CBC800C2C7F3 /* SkyView.swift in Sources */,
+				A9F1E2A82CA283F80048BC1A /* PreviewSampleData.swift in Sources */,
+				FC7EA8C82ADE23640072BB8F /* Rocketry_Widget.swift in Sources */,
+				FC349A682AF0ACD100278E0A /* LaunchResultCollection.swift in Sources */,
+				FC7EA8CA2ADE23640072BB8F /* AppIntent.swift in Sources */,
+				FC7EA8C42ADE23640072BB8F /* Rocketry_WidgetBundle.swift in Sources */,
+				A93D3F4D2CC0C13100933171 /* Array-GradientStop.swift in Sources */,
+				A935DA4D2CDAA9D1006C8224 /* PadWeather.swift in Sources */,
+				A93D3F4B2CC0C12500933171 /* Color-Custom.swift in Sources */,
+				A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */,
+				FC7EA8C62ADE23640072BB8F /* Rocketry_WidgetLiveActivity.swift in Sources */,
+				A9F1E2A52CA27F8C0048BC1A /* Location.swift in Sources */,
+				A935DA4E2CDAB334006C8224 /* Cloud.swift in Sources */,
+				A93D3F4C2CC0C12B00933171 /* Color-Interpolated.swift in Sources */,
+				A9D0243C2CAFBDCF001902E7 /* Launch+ResultCollection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC7EA8CF2ADE23670072BB8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC7EA8BB2ADE23630072BB8F /* Rocketry Widget */;
+			targetProxy = FC7EA8CE2ADE23670072BB8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FC7EA8B32ADE199C0072BB8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		FC7EA8B42ADE199C0072BB8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC7EA8B62ADE199C0072BB8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Rocketry/Rocketry.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Rocketry/Preview Content\"";
+				DEVELOPMENT_TEAM = QCYB8YLNNQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Rocketry;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dhawley.Rocketry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FC7EA8B72ADE199C0072BB8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Rocketry/Rocketry.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Rocketry/Preview Content\"";
+				DEVELOPMENT_TEAM = QCYB8YLNNQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Rocketry;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dhawley.Rocketry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FC7EA8D22ADE23670072BB8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Rocketry Widget/Rocketry Widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QCYB8YLNNQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Rocketry Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rocketry Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.Rocketry.Rocketry-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FC7EA8D32ADE23670072BB8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Rocketry Widget/Rocketry Widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QCYB8YLNNQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Rocketry Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rocketry Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dhawley.Rocketry.Rocketry-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC7EA8A22ADE19990072BB8F /* Build configuration list for PBXProject "Rocketry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC7EA8B32ADE199C0072BB8F /* Debug */,
+				FC7EA8B42ADE199C0072BB8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC7EA8B52ADE199C0072BB8F /* Build configuration list for PBXNativeTarget "Rocketry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC7EA8B62ADE199C0072BB8F /* Debug */,
+				FC7EA8B72ADE199C0072BB8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC7EA8D12ADE23670072BB8F /* Build configuration list for PBXNativeTarget "Rocketry Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC7EA8D22ADE23670072BB8F /* Debug */,
+				FC7EA8D32ADE23670072BB8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A957628B2CC787B000C2C7F3 /* XCRemoteSwiftPackageReference "Solar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ceeK/Solar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A957628C2CC787C800C2C7F3 /* Solar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A957628B2CC787B000C2C7F3 /* XCRemoteSwiftPackageReference "Solar" */;
+			productName = Solar;
+		};
+		A957628E2CC787D000C2C7F3 /* Solar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A957628B2CC787B000C2C7F3 /* XCRemoteSwiftPackageReference "Solar" */;
+			productName = Solar;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FC7EA89F2ADE19990072BB8F /* Project object */;
+}

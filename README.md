@@ -1,4 +1,4 @@
-# T Minus
+# Rocketry
 
 <p align="center">
   <i align="center">The latest spaceflight news, packed into your lockscreen 🚀</i>
@@ -10,7 +10,7 @@
 
 ## Introduction
 
-`T Minus` is an iOS application designed with Apple's `WidgetKit` and `SwiftUI` frameworks. We eliminate the need to open an app for detailed information on an upcoming launch by utilizing the various wigets compatible with the iOS lockscreen, home screen, and watchOS.
+`Rocketry` is an iOS application designed with Apple's `WidgetKit` and `SwiftUI` frameworks. We eliminate the need to open an app for detailed information on an upcoming launch by utilizing the various wigets compatible with the iOS lockscreen, home screen, and watchOS.
 
 ## Resources
 
