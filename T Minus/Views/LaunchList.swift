@@ -53,7 +53,7 @@ struct LaunchList: View {
         .navigationDestination(for: Launch.self) {launch in
             LaunchDetailView(launch: launch)
                 .navigationTransition(.zoom(sourceID: launch.id, in: namespace))
-                .navigationBarHidden(true)
+                .toolbarVisibility(.hidden, for: .navigationBar)
         }
         .listStyle(.plain)
         .listRowSpacing(-6)
