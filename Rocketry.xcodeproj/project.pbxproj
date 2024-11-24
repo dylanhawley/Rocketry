@@ -152,6 +152,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9B0E8D82CF2D80D000E3885 /* WeatherAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				A957626F2CC23F6C00C2C7F3 /* Cloud.swift */,
+				A95762732CC2414C00C2C7F3 /* CloudGroup.swift */,
+				A95762752CC2438A00C2C7F3 /* CloudsView.swift */,
+				A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */,
+				A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */,
+				A93D3F422CC0BB3100933171 /* Color-Custom.swift */,
+				A95762792CC6CBC800C2C7F3 /* SkyView.swift */,
+				A95762902CC78D5D00C2C7F3 /* SunView.swift */,
+				A95762922CCDF8CA00C2C7F3 /* Star.swift */,
+				A95762942CCDF94100C2C7F3 /* StarField.swift */,
+				A95762982CCDF9B900C2C7F3 /* StarsView.swift */,
+				A957629A2CCDF9DF00C2C7F3 /* Meteor.swift */,
+				A957629C2CCDFA1300C2C7F3 /* MeteorShower.swift */,
+			);
+			path = WeatherAnimations;
+			sourceTree = "<group>";
+		};
 		A9F2F5782C7D9770007A4A11 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,12 +218,7 @@
 		FC7EA8A92ADE19990072BB8F /* Rocketry */ = {
 			isa = PBXGroup;
 			children = (
-				A957626F2CC23F6C00C2C7F3 /* Cloud.swift */,
-				A95762732CC2414C00C2C7F3 /* CloudGroup.swift */,
-				A95762752CC2438A00C2C7F3 /* CloudsView.swift */,
-				A93D3F472CC0BBD200933171 /* Array-GradientStop.swift */,
-				A93D3F492CC0BBFA00933171 /* Color-Interpolated.swift */,
-				A93D3F422CC0BB3100933171 /* Color-Custom.swift */,
+				A9B0E8D82CF2D80D000E3885 /* WeatherAnimations */,
 				A9F1E2AB2CA6AAFA0048BC1A /* Rocketry.entitlements */,
 				FC7EA8AA2ADE19990072BB8F /* RocketryApp.swift */,
 				FC12E7AE2AF8A5B80069C6E2 /* Models */,
@@ -211,13 +226,6 @@
 				A9F2F5782C7D9770007A4A11 /* Views */,
 				FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */,
 				FC7EA8B02ADE199C0072BB8F /* Preview Content */,
-				A95762792CC6CBC800C2C7F3 /* SkyView.swift */,
-				A95762902CC78D5D00C2C7F3 /* SunView.swift */,
-				A95762922CCDF8CA00C2C7F3 /* Star.swift */,
-				A95762942CCDF94100C2C7F3 /* StarField.swift */,
-				A95762982CCDF9B900C2C7F3 /* StarsView.swift */,
-				A957629A2CCDF9DF00C2C7F3 /* Meteor.swift */,
-				A957629C2CCDFA1300C2C7F3 /* MeteorShower.swift */,
 				A935DA5F2CE6F6A4006C8224 /* WeatherManager.swift */,
 				A935DA642CE814B2006C8224 /* PadMapView.swift */,
 			);
