@@ -91,20 +91,6 @@ extension Launch {
             (endDate == nil || launch.net <= endDate!)
         }
     }
-
-    /// Report the range of dates over which there are launches.
-    static func dateRange(modelContext: ModelContext) -> ClosedRange<Date> {
-        let descriptor = FetchDescriptor<Launch>(sortBy: [.init(\.net, order: .forward)])
-        guard let launches = try? modelContext.fetch(descriptor),
-              let first = launches.first?.net,
-              let last = launches.last?.net else { return .distantPast ... .distantFuture }
-        return first ... last
-    }
-
-    /// Reports the total number of launches.
-    static func totalLaunches(modelContext: ModelContext) -> Int {
-        (try? modelContext.fetchCount(FetchDescriptor<Launch>())) ?? 0
-    }
 }
 
 /// Ensure that the model's conformance to Identifiable is public.

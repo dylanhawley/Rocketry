@@ -40,7 +40,6 @@ struct CloudsView: View {
             }
         }
         .ignoresSafeArea()
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     init(thickness: Cloud.Thickness, topTint: Color, bottomTint: Color) {

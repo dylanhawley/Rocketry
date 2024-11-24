@@ -7,7 +7,7 @@
 
 import SwiftData
 import OSLog
-@preconcurrency import WeatherKit
+import WeatherKit
 import CoreLocation
 
 

@@ -21,21 +21,14 @@ struct ContentView: View {
             LaunchList(searchText: searchText)
             .searchable(text: $searchText, prompt: "Search Launches")
             .navigationTitle("Launches")
-            .refreshable { await refreshData() }
-            .onChange(of: scenePhase) { _, newPhase in
-                if newPhase == .active {
-                    Task { await refreshData() }
-                }
+            .refreshable { await LaunchResultCollection.refresh(modelContext: modelContext) }
+            .onChange(of: scenePhase) {
+                Task { await LaunchResultCollection.refresh(modelContext: modelContext) }
             }
-            .task { await refreshData() }
+            .task { await LaunchResultCollection.refresh(modelContext: modelContext) }
             .preferredColorScheme(.dark)
             .scrollIndicators(.never)
         }
-        .accentColor(.white)
-    }
-
-    private func refreshData() async {
-        await LaunchResultCollection.refresh(modelContext: modelContext)
     }
 }
 
