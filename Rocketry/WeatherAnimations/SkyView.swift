@@ -23,21 +23,15 @@ class SolarTime {
 struct SkyView: View {
     let date: Date
     let location: CLLocationCoordinate2D
-    let timezone: TimeZone?
-    
+    let timezone_name: String
+
     @State private var backgroundTopStops: [Gradient.Stop] = []
     @State private var backgroundBottomStops: [Gradient.Stop] = []
     @State private var normalizedTimeOfDay: Double = 0
-    
-    init(date: Date, location: CLLocationCoordinate2D, timezone_name: String) {
-        self.date = date
-        self.location = location
-        self.timezone = TimeZone(identifier: timezone_name)
-    }
-    
+
     var body: some View {
         Group {
-            if !backgroundTopStops.isEmpty && !backgroundBottomStops.isEmpty && timezone != nil {
+            if !backgroundTopStops.isEmpty && !backgroundBottomStops.isEmpty {
                 LinearGradient(colors: [
                     backgroundTopStops.interpolated(amount: normalizedTimeOfDay),
                     backgroundBottomStops.interpolated(amount: normalizedTimeOfDay)
@@ -50,14 +44,14 @@ struct SkyView: View {
             computeGradientStops()
         }
     }
-    
+
     private func computeGradientStops() {
-        guard let timezone = self.timezone else { return }
+        guard let timezone = TimeZone(identifier: self.timezone_name) else { return }
         let solar = Solar(for: date, coordinate: location)
         let daytimeStart: Date? = Calendar.current.date(byAdding: .hour, value: 1, to: (solar?.sunrise)!)
         let daytimeEnd: Date? = Calendar.current.date(byAdding: .hour, value: -1, to: (solar?.sunset)!)
         let normalizedTime = SolarTime.normalizeTimeOfDay(date, timezone)
-        
+
         let astronomicalDawnNormalized: Double = solar?.astronomicalSunrise.map{SolarTime.normalizeTimeOfDay($0, timezone)} ?? 0.25
         let astronomicalDuskNormalized: Double = solar?.astronomicalSunset.map{SolarTime.normalizeTimeOfDay($0, timezone)} ?? 0.82
         let daytimeStartNormalized: Double = daytimeStart.map{SolarTime.normalizeTimeOfDay($0, timezone)} ?? 0.38

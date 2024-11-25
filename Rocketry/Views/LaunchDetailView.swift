@@ -40,7 +40,6 @@ struct LaunchDetailView: View {
                         .font(.system(size: 16, weight: .light))
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // Launch details
                 VStack(alignment: .leading, spacing: 24) {
@@ -63,7 +62,6 @@ struct LaunchDetailView: View {
             .padding()
         }
         .scrollIndicators(.hidden)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .task { fetchSolarEvents() }
         .background(
             ZStack {

@@ -7,10 +7,9 @@
 
 import Foundation
 
-
 struct LaunchResultCollection: Decodable {
     let results: [Result]
-    
+
     struct Result: Decodable {
         let id: String
         let net: Date
@@ -18,20 +17,20 @@ struct LaunchResultCollection: Decodable {
         let mission: Mission
         let pad: Pad
         let image: String?
-        
+
         struct Rocket: Decodable {
             let configuration: RocketConfiguration
-            
+
             struct RocketConfiguration: Decodable {
                 let name: String
             }
         }
-        
+
         struct Mission: Decodable {
             let name: String
             let description: String
             let orbit: Orbit
-            
+
             struct Orbit: Decodable {
                 let abbrev: String
             }
@@ -43,7 +42,7 @@ struct LaunchResultCollection: Decodable {
             let longitude: String
             let country_code: String
             let location: PadLocation
-            
+
             struct PadLocation: Decodable {
                 let timezone_name: String
             }
@@ -57,7 +56,7 @@ extension LaunchResultCollection.Result: CustomStringConvertible {
     result: {
         id: \(id),
         net: \(net),
-        rocket: { 
+        rocket: {
             configuration: {
                 name: \(rocket.configuration.name)
             }
@@ -101,11 +100,11 @@ extension LaunchResultCollection {
         let url = URL(string: "https://ll.thespacedevs.com/2.2.0/launch/upcoming/")!
         let session = URLSession.shared
         let (data, response) = try await session.data(from: url)
-        
+
         guard let httpResponse = response as? HTTPURLResponse else {
             throw DownloadError.invalidResponse
         }
-        
+
         guard httpResponse.statusCode == 200 else {
             throw DownloadError.serverError(statusCode: httpResponse.statusCode)
         }
@@ -122,14 +121,13 @@ extension LaunchResultCollection {
     }
 }
 
-
 enum DownloadError: Error, LocalizedError {
     case wrongDataFormat(error: Error)
     case decodingError(error: DecodingError)
     case invalidResponse
     case serverError(statusCode: Int)
     case missingData
-    
+
     var errorDescription: String? {
         switch self {
         case .wrongDataFormat(let error):

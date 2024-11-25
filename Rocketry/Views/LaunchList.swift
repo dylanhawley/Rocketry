@@ -8,7 +8,6 @@
 import SwiftUI
 import SwiftData
 
-
 struct LaunchList: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var futureLaunches: [Launch]
@@ -21,7 +20,7 @@ struct LaunchList: View {
     }
 
     var body: some View {
-        List() {
+        List {
             ForEach(futureLaunches) { launch in
                 LaunchRow(launch: launch)
                     .listRowSeparator(.hidden)

@@ -11,7 +11,7 @@ import WeatherKit
 struct AttributionView: View {
     let weatherManager = WeatherManager.shared
     @State private var attribution: WeatherAttribution?
-    
+
     var body: some View {
         VStack {
             if let attribution {
