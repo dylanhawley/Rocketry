@@ -17,7 +17,7 @@ struct LaunchResultCollection: Decodable {
         let rocket: Rocket
         let mission: Mission
         let pad: Pad
-        let image: String
+        let image: String?
         
         struct Rocket: Decodable {
             let configuration: RocketConfiguration
@@ -75,7 +75,7 @@ extension LaunchResultCollection.Result: CustomStringConvertible {
             longitude: \(pad.longitude),
             country_code: \(pad.country_code)
         },
-        image: \(image)
+        image: \(image ?? "null")
     }
     """
     }
@@ -99,19 +99,23 @@ extension LaunchResultCollection {
     /// Gets and decodes the latest launch data from the server.
     static func fetchResults() async throws -> LaunchResultCollection {
         let url = URL(string: "https://ll.thespacedevs.com/2.2.0/launch/upcoming/")!
-
         let session = URLSession.shared
-        guard let (data, response) = try? await session.data(from: url),
-              let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200
-        else {
-            throw DownloadError.missingData
+        let (data, response) = try await session.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw DownloadError.invalidResponse
+        }
+        
+        guard httpResponse.statusCode == 200 else {
+            throw DownloadError.serverError(statusCode: httpResponse.statusCode)
         }
 
         do {
             let jsonDecoder = JSONDecoder()
             jsonDecoder.dateDecodingStrategy = .iso8601
             return try jsonDecoder.decode(LaunchResultCollection.self, from: data)
+        } catch let decodingError as DecodingError {
+            throw DownloadError.decodingError(error: decodingError)
         } catch {
             throw DownloadError.wrongDataFormat(error: error)
         }
@@ -119,7 +123,36 @@ extension LaunchResultCollection {
 }
 
 
-enum DownloadError: Error {
+enum DownloadError: Error, LocalizedError {
     case wrongDataFormat(error: Error)
+    case decodingError(error: DecodingError)
+    case invalidResponse
+    case serverError(statusCode: Int)
     case missingData
+    
+    var errorDescription: String? {
+        switch self {
+        case .wrongDataFormat(let error):
+            return "Data format error: \(error.localizedDescription)"
+        case .decodingError(let error):
+            switch error {
+            case .keyNotFound(let key, let context):
+                return "Could not find key '\(key.stringValue)' in JSON: \(context.debugDescription)"
+            case .valueNotFound(let type, let context):
+                return "Could not find value of type '\(type)' in JSON: \(context.debugDescription)"
+            case .typeMismatch(let type, let context):
+                return "Type '\(type)' mismatch: \(context.debugDescription)"
+            case .dataCorrupted(let context):
+                return "Data corrupted: \(context.debugDescription)"
+            @unknown default:
+                return "Unknown decoding error: \(error.localizedDescription)"
+            }
+        case .invalidResponse:
+            return "Invalid response from server"
+        case .serverError(let statusCode):
+            return "Server error with status code: \(statusCode)"
+        case .missingData:
+            return "Missing data in response"
+        }
+    }
 }
