@@ -64,9 +64,7 @@ struct LaunchDetailView: View {
         }
         .scrollIndicators(.hidden)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onAppear {
-            fetchSolarEvents()
-        }
+        .task { fetchSolarEvents() }
         .background(
             ZStack {
                 SkyView(date: launch.net, location: launch.location.coordinate, timezone_name: launch.timezone_name)
