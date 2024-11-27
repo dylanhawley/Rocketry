@@ -51,12 +51,14 @@ struct WeatherModel: Codable {
     
     var cloudThickness: Cloud.Thickness{
         switch cloudCover {
-            case 0.05...0.25:
+            case 0.125...0.375:
                 return .thin
-            case 0.25...0.5:
+            case 0.375...0.625:
                 return .light
-            case 0.5...1:
+            case 0.625...0.875:
                 return .regular
+            case 0.875...1:
+                return .thick
             default:
                 return .none
         }

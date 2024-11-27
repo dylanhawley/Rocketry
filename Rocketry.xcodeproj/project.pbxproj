@@ -35,6 +35,8 @@
 		A95762992CCDF9B900C2C7F3 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95762982CCDF9B900C2C7F3 /* StarsView.swift */; };
 		A957629B2CCDF9DF00C2C7F3 /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A957629A2CCDF9DF00C2C7F3 /* Meteor.swift */; };
 		A957629D2CCDFA1300C2C7F3 /* MeteorShower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A957629C2CCDFA1300C2C7F3 /* MeteorShower.swift */; };
+		A96770432CF6D05A00791EBE /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96770422CF6D05A00791EBE /* ConditionsView.swift */; };
+		A96770452CF6D9FF00791EBE /* RangedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96770442CF6D9FF00791EBE /* RangedProgressView.swift */; };
 		A96CAC8B2C3751DF001AC10B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
 		A9D0243C2CAFBDCF001902E7 /* Launch+ResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */; };
 		A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
@@ -105,6 +107,8 @@
 		A95762982CCDF9B900C2C7F3 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		A957629A2CCDF9DF00C2C7F3 /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 		A957629C2CCDFA1300C2C7F3 /* MeteorShower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorShower.swift; sourceTree = "<group>"; };
+		A96770422CF6D05A00791EBE /* ConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
+		A96770442CF6D9FF00791EBE /* RangedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangedProgressView.swift; sourceTree = "<group>"; };
 		A96CAC8A2C3751DF001AC10B /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		A9F1E2AA2CA6A9ED0048BC1A /* Rocketry Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rocketry Widget.entitlements"; sourceTree = "<group>"; };
 		A9F1E2AB2CA6AAFA0048BC1A /* Rocketry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rocketry.entitlements; sourceTree = "<group>"; };
@@ -179,6 +183,9 @@
 				A9F2F57B2C7D9C45007A4A11 /* LaunchRow.swift */,
 				A935DA4F2CDDAE79006C8224 /* LaunchDetailView.swift */,
 				A935DA5D2CE6F67C006C8224 /* AttributionView.swift */,
+				A935DA642CE814B2006C8224 /* PadMapView.swift */,
+				A96770422CF6D05A00791EBE /* ConditionsView.swift */,
+				A96770442CF6D9FF00791EBE /* RangedProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,7 +230,6 @@
 				FC7EA8AA2ADE19990072BB8F /* RocketryApp.swift */,
 				FC12E7AE2AF8A5B80069C6E2 /* Models */,
 				FC7EA8AC2ADE19990072BB8F /* ContentView.swift */,
-				A935DA642CE814B2006C8224 /* PadMapView.swift */,
 				A9F2F5782C7D9770007A4A11 /* Views */,
 				FC7EA8AE2ADE199C0072BB8F /* Assets.xcassets */,
 				FC7EA8B02ADE199C0072BB8F /* Preview Content */,
@@ -381,7 +387,9 @@
 				FC7EA8AD2ADE19990072BB8F /* ContentView.swift in Sources */,
 				A935DA602CE6F6A4006C8224 /* WeatherManager.swift in Sources */,
 				A935DA502CDDAE79006C8224 /* LaunchDetailView.swift in Sources */,
+				A96770432CF6D05A00791EBE /* ConditionsView.swift in Sources */,
 				A92D4B3C2C3E5B7700DA7E2C /* Location.swift in Sources */,
+				A96770452CF6D9FF00791EBE /* RangedProgressView.swift in Sources */,
 				A957627A2CC6CBC800C2C7F3 /* SkyView.swift in Sources */,
 				A92D4B3E2C40A38F00DA7E2C /* Launch+ResultCollection.swift in Sources */,
 				A957629B2CCDF9DF00C2C7F3 /* Meteor.swift in Sources */,
