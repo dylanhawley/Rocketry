@@ -10,24 +10,26 @@ import MapKit
 
 struct PadMapView: View {
     let location: Location
+    let visibility: Double?
     @State private var position: MapCameraPosition = .automatic
 
     var body: some View {
         VStack(alignment: .leading) {
-            (Text(Image(systemName: "mappin.and.ellipse")) + Text(" Launch Pad".uppercased()))
+            (Text(Image(systemName: "mappin.and.ellipse")) + Text(" ") + Text("Visibility".uppercased()))
                 .font(Font.system(size: 12))
                 .fontWeight(.medium)
             
             Map(position: $position, interactionModes: []) {
-                Marker(location.name, coordinate: location.coordinate)
-                    .tint(.red)
+                Marker(location.name, image: "rocket", coordinate: location.coordinate)
+                visibility.map {
+                    MapCircle(center: location.coordinate, radius: $0)
+                        .foregroundStyle(.mint.opacity(0.5))
+                        .mapOverlayLevel(level: .aboveRoads)
+                }
             }
             .cornerRadius(10)
             .mapStyle(.hybrid)
             .frame(height: 400)
-            .onAppear {
-                position = .region(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.4, longitudeDelta: 0.4)))
-            }
         }
         .padding()
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
@@ -37,7 +39,7 @@ struct PadMapView: View {
 #if DEBUG
 #Preview {
     ModelContainerPreview(PreviewSampleData.inMemoryContainer) {
-        PadMapView(location: Launch.sampleLaunches[2].location)
+        PadMapView(location: Launch.sampleLaunches[2].location, visibility: 10)
     }
 }
 #endif

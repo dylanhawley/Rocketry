@@ -50,12 +50,7 @@ extension LaunchResultCollection {
                 let oneHourAfterLaunch = launch.net.addingTimeInterval(3600)
                 let weatherFilter: WeatherQuery = .hourly(startDate: launch.net, endDate: oneHourAfterLaunch)
                 if let weather = try? await weatherService.weather(for: location, including: weatherFilter).first {
-                    launch.weather = PadWeather(
-                        cloudCover: weather.cloudCover,
-                        symbolName: weather.symbolName,
-                        precipitationChance: weather.precipitationChance,
-                        temperature: weather.temperature.value
-                    )
+                    launch.weather = WeatherModel(hourWeather: weather)
                 }
 
                 logger.debug("Inserting \(launch)")

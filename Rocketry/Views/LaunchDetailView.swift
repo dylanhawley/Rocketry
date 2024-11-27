@@ -56,7 +56,7 @@ struct LaunchDetailView: View {
                     .padding()
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
                     
-                    PadMapView(location: launch.location)
+                    PadMapView(location: launch.location, visibility: launch.weather?.visibility)
                 }
             }
             .padding()
