@@ -17,3 +17,4 @@
 - [**Launch Library 2**](https://ll.thespacedevs.com/docs/) API documentation for fetching spaceflight events.
 - [**Launch List**](https://ll.thespacedevs.com/2.2.0/launch/) endpoint that returns all Launch objects or a single launch.
 - Purchased a royalty–free license to Rocket [**Vector Art**](https://thenounproject.com/icon/rocket-680024/)
+- [**Forecast terms**](https://www.weather.gov/bgm/forecast_terms) used to define cloud cover in animations
