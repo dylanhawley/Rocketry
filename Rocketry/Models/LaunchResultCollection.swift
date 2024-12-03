@@ -12,11 +12,27 @@ struct LaunchResultCollection: Decodable {
 
     struct Result: Decodable {
         let id: String
+        let status: Status
+        let last_updated: Date
         let net: Date
+        let window_start: Date
+        let window_end: Date
+        let net_precision: NetPrecision
         let rocket: Rocket
         let mission: Mission
         let pad: Pad
         let image: String?
+        
+        struct Status: Decodable {
+            let name: String
+            let abbrev: String
+        }
+        
+        struct NetPrecision: Decodable {
+            let name: String
+            let abbrev: String
+            let description: String
+        }
 
         struct Rocket: Decodable {
             let configuration: RocketConfiguration

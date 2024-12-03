@@ -14,7 +14,12 @@ extension Launch {
     convenience init(from result: LaunchResultCollection.Result) {
         self.init(
             code: result.id,
+            status: result.status.abbrev,
+            last_updated: result.last_updated,
             net: result.net,
+            window_start: result.window_start,
+            window_end: result.window_end,
+            net_precision: result.net_precision.abbrev,
             vehicle: result.rocket.configuration.name,
             mission: result.mission.name,
             details: result.mission.description,
