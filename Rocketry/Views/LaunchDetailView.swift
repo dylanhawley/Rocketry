@@ -40,6 +40,7 @@ struct LaunchDetailView: View {
                 // Launch details
                 VStack(alignment: .leading, spacing: 24) {
                     MissionDetailsView(launch: launch)
+                    URL(string: launch.url).map { LivestreamView(source: $0) }
                     PadMapView(location: launch.location, visibility: launch.weather?.visibility)
                     launch.weather.map { ConditionsView(weather: $0) }
                 }

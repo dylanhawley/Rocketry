@@ -14,6 +14,7 @@ extension Launch {
     convenience init(from result: LaunchResultCollection.Result) {
         self.init(
             code: result.id,
+            url: result.url,
             status: result.status.abbrev,
             last_updated: result.last_updated,
             net: result.net,

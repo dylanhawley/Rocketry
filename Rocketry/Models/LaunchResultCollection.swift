@@ -12,6 +12,7 @@ struct LaunchResultCollection: Decodable {
 
     struct Result: Decodable {
         let id: String
+        let url: String
         let status: Status
         let last_updated: Date
         let net: Date

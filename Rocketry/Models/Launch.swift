@@ -13,6 +13,7 @@ class Launch {
     /// A unique identifier associated with each launch.
     @Attribute(.unique) var code: String
 
+    var url: String
     var status: MissionStatus?
     var last_updated: Date
     var net: Date
@@ -32,6 +33,7 @@ class Launch {
     /// Creates a new launch from the specified values.
     init(
         code: String,
+        url: String,
         status: String,
         last_updated: Date,
         net: Date,
@@ -50,6 +52,7 @@ class Launch {
         weather: WeatherModel? = nil
     ) {
         self.code = code
+        self.url = url
         self.status = MissionStatus(rawValue: status)
         self.last_updated = last_updated
         self.net = net
