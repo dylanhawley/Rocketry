@@ -11,11 +11,11 @@ import Solar
 struct LaunchDetailView: View {
     let launch: Launch
     @Environment(\.dismiss) private var dismiss
+    @State private var detailedLaunch: LaunchDetailed? = nil
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                // Header with background
                 VStack(alignment: .leading) {
                     Text(launch.mission)
                         .font(.largeTitle)
@@ -40,7 +40,13 @@ struct LaunchDetailView: View {
                 // Launch details
                 VStack(alignment: .leading, spacing: 24) {
                     MissionDetailsView(launch: launch)
-                    URL(string: launch.url).map { LivestreamView(source: $0) }
+                    if let detailedLaunch = detailedLaunch {
+                        let vidURLs = detailedLaunch.vidURLs
+                        if !vidURLs.isEmpty {
+                            let highestPriorityVideo = vidURLs.max(by: { $0.priority < $1.priority })
+                            LivestreamView(source: highestPriorityVideo!)
+                        }
+                    }
                     PadMapView(location: launch.location, visibility: launch.weather?.visibility)
                     launch.weather.map { ConditionsView(weather: $0) }
                 }
@@ -52,6 +58,22 @@ struct LaunchDetailView: View {
             WeatherAnimationView(launch: launch)
             .ignoresSafeArea()
         )
+        .onAppear {
+            Task { await fetchVideoURL() }
+        }
+    }
+
+    private func fetchVideoURL() async {
+        do {
+            let source = URL(string: launch.url)!
+            let (data, _) = try await URLSession.shared.data(from: source)
+            let decoded = try JSONDecoder().decode(LaunchDetailed.self, from: data)
+            await MainActor.run {
+                self.detailedLaunch = decoded
+            }
+        } catch {
+            print("Failed to fetch or decode detailed launch data: \(error)")
+        }
     }
 }
 
