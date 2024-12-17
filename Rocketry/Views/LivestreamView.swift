@@ -13,52 +13,38 @@ struct LivestreamView: View {
     @State private var detailedLaunch: LaunchDetailed? = nil
     
     var body: some View {
-//        VStack(alignment: .leading) {
-//            (Text(Image(systemName: "video")) + Text(" ") + Text("Livestream".uppercased()))
-//                .font(Font.system(size: 12))
-//                .fontWeight(.medium)
-//            
-//            if let detailedLaunch = detailedLaunch {
-//                let vidURLs = detailedLaunch.vidURLs
-//                if !vidURLs.isEmpty {
-//                    let highestPriorityVideo = vidURLs.max(by: { $0.priority < $1.priority })
-//                    Link(destination: URL(string: highestPriorityVideo!.url)!) {
-//                        AsyncImage(url: URL(string: highestPriorityVideo!.feature_image)) { image in
-//                            image
-//                                .resizable()
-//                                .scaledToFit()
-//                                .clipShape(RoundedRectangle(cornerRadius: 10))
-//                        } placeholder: {
-//                            ProgressView()
-//                        }
-//                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
-//                    }
-//                }
-//            }
-//        }
-//        .frame(maxWidth: .infinity, alignment: .leading)
-//        .padding()
-//        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
-        if let detailedLaunch = detailedLaunch {
-            let vidURLs = detailedLaunch.vidURLs
-            if !vidURLs.isEmpty {
-                let highestPriorityVideo = vidURLs.max(by: { $0.priority < $1.priority })
-                Link(destination: URL(string: highestPriorityVideo!.url)!) {
-                    AsyncImage(url: URL(string: highestPriorityVideo!.feature_image)) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .overlay(Image(systemName: "play"), alignment: .center)
-                    } placeholder: {
-                        ProgressView()
+        VStack() {
+            if let detailedLaunch = detailedLaunch {
+                let vidURLs = detailedLaunch.vidURLs
+                if !vidURLs.isEmpty {
+                    let highestPriorityVideo = vidURLs.max(by: { $0.priority < $1.priority })
+                    Link(destination: URL(string: highestPriorityVideo!.url)!) {
+                        AsyncImage(url: URL(string: highestPriorityVideo!.feature_image), transaction: Transaction(animation: .spring)) {
+                            phase in
+                            switch phase {
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .overlay(
+                                        Image(systemName: "play.fill")
+                                            .padding()
+                                            .foregroundColor(.white)
+                                            .font(.largeTitle)
+                                            .background(.ultraThinMaterial, in: Circle())
+                                    )
+                            default:
+                                EmptyView()
+                            }
+                        }
+                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
                     }
-                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
-                }
-                .onAppear {
-                    Task { await fetchVideoURL() }
                 }
             }
+        }
+        .onAppear {
+            Task { await fetchVideoURL() }
         }
     }
     

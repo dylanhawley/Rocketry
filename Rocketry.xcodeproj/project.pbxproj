@@ -42,6 +42,7 @@
 		A967704D2D02A14D00791EBE /* LaunchDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A967704C2D02A14D00791EBE /* LaunchDetailed.swift */; };
 		A967704E2D02A14D00791EBE /* LaunchDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A967704C2D02A14D00791EBE /* LaunchDetailed.swift */; };
 		A967712A2D07F72A00791EBE /* LivestreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96771292D07F72A00791EBE /* LivestreamView.swift */; };
+		A96B0A592D0BE9730068E7C4 /* Rocketry_WidgetTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B0A582D0BE9730068E7C4 /* Rocketry_WidgetTimer.swift */; };
 		A96CAC8B2C3751DF001AC10B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
 		A9D0243C2CAFBDCF001902E7 /* Launch+ResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */; };
 		A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
@@ -118,6 +119,7 @@
 		A967704A2CFE6EA600791EBE /* MissionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsView.swift; sourceTree = "<group>"; };
 		A967704C2D02A14D00791EBE /* LaunchDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailed.swift; sourceTree = "<group>"; };
 		A96771292D07F72A00791EBE /* LivestreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivestreamView.swift; sourceTree = "<group>"; };
+		A96B0A582D0BE9730068E7C4 /* Rocketry_WidgetTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocketry_WidgetTimer.swift; sourceTree = "<group>"; };
 		A96CAC8A2C3751DF001AC10B /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		A9F1E2AA2CA6A9ED0048BC1A /* Rocketry Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rocketry Widget.entitlements"; sourceTree = "<group>"; };
 		A9F1E2AB2CA6AAFA0048BC1A /* Rocketry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rocketry.entitlements; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				FC7EA8C32ADE23640072BB8F /* Rocketry_WidgetBundle.swift */,
 				FC7EA8C52ADE23640072BB8F /* Rocketry_WidgetLiveActivity.swift */,
 				FC7EA8C72ADE23640072BB8F /* Rocketry_Widget.swift */,
+				A96B0A582D0BE9730068E7C4 /* Rocketry_WidgetTimer.swift */,
 				FC7EA8C92ADE23640072BB8F /* AppIntent.swift */,
 				FC7EA8CB2ADE23670072BB8F /* Assets.xcassets */,
 				FC7EA8CD2ADE23670072BB8F /* Info.plist */,
@@ -438,6 +441,7 @@
 				A967704E2D02A14D00791EBE /* LaunchDetailed.swift in Sources */,
 				A93D3F4D2CC0C13100933171 /* Array-GradientStop.swift in Sources */,
 				A935DA4D2CDAA9D1006C8224 /* WeatherModel.swift in Sources */,
+				A96B0A592D0BE9730068E7C4 /* Rocketry_WidgetTimer.swift in Sources */,
 				A93D3F4B2CC0C12500933171 /* Color-Custom.swift in Sources */,
 				A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */,
 				FC7EA8C62ADE23640072BB8F /* Rocketry_WidgetLiveActivity.swift in Sources */,
