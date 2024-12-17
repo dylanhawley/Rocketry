@@ -48,6 +48,9 @@ struct LaunchDetailView: View {
                 
                 // Launch details
                 VStack(alignment: .leading) {
+                    if let weather = launch.weather, weather.cloudCover < 0.25 && weather.visibility > 13 && weather.precipitationChance < 0.05 {
+                        GoodToWatchView()
+                    }
                     MissionDetailsView(launch: launch)
                     if let detailedLaunch = detailedLaunch {
                         let vidURLs = detailedLaunch.vidURLs
