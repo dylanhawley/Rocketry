@@ -15,11 +15,20 @@ struct LaunchDetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                VStack(alignment: .leading) {
+            VStack(spacing: 16) {
+                HStack {
                     Text(launch.mission)
                         .font(.largeTitle)
                         .bold()
+                    if launch.status == .go {
+                        Spacer()
+                        Text("Go")
+                            .padding(5)
+                            .background(Color(.green))
+                            .cornerRadius(5)
+                    }
+                }
+                VStack(alignment: .leading) {
                     FormattedDateView(date: launch.net)
                         .font(.title3)
                     ScrollView(.horizontal) {
@@ -38,7 +47,7 @@ struct LaunchDetailView: View {
                 }
                 
                 // Launch details
-                VStack(alignment: .leading, spacing: 24) {
+                VStack(alignment: .leading) {
                     MissionDetailsView(launch: launch)
                     if let detailedLaunch = detailedLaunch {
                         let vidURLs = detailedLaunch.vidURLs

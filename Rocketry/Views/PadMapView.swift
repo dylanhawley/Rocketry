@@ -15,16 +15,29 @@ struct PadMapView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            (Text(Image(systemName: "mappin.and.ellipse")) + Text(" ") + Text("Visibility".uppercased()))
+            (Text(Image(systemName: "eye.fill")) + Text(" ") + Text("Visibility".uppercased()))
                 .font(Font.system(size: 12))
-                .fontWeight(.medium)
+                .foregroundStyle(.secondary)
+                .fontWeight(.semibold)
             
             Map(position: $position, interactionModes: []) {
                 Marker(location.name, image: "rocket", coordinate: location.coordinate)
-                visibility.map {
-                    MapCircle(center: location.coordinate, radius: $0)
+                if let visibility = visibility {
+                    MapCircle(center: location.coordinate, radius: visibility)
                         .foregroundStyle(.mint.opacity(0.5))
                         .mapOverlayLevel(level: .aboveRoads)
+
+                    let endCoordinate = location.coordinate.destination(distance: visibility, bearing: 90)
+                    MapPolyline(coordinates: [location.coordinate, endCoordinate])
+                        .stroke(.mint, lineWidth: 2)
+                        .mapOverlayLevel(level: .aboveRoads)
+                    
+                    Annotation("", coordinate: endCoordinate) {
+                        Text(formatDistance(visibility))
+                            .font(.caption)
+                            .padding(4)
+                            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 4))
+                    }
                 }
             }
             .cornerRadius(10)
@@ -33,6 +46,38 @@ struct PadMapView: View {
         }
         .padding()
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
+    }
+
+    private func formatDistance(_ meters: Double) -> String {
+        let useMetric = UserDefaults.standard.bool(forKey: "useMetricSystem")
+        let measurementInMeters = Measurement(value: meters, unit: UnitLength.meters)
+        
+        let formatter = MeasurementFormatter()
+        formatter.unitOptions = .providedUnit
+        formatter.numberFormatter.maximumFractionDigits = 0
+        
+        let convertedMeasurement = useMetric 
+            ? measurementInMeters.converted(to: .kilometers)
+            : measurementInMeters.converted(to: .miles)
+            
+        return formatter.string(from: convertedMeasurement)
+    }
+}
+
+extension CLLocationCoordinate2D {
+    func destination(distance: Double, bearing: Double) -> CLLocationCoordinate2D {
+        let distanceRadians = distance / 6371000.0 // Earth's radius in meters
+        let bearingRadians = bearing * .pi / 180
+        let lat1 = latitude * .pi / 180
+        let lon1 = longitude * .pi / 180
+        
+        let lat2 = asin(sin(lat1) * cos(distanceRadians) + 
+                       cos(lat1) * sin(distanceRadians) * cos(bearingRadians))
+        let lon2 = lon1 + atan2(sin(bearingRadians) * sin(distanceRadians) * cos(lat1),
+                               cos(distanceRadians) - sin(lat1) * sin(lat2))
+        
+        return CLLocationCoordinate2D(latitude: lat2 * 180 / .pi,
+                                    longitude: lon2 * 180 / .pi)
     }
 }
 

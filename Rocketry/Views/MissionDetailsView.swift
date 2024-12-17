@@ -16,9 +16,8 @@ struct MissionDetailsView: View {
                 .padding(5)
                 .background(Color(.tertiarySystemFill))
                 .cornerRadius(5)
-            Text(launch.mission)
-                .font(.headline)
             Text(launch.details)
+                .font(.body)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()

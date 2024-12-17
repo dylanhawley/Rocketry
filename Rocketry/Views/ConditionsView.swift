@@ -26,18 +26,30 @@ struct ConditionsView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            (Text(Image(systemName: "cloud")) + Text(" ") + Text("Cloud Cover".uppercased()))
-                .font(Font.system(size: 12))
-                .fontWeight(.medium)
-            ProgressView(value: weather.cloudCover)
-                .progressViewStyle(
-                    RangedProgressView(range: 0...1, foregroundColor: AnyShapeStyle(cloudGradient), backgroundColor: .clear)
-                )
-                .frame(maxHeight: 5)
+        HStack{
+            VStack(alignment: .leading, spacing: 10) {
+                (Text(Image(systemName: "cloud.fill")) + Text(" ") + Text("Cloud Cover".uppercased()))
+                    .font(Font.system(size: 12))
+                    .foregroundStyle(.secondary)
+                    .fontWeight(.semibold)
+                Text("\(Int(weather.cloudCover * 100))%")
+                    .font(.title)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
+            
+            VStack(alignment: .leading, spacing: 10) {
+                (Text(Image(systemName: "drop.fill")) + Text(" ") + Text("Precipitation".uppercased()))
+                    .font(Font.system(size: 12))
+                    .foregroundStyle(.secondary)
+                    .fontWeight(.semibold)
+                Text("\(Int(weather.precipitationChance * 100))%")
+                    .font(.title)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding()
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
     }
 }
