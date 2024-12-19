@@ -69,6 +69,13 @@ class Launch {
         self.timezone_name = timezone_name
         self.weather = weather
     }
+    
+    func isGoodViewingConditions() -> Bool {
+        if let weather = self.weather, weather.cloudCover < 0.25 && weather.visibility > 13 && weather.precipitationChance < 0.05 {
+            return true
+        }
+        return false
+    }
 }
 
 /// Represents the status of a launch.
@@ -79,6 +86,17 @@ enum MissionStatus: String, Codable {
     case success = "Success"
     case inFlight = "In Flight"
 
+    /// Provides a human-readable abbreviation of the status.
+    var abbrev: String {
+        switch self {
+        case .tbd: return "TBD"
+        case .tbc: return "TBC"
+        case .go: return "Go"
+        case .success: return "Success"
+        case .inFlight: return "In Flight"
+        }
+    }
+    
     /// Provides a human-readable description of the status.
     var description: String {
         switch self {
@@ -87,6 +105,16 @@ enum MissionStatus: String, Codable {
         case .go: return "Go for Launch"
         case .success: return "Launch Successful"
         case .inFlight: return "Launch In Flight"
+        }
+    }
+    
+    var displayColor: Color {
+        switch self {
+        case .tbd: return .yellow
+        case .tbc: return .yellow
+        case .go: return .green
+        case .success: return .green
+        case .inFlight: return .blue
         }
     }
 }

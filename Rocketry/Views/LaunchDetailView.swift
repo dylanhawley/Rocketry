@@ -16,39 +16,17 @@ struct LaunchDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                HStack {
+                VStack(alignment: .leading) {
                     Text(launch.mission)
                         .font(.largeTitle)
                         .bold()
-                    if launch.status == .go {
-                        Spacer()
-                        Text("Go")
-                            .padding(5)
-                            .background(Color(.green))
-                            .cornerRadius(5)
-                    }
-                }
-                VStack(alignment: .leading) {
                     FormattedDateView(date: launch.net)
                         .font(.title3)
-                    ScrollView(.horizontal) {
-                        HStack {
-                            Text(launch.vehicle)
-                                .padding(5)
-                                .background(Color(.tertiarySystemFill))
-                                .cornerRadius(5)
-                            Text(launch.pad)
-                                .padding(5)
-                                .background(Color(.tertiarySystemFill))
-                                .cornerRadius(5)
-                        }
-                        .font(.system(size: 16, weight: .light))
-                    }
                 }
                 
                 // Launch details
                 VStack(alignment: .leading) {
-                    if let weather = launch.weather, weather.cloudCover < 0.25 && weather.visibility > 13 && weather.precipitationChance < 0.05 {
+                    if launch.isGoodViewingConditions() {
                         GoodToWatchView()
                     }
                     MissionDetailsView(launch: launch)

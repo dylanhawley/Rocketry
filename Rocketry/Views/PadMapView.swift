@@ -49,18 +49,21 @@ struct PadMapView: View {
     }
 
     private func formatDistance(_ meters: Double) -> String {
-        let useMetric = UserDefaults.standard.bool(forKey: "useMetricSystem")
         let measurementInMeters = Measurement(value: meters, unit: UnitLength.meters)
-        
         let formatter = MeasurementFormatter()
         formatter.unitOptions = .providedUnit
         formatter.numberFormatter.maximumFractionDigits = 0
-        
-        let convertedMeasurement = useMetric 
-            ? measurementInMeters.converted(to: .kilometers)
-            : measurementInMeters.converted(to: .miles)
-            
-        return formatter.string(from: convertedMeasurement)
+
+        let targetUnit: UnitLength = {
+            switch Locale.current.measurementSystem {
+            case .us, .uk:
+                return .miles
+            default:
+                return .kilometers
+            }
+        }()
+
+        return formatter.string(from: measurementInMeters.converted(to: targetUnit))
     }
 }
 

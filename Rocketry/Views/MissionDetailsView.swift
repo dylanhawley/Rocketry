@@ -12,10 +12,23 @@ struct MissionDetailsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            (Text(Image(systemName: "globe.americas")) + Text(" ") + Text(launch.orbit))
-                .padding(5)
-                .background(Color(.tertiarySystemFill))
-                .cornerRadius(5)
+            HStack {
+                if let status = launch.status {
+                    Text(status.description)
+                        .padding(5)
+                        .background(Color(.tertiarySystemFill))
+                        .cornerRadius(5)
+                        .foregroundStyle(status.displayColor)
+                }
+                Text("🚀 " + launch.vehicle)
+                    .padding(5)
+                    .background(Color(.tertiarySystemFill))
+                    .cornerRadius(5)
+                (Text(Image(systemName: "globe.americas")) + Text(" ") + Text(launch.orbit))
+                    .padding(5)
+                    .background(Color(.tertiarySystemFill))
+                    .cornerRadius(5)
+            }
             Text(launch.details)
                 .font(.body)
         }
