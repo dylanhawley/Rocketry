@@ -22,6 +22,26 @@ struct Location: Codable {
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
+    
+    /// The city associated with the location.
+    func fetchLocality() async -> String? {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        return await withCheckedContinuation { continuation in
+            location.placemark { placemark, _ in
+                continuation.resume(returning: placemark?.locality)
+            }
+        }
+    }
+    
+    /// The state or province associated with the location.
+    func fetchAdministrativeArea() async -> String? {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        return await withCheckedContinuation { continuation in
+            location.placemark { placemark, _ in
+                continuation.resume(returning: placemark?.administrativeArea)
+            }
+        }
+    }
 }
 
 /// A string represenation of the location.
@@ -34,5 +54,11 @@ extension Location: CustomStringConvertible {
         + latitude.formatted(.number.precision(.fractionLength(1)))
         + "] "
         + name
+    }
+}
+
+extension CLLocation {
+    func placemark(completion: @escaping (_ placemark: CLPlacemark?, _ error: Error?) -> ()) {
+        CLGeocoder().reverseGeocodeLocation(self) { completion($0?.first, $1) }
     }
 }
