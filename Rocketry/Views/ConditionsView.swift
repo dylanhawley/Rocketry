@@ -28,11 +28,7 @@ struct ConditionsView: View {
     var body: some View {
         HStack{
             VStack(alignment: .leading, spacing: 10) {
-                Label {
-                    Text("Cloud Cover".uppercased())
-                } icon: {
-                    Image(systemName: "cloud.fill")
-                }
+                Label("Cloud Cover".uppercased(), systemImage: "cloud.fill")
                 .font(Font.system(size: 12))
                 .foregroundStyle(.secondary)
                 .fontWeight(.semibold)
@@ -45,11 +41,7 @@ struct ConditionsView: View {
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
             
             VStack(alignment: .leading, spacing: 10) {
-                Label {
-                    Text("Precipitation".uppercased())
-                } icon: {
-                    Image(systemName: "drop.fill")
-                }
+                Label("Precipitation".uppercased(), systemImage: "drop.fill")
                 .font(Font.system(size: 12))
                 .foregroundStyle(.secondary)
                 .fontWeight(.semibold)

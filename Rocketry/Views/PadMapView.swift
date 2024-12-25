@@ -15,11 +15,7 @@ struct PadMapView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Label {
-                Text("Visibility".uppercased())
-            } icon: {
-                Image(systemName: "eye.fill")
-            }
+            Label("Visibility".uppercased(), systemImage: "eye.fill")
             .font(Font.system(size: 12))
             .foregroundStyle(.secondary)
             .fontWeight(.semibold)

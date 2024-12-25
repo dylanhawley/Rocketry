@@ -23,7 +23,6 @@ struct LaunchDetailView: View {
                         .lineLimit(1)
                         .minimumScaleFactor(0.6)
                     FormattedDateView(date: launch.net)
-//                        .font(.title3)
                 }
                 
                 // Launch details
