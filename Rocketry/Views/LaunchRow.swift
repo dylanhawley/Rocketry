@@ -13,26 +13,37 @@ struct LaunchRow: View {
     var launch: Launch
 
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(launch.mission.removingParenthesizedText())
-                    .font(.system(size: 18, weight: .semibold))
-                    .shadow(color: .black.opacity(0.9), radius: 4)
-                Spacer()
-                if launch.isGoodViewingConditions() {
-                    Image(systemName: "eye.fill")
-                        .foregroundStyle(.green)
-                        .imageScale(.small)
+        HStack {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(launch.mission.removingParenthesizedText())
+                        .font(.system(size: 18, weight: .semibold))
+                        .shadow(color: .black.opacity(0.9), radius: 4)
+                    Spacer()
+                    if launch.isGoodViewingConditions() {
+                        Image(systemName: "eye.fill")
+                            .foregroundStyle(.green)
+                            .imageScale(.small)
+                    }
                 }
+                Group {
+                    Text(launch.location.localityAndAdministrativeArea)
+                    Text(launch.launch_service_provider)
+                    Spacer()
+                    FormattedDateView(date: launch.net)
+                }
+                .font(.system(size: 14, weight: .medium))
+                .opacity(0.8)
             }
-            Group {
-                Text(launch.location.localityAndAdministrativeArea)
-                Text(launch.launch_service_provider)
-                Spacer()
-                FormattedDateView(date: launch.net)
+            Spacer()
+            if launch.vehicle == "Falcon 9" {
+                Image("falcon9")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 50, height: 120, alignment: .top)
+                    .clipped()
+                    .padding(.top, 20)
             }
-            .font(.system(size: 14, weight: .medium))
-            .opacity(0.8)
         }
         .padding()
         .frame(height: 120)
