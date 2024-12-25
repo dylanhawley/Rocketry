@@ -22,7 +22,7 @@ struct PadMapView: View {
             .labelStyle(CustomLabel(spacing: 4))
             
             Map(position: $position, interactionModes: []) {
-                Marker(location.name, image: "rocket", coordinate: location.coordinate)
+                Marker(location.name, image: "rocket.fill", coordinate: location.coordinate)
                 if let visibility = visibility {
                     MapCircle(center: location.coordinate, radius: visibility)
                         .foregroundStyle(.mint.opacity(0.5))

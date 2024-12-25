@@ -21,21 +21,18 @@ struct LaunchRow: View {
                 Spacer()
                 if launch.isGoodViewingConditions() {
                     Image(systemName: "eye.fill")
-                        .font(.system(size: 12))
                         .foregroundStyle(.green)
+                        .imageScale(.small)
                 }
             }
             Group {
                 Text(launch.location.localityAndAdministrativeArea)
                 Text(launch.launch_service_provider)
                 Spacer()
-                
+                FormattedDateView(date: launch.net)
             }
             .font(.system(size: 14, weight: .medium))
             .opacity(0.8)
-            FormattedDateView(date: launch.net)
-                .font(.system(size: 14, weight: .medium))
-                .opacity(0.8)
         }
         .padding()
         .frame(height: 120)

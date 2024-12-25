@@ -9,10 +9,7 @@ import SwiftUI
 
 struct GoodToWatchView: View {
     var body: some View {
-        HStack {
-            Image(systemName: "eye.fill")
-            Text("Good Viewing Conditions")
-        }
+        Label("Good Viewing Conditions", systemImage: "eye.fill")
         .foregroundColor(.green)
         .frame(maxWidth: .infinity, alignment: .leading)
     }

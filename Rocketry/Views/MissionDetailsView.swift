@@ -16,7 +16,7 @@ struct MissionDetailsView: View {
                 if let status = launch.status {
                     Text(status.abbrev)
                     .padding(5)
-                    .background(Color(.tertiarySystemFill))
+                    .background(status.displayColor.opacity(0.1))
                     .cornerRadius(5)
                     .foregroundStyle(status.displayColor)
                 }
