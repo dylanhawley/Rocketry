@@ -20,11 +20,11 @@ class Launch {
     var window_start: Date
     var window_end: Date
     var net_precision: NetPrecision?
+    var launch_service_provider: String
     var vehicle: String
     var mission: String
     var details: String
     var orbit: String
-    var pad: String
     var country_code: String
     var location: Location
     var timezone_name: String
@@ -40,11 +40,14 @@ class Launch {
         window_start: Date,
         window_end: Date,
         net_precision: String,
+        launch_service_provider: String,
         vehicle: String,
         mission: String,
         details: String,
         orbit: String,
         pad: String,
+        pad_locality: String,
+        pad_details: String,
         country_code: String,
         longitude: Double,
         latitude: Double,
@@ -59,13 +62,13 @@ class Launch {
         self.window_start = window_start
         self.window_end = window_end
         self.net_precision = NetPrecision(rawValue: net_precision)
+        self.launch_service_provider = launch_service_provider
         self.vehicle = vehicle
         self.mission = mission
         self.details = details
         self.orbit = orbit
-        self.pad = pad
         self.country_code = country_code
-        self.location = Location(name: pad, longitude: longitude, latitude: latitude)
+        self.location = Location(name: pad, locality: pad_locality, longitude: longitude, latitude: latitude, details: pad_details)
         self.timezone_name = timezone_name
         self.weather = weather
     }
@@ -151,7 +154,7 @@ extension Array where Element: Launch {
 // A string represenation of the launch.
 extension Launch: CustomStringConvertible {
     var description: String {
-        "\(code) \(mission) \(vehicle) \(pad)"
+        "\(code) \(mission) \(vehicle) \(location.name)"
     }
 }
 
@@ -182,3 +185,16 @@ extension Launch {
 
 /// Ensure that the model's conformance to Identifiable is public.
 extension Launch: Identifiable {}
+
+extension String {
+    /// Returns a copy of the string without any parenthesized text (and the parentheses themselves).
+    func removingParenthesizedText() -> String {
+        self.replacingOccurrences(
+            of: "\\(.*?\\)",
+            with: "",
+            options: .regularExpression,
+            range: nil
+        )
+        .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}

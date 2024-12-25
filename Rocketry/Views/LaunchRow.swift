@@ -13,30 +13,32 @@ struct LaunchRow: View {
     var launch: Launch
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(launch.mission)
-                .font(.headline)
-            ScrollView(.horizontal) {
-                HStack {
-                    Text(launch.vehicle)
-                        .padding(5)
-                        .background(Color(.tertiarySystemFill))
-                        .cornerRadius(5)
-                    Text(launch.pad)
-                        .padding(5)
-                        .background(Color(.tertiarySystemFill))
-                        .cornerRadius(5)
+        VStack(alignment: .leading) {
+            HStack {
+                Text(launch.mission.removingParenthesizedText())
+                    .font(.system(size: 18, weight: .semibold))
+                    .shadow(color: .black.opacity(0.9), radius: 4)
+                Spacer()
+                if launch.isGoodViewingConditions() {
+                    Image(systemName: "eye.fill")
+                        .font(.system(size: 12))
+                        .foregroundStyle(.green)
                 }
-                .font(.system(size: 16, weight: .light))
             }
-            Text(launch.details)
-                .font(.system(size: 16, weight: .light))
-                .lineLimit(3)
+            Group {
+                Text(launch.location.localityAndAdministrativeArea)
+                Text(launch.launch_service_provider)
+                Spacer()
+                
+            }
+            .font(.system(size: 14, weight: .medium))
+            .opacity(0.8)
             FormattedDateView(date: launch.net)
-                .font(.system(size: 16, weight: .light))
+                .font(.system(size: 14, weight: .medium))
                 .opacity(0.8)
         }
         .padding()
+        .frame(height: 120)
         .background(WeatherAnimationView(launch: launch))
         .cornerRadius(15)
     }
@@ -47,7 +49,7 @@ struct FormattedDateView: View {
 
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
+        formatter.dateFormat = "MMMM d"
         return formatter
     }()
 

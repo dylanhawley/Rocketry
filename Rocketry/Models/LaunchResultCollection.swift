@@ -19,6 +19,7 @@ struct LaunchResultCollection: Decodable {
         let window_start: Date
         let window_end: Date
         let net_precision: NetPrecision
+        let launch_service_provider: LaunchServiceProvider
         let rocket: Rocket
         let mission: Mission
         let pad: Pad
@@ -34,18 +35,24 @@ struct LaunchResultCollection: Decodable {
             let abbrev: String
             let description: String
         }
+        
+        struct LaunchServiceProvider: Decodable {
+            let name: String
+        }
 
         struct Rocket: Decodable {
             let configuration: RocketConfiguration
 
             struct RocketConfiguration: Decodable {
                 let name: String
+                let full_name: String
             }
         }
 
         struct Mission: Decodable {
             let name: String
             let description: String
+            let type: String
             let orbit: Orbit
 
             struct Orbit: Decodable {
@@ -61,6 +68,8 @@ struct LaunchResultCollection: Decodable {
             let location: PadLocation
 
             struct PadLocation: Decodable {
+                let name: String
+                let description: String
                 let timezone_name: String
             }
         }

@@ -14,20 +14,30 @@ struct MissionDetailsView: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 if let status = launch.status {
-                    Text(status.description)
-                        .padding(5)
-                        .background(Color(.tertiarySystemFill))
-                        .cornerRadius(5)
-                        .foregroundStyle(status.displayColor)
+                    Text(status.abbrev)
+                    .padding(5)
+                    .background(Color(.tertiarySystemFill))
+                    .cornerRadius(5)
+                    .foregroundStyle(status.displayColor)
                 }
-                Text("🚀 " + launch.vehicle)
-                    .padding(5)
-                    .background(Color(.tertiarySystemFill))
-                    .cornerRadius(5)
-                (Text(Image(systemName: "globe.americas")) + Text(" ") + Text(launch.orbit))
-                    .padding(5)
-                    .background(Color(.tertiarySystemFill))
-                    .cornerRadius(5)
+                Label {
+                    Text(launch.vehicle)
+                } icon: {
+                    Image("rocket")
+                }
+                .padding(5)
+                .background(Color(.tertiarySystemFill))
+                .cornerRadius(5)
+                .labelStyle(CustomLabel(spacing: 4))
+                Label {
+                    Text(launch.orbit)
+                } icon: {
+                    Image(systemName: "globe.americas")
+                }
+                .padding(5)
+                .background(Color(.tertiarySystemFill))
+                .cornerRadius(5)
+                .labelStyle(CustomLabel(spacing: 4))
             }
             Text(launch.details)
                 .font(.body)

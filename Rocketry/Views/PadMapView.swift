@@ -15,10 +15,15 @@ struct PadMapView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            (Text(Image(systemName: "eye.fill")) + Text(" ") + Text("Visibility".uppercased()))
-                .font(Font.system(size: 12))
-                .foregroundStyle(.secondary)
-                .fontWeight(.semibold)
+            Label {
+                Text("Visibility".uppercased())
+            } icon: {
+                Image(systemName: "eye.fill")
+            }
+            .font(Font.system(size: 12))
+            .foregroundStyle(.secondary)
+            .fontWeight(.semibold)
+            .labelStyle(CustomLabel(spacing: 4))
             
             Map(position: $position, interactionModes: []) {
                 Marker(location.name, image: "rocket", coordinate: location.coordinate)

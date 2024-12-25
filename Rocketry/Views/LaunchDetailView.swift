@@ -17,11 +17,13 @@ struct LaunchDetailView: View {
         ScrollView {
             VStack(spacing: 16) {
                 VStack(alignment: .leading) {
-                    Text(launch.mission)
+                    Text(launch.mission.removingParenthesizedText())
                         .font(.largeTitle)
                         .bold()
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.6)
                     FormattedDateView(date: launch.net)
-                        .font(.title3)
+//                        .font(.title3)
                 }
                 
                 // Launch details
@@ -39,6 +41,11 @@ struct LaunchDetailView: View {
                     }
                     PadMapView(location: launch.location, visibility: launch.weather?.visibility)
                     launch.weather.map { ConditionsView(weather: $0) }
+                    Text("Last updated: \(launch.last_updated.formatted())")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .padding(.top, 16)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
             .padding()
@@ -63,6 +70,17 @@ struct LaunchDetailView: View {
             }
         } catch {
             print("Failed to fetch or decode detailed launch data: \(error)")
+        }
+    }
+}
+
+struct CustomLabel: LabelStyle {
+    var spacing: Double = 0.0
+    
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(spacing: spacing) {
+            configuration.icon
+            configuration.title
         }
     }
 }

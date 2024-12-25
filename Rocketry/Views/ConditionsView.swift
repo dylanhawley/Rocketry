@@ -28,10 +28,15 @@ struct ConditionsView: View {
     var body: some View {
         HStack{
             VStack(alignment: .leading, spacing: 10) {
-                (Text(Image(systemName: "cloud.fill")) + Text(" ") + Text("Cloud Cover".uppercased()))
-                    .font(Font.system(size: 12))
-                    .foregroundStyle(.secondary)
-                    .fontWeight(.semibold)
+                Label {
+                    Text("Cloud Cover".uppercased())
+                } icon: {
+                    Image(systemName: "cloud.fill")
+                }
+                .font(Font.system(size: 12))
+                .foregroundStyle(.secondary)
+                .fontWeight(.semibold)
+                .labelStyle(CustomLabel(spacing: 4))
                 Text("\(Int(weather.cloudCover * 100))%")
                     .font(.title)
             }
@@ -40,10 +45,15 @@ struct ConditionsView: View {
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
             
             VStack(alignment: .leading, spacing: 10) {
-                (Text(Image(systemName: "drop.fill")) + Text(" ") + Text("Precipitation".uppercased()))
-                    .font(Font.system(size: 12))
-                    .foregroundStyle(.secondary)
-                    .fontWeight(.semibold)
+                Label {
+                    Text("Precipitation".uppercased())
+                } icon: {
+                    Image(systemName: "drop.fill")
+                }
+                .font(Font.system(size: 12))
+                .foregroundStyle(.secondary)
+                .fontWeight(.semibold)
+                .labelStyle(CustomLabel(spacing: 4))
                 Text("\(Int(weather.precipitationChance * 100))%")
                     .font(.title)
             }
