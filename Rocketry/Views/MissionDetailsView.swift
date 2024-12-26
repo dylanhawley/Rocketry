@@ -9,9 +9,14 @@ import SwiftUI
 
 struct MissionDetailsView: View {
     let launch: Launch
+    @State private var isExpanded: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
+            if launch.isGoodViewingConditions() {
+                GoodToWatchView()
+                Divider()
+            }
             HStack {
                 if let status = launch.status {
                     Text(status.abbrev)
@@ -40,8 +45,14 @@ struct MissionDetailsView: View {
                 .labelStyle(CustomLabel(spacing: 4))
             }
             Text(launch.details)
-                .font(.body)
+            .lineLimit(isExpanded ? nil : 3)
+            .onTapGesture {
+                withAnimation(.easeInOut(duration: 0.15)) {
+                    isExpanded.toggle()
+                }
+            }
         }
+        .font(Font.system(size: 16))
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))

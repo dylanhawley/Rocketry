@@ -21,7 +21,7 @@ struct LaunchRow: View {
                 Spacer()
                 if launch.isGoodViewingConditions() {
                     Image(systemName: "eye.fill")
-                        .foregroundStyle(.green)
+//                        .foregroundStyle(.green)
                         .imageScale(.small)
                 }
             }
@@ -52,9 +52,7 @@ struct FormattedDateView: View {
 
     private static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "h:mma z"
-        formatter.amSymbol = "am"
-        formatter.pmSymbol = "pm"
+        formatter.setLocalizedDateFormatFromTemplate("j:mm z")
         return formatter
     }()
 

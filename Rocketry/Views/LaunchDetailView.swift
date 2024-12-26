@@ -27,9 +27,6 @@ struct LaunchDetailView: View {
                 
                 // Launch details
                 VStack(alignment: .leading) {
-                    if launch.isGoodViewingConditions() {
-                        GoodToWatchView()
-                    }
                     MissionDetailsView(launch: launch)
                     if let detailedLaunch = detailedLaunch {
                         let vidURLs = detailedLaunch.vidURLs
