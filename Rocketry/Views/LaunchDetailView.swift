@@ -12,6 +12,7 @@ struct LaunchDetailView: View {
     let launch: Launch
     @Environment(\.dismiss) private var dismiss
     @State private var detailedLaunch: LaunchDetailed? = nil
+    @AppStorage("usePadTimeZone") private var usePadTimeZone: Bool = false
     
     var body: some View {
         ScrollView {
@@ -22,7 +23,9 @@ struct LaunchDetailView: View {
                         .bold()
                         .lineLimit(1)
                         .minimumScaleFactor(0.6)
-                    FormattedDateView(date: launch.net)
+                    FormattedDateView(date: launch.net, timeZone: usePadTimeZone
+                      ? .current
+                      : TimeZone(identifier: launch.timezone_name) ?? .current)
                 }
                 
                 // Launch details

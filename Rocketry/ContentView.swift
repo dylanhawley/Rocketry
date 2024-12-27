@@ -15,6 +15,8 @@ struct ContentView: View {
 
     @Query private var launches: [Launch]
     @State private var searchText: String = String()
+    @AppStorage("usePadTimeZone") private var usePadTimeZone: Bool = false
+    @State private var showingSettings = false
 
     var body: some View {
         NavigationStack {
@@ -28,6 +30,25 @@ struct ContentView: View {
             .task { await LaunchResultCollection.refresh(modelContext: modelContext) }
             .preferredColorScheme(.dark)
             .scrollIndicators(.never)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        Picker(selection: $usePadTimeZone, label: Text("Select Timezone")) {
+                            Text("System Timezone").tag(false)
+                            Text("Launch Pad Timezone").tag(true)
+                        }
+                        Button{showingSettings.toggle()} label: {
+                            Label("Settings", systemImage: "gear")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                    }
+                    .foregroundStyle(Color.white)
+                }
+            }
+        }
+        .sheet(isPresented: $showingSettings) {
+            SettingsView()
         }
     }
 }

@@ -11,6 +11,7 @@ import Solar
 
 struct LaunchRow: View {
     var launch: Launch
+    @AppStorage("usePadTimeZone") private var usePadTimeZone: Bool = false
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,7 +22,6 @@ struct LaunchRow: View {
                 Spacer()
                 if launch.isGoodViewingConditions() {
                     Image(systemName: "eye.fill")
-//                        .foregroundStyle(.green)
                         .imageScale(.small)
                 }
             }
@@ -29,7 +29,9 @@ struct LaunchRow: View {
                 Text(launch.location.localityAndAdministrativeArea)
                 Text(launch.launch_service_provider)
                 Spacer()
-                FormattedDateView(date: launch.net)
+                FormattedDateView(date: launch.net, timeZone: usePadTimeZone
+                  ? .current
+                  : TimeZone(identifier: launch.timezone_name) ?? .current)
             }
             .font(.system(size: 14, weight: .medium))
             .opacity(0.8)
@@ -43,24 +45,27 @@ struct LaunchRow: View {
 
 struct FormattedDateView: View {
     let date: Date
+    let timeZone: TimeZone
 
-    private static let dateFormatter: DateFormatter = {
+    private static func dateFormatter(for timeZone: TimeZone) -> DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d"
+        formatter.timeZone = timeZone
         return formatter
-    }()
+    }
 
-    private static let timeFormatter: DateFormatter = {
+    private static func timeFormatter(for timeZone: TimeZone) -> DateFormatter {
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("j:mm z")
+        formatter.timeZone = timeZone
         return formatter
-    }()
+    }
 
     var body: some View {
         HStack {
-            Text(Self.dateFormatter.string(from: date))
+            Text(Self.dateFormatter(for: timeZone).string(from: date))
             Spacer()
-            Text(Self.timeFormatter.string(from: date))
+            Text(Self.timeFormatter(for: timeZone).string(from: date))
         }
     }
 }
