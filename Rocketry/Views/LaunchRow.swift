@@ -30,8 +30,8 @@ struct LaunchRow: View {
                 Text(launch.launch_service_provider)
                 Spacer()
                 FormattedDateView(date: launch.net, timeZone: usePadTimeZone
-                  ? .current
-                  : TimeZone(identifier: launch.timezone_name) ?? .current)
+                  ? TimeZone(identifier: launch.timezone_name) ?? .current
+                  : .current)
             }
             .font(.system(size: 14, weight: .medium))
             .opacity(0.8)

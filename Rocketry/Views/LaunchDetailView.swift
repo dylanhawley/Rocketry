@@ -24,8 +24,8 @@ struct LaunchDetailView: View {
                         .lineLimit(1)
                         .minimumScaleFactor(0.6)
                     FormattedDateView(date: launch.net, timeZone: usePadTimeZone
-                      ? .current
-                      : TimeZone(identifier: launch.timezone_name) ?? .current)
+                      ? TimeZone(identifier: launch.timezone_name) ?? .current
+                      : .current)
                 }
                 
                 // Launch details
