@@ -19,11 +19,20 @@ struct MissionDetailsView: View {
             }
             HStack {
                 if let status = launch.status {
-                    Text(status.abbrev)
+                    Label {
+                        Text(status.abbrev)
+                    } icon: {
+                        if UIImage(systemName: status.iconName) != nil {
+                            Image(systemName: status.iconName)
+                        } else {
+                            Image(status.iconName)
+                        }
+                    }
                     .padding(5)
                     .background(status.displayColor.opacity(0.1))
                     .cornerRadius(5)
                     .foregroundStyle(status.displayColor)
+                    .labelStyle(CustomLabel(spacing: 4))
                 }
                 Label {
                     Text(launch.vehicle)

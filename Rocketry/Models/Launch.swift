@@ -120,6 +120,16 @@ enum MissionStatus: String, Codable {
         case .inFlight: return .blue
         }
     }
+    
+    var iconName: String {
+        switch self {
+        case .tbd: return "questionmark.circle"
+        case .tbc: return "questionmark.circle"
+        case .go: return "go.circle"
+        case .success: return "checkmark.circle"
+        case .inFlight: return "arrow.trianglehead.counterclockwise"
+        }
+    }
 }
 
 /// Represents the precision of a launch's net (No Earlier Than) time.
