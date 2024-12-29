@@ -72,13 +72,6 @@ class Launch {
         self.timezone_name = timezone_name
         self.weather = weather
     }
-    
-    func isGoodViewingConditions() -> Bool {
-        if let weather = self.weather, weather.cloudCover < 0.25 && weather.visibility > 13 && weather.precipitationChance < 0.05 {
-            return true
-        }
-        return false
-    }
 }
 
 /// Represents the status of a launch.

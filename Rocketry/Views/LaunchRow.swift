@@ -8,10 +8,15 @@
 import SwiftUI
 import Solar
 
-
 struct LaunchRow: View {
     var launch: Launch
     @AppStorage("usePadTimeZone") private var usePadTimeZone: Bool = false
+    @StateObject private var viewModel: WeatherViewModel
+        
+    init(launch: Launch) {
+        self.launch = launch
+        _viewModel = StateObject(wrappedValue: WeatherViewModel(weather: launch.weather))
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -20,7 +25,7 @@ struct LaunchRow: View {
                     .font(.system(size: 18, weight: .semibold))
                     .shadow(color: .black.opacity(0.9), radius: 4)
                 Spacer()
-                if launch.isGoodViewingConditions() {
+                if viewModel.isGoodViewingConditions {
                     Image(systemName: "eye.fill")
                         .imageScale(.small)
                 }

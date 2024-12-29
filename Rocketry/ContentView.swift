@@ -21,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             LaunchList(searchText: searchText)
-            .searchable(text: $searchText, prompt: "Search Launches")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Launches")
             .navigationTitle("Launches")
             .refreshable { await LaunchResultCollection.refresh(modelContext: modelContext) }
             .onChange(of: scenePhase) {

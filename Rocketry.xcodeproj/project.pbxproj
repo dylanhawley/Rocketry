@@ -46,6 +46,8 @@
 		A96CAC8B2C3751DF001AC10B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
 		A9A70BF02D111E440084511C /* GoodToWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A70BEF2D111E440084511C /* GoodToWatchView.swift */; };
 		A9A70BF62D1E60670084511C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A70BF52D1E60670084511C /* SettingsView.swift */; };
+		A9A70BFE2D21BF340084511C /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A70BFD2D21BF340084511C /* WeatherViewModel.swift */; };
+		A9A70BFF2D21BF340084511C /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A70BFD2D21BF340084511C /* WeatherViewModel.swift */; };
 		A9D0243C2CAFBDCF001902E7 /* Launch+ResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */; };
 		A9F1E2A42CA27F830048BC1A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CAC8A2C3751DF001AC10B /* Launch.swift */; };
 		A9F1E2A52CA27F8C0048BC1A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D4B3B2C3E5B7700DA7E2C /* Location.swift */; };
@@ -125,6 +127,7 @@
 		A96CAC8A2C3751DF001AC10B /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		A9A70BEF2D111E440084511C /* GoodToWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodToWatchView.swift; sourceTree = "<group>"; };
 		A9A70BF52D1E60670084511C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A9A70BFD2D21BF340084511C /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		A9F1E2AA2CA6A9ED0048BC1A /* Rocketry Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rocketry Widget.entitlements"; sourceTree = "<group>"; };
 		A9F1E2AB2CA6AAFA0048BC1A /* Rocketry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rocketry.entitlements; sourceTree = "<group>"; };
 		A9F2F5722C7D934E007A4A11 /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
@@ -219,6 +222,7 @@
 				A92D4B3D2C40A38F00DA7E2C /* Launch+ResultCollection.swift */,
 				A935DA4B2CDAA9D1006C8224 /* WeatherModel.swift */,
 				A967704C2D02A14D00791EBE /* LaunchDetailed.swift */,
+				A9A70BFD2D21BF340084511C /* WeatherViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -404,6 +408,7 @@
 				A95762912CC78D5D00C2C7F3 /* SunView.swift in Sources */,
 				A95762932CCDF8CA00C2C7F3 /* Star.swift in Sources */,
 				A967712A2D07F72A00791EBE /* LivestreamView.swift in Sources */,
+				A9A70BFE2D21BF340084511C /* WeatherViewModel.swift in Sources */,
 				A95762952CCDF94100C2C7F3 /* StarField.swift in Sources */,
 				A9F2F57C2C7D9C45007A4A11 /* LaunchRow.swift in Sources */,
 				A96CAC8B2C3751DF001AC10B /* Launch.swift in Sources */,
@@ -441,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A957627B2CC6CBC800C2C7F3 /* SkyView.swift in Sources */,
+				A9A70BFF2D21BF340084511C /* WeatherViewModel.swift in Sources */,
 				A9F1E2A82CA283F80048BC1A /* PreviewSampleData.swift in Sources */,
 				FC7EA8C82ADE23640072BB8F /* Rocketry_Widget.swift in Sources */,
 				FC349A682AF0ACD100278E0A /* LaunchResultCollection.swift in Sources */,

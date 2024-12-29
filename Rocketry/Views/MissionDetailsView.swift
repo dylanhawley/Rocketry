@@ -10,10 +10,16 @@ import SwiftUI
 struct MissionDetailsView: View {
     let launch: Launch
     @State private var isExpanded: Bool = false
+    @StateObject private var viewModel: WeatherViewModel
+        
+    init(launch: Launch) {
+        self.launch = launch
+        _viewModel = StateObject(wrappedValue: WeatherViewModel(weather: launch.weather ))
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if launch.isGoodViewingConditions() {
+            if viewModel.isGoodViewingConditions {
                 GoodToWatchView()
                 Divider()
             }
