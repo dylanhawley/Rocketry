@@ -56,6 +56,8 @@ struct LaunchList: View {
         }
         .listStyle(.plain)
         .listRowSpacing(-6)
+        .animation(.default, value: futureLaunches)
+        .animation(.default, value: pastLaunches)
    }
 }
 
