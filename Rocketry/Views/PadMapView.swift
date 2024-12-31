@@ -47,6 +47,14 @@ struct PadMapView: View {
         }
         .padding()
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
+        .onAppear {
+            if visibility == nil {
+                position = .region(
+                    MKCoordinateRegion(center: location.coordinate,
+                                       span: MKCoordinateSpan(latitudeDelta: 0.4, longitudeDelta: 0.4))
+                )
+            }
+        }
     }
 
     private func formatDistance(_ meters: Double) -> String {
