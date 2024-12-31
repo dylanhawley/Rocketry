@@ -13,11 +13,11 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section {
-                    NavigationLink(destination: SubscriptionView()) {
-                        Label("Appearance", systemImage: "square.filled.on.square")
-                    }
-                }
+//                Section {
+//                    NavigationLink(destination: SubscriptionView()) {
+//                        Label("Appearance", systemImage: "square.filled.on.square")
+//                    }
+//                }
                 
                 Section {
                     NavigationLink(destination: GoodToWatchSettingsView()) {
@@ -26,19 +26,22 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Information")) {
-                    NavigationLink(destination: SubscriptionView()) {
-                        Label("Help", systemImage: "questionmark.circle")
+//                    NavigationLink(destination: HelpView()) {
+//                        Label("Help", systemImage: "questionmark.circle")
+//                    }
+                    NavigationLink(destination: AcknowledgementsView()) {
+                        Label("Acknowledgements", systemImage: "document")
                     }
-                    NavigationLink(destination: SubscriptionView()) {
+                    NavigationLink(destination: AboutView()) {
                         Label("About", systemImage: "info.circle")
                     }
                 }
                 
-                Section(header: Text("Support our costs")) {
-                    NavigationLink(destination: SubscriptionView()) {
-                        Label("Subscription", systemImage: "star.fill")
-                    }
-                }
+//                Section(header: Text("Support our costs")) {
+//                    NavigationLink(destination: SubscriptionView()) {
+//                        Label("Subscription", systemImage: "star.fill")
+//                    }
+//                }
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
@@ -53,13 +56,13 @@ struct SettingsView: View {
     }
 }
 
-struct SubscriptionView: View {
-    var body: some View {
-        Text("Subscription View")
-            .navigationTitle("Subscription")
-            .navigationBarTitleDisplayMode(.inline)
-    }
-}
+//struct SubscriptionView: View {
+//    var body: some View {
+//        Text("Subscription View")
+//            .navigationTitle("Subscription")
+//            .navigationBarTitleDisplayMode(.inline)
+//    }
+//}
 
 struct GoodToWatchSettingsView: View {
     @AppStorage("cloudCoverFilterEnabledKey") private var cloudCoverFilterEnabled: Bool = true
