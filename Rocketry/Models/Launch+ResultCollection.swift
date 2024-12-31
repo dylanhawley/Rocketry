@@ -54,12 +54,14 @@ extension LaunchResultCollection {
             // Add the content to the data store.
             for result in resultCollection.results {
                 let launch = Launch(from: result)
-
-                let location = CLLocation(latitude: launch.location.latitude, longitude: launch.location.longitude)
-                let oneHourAfterLaunch = launch.net.addingTimeInterval(3600)
-                let weatherFilter: WeatherQuery = .hourly(startDate: launch.net, endDate: oneHourAfterLaunch)
-                if let weather = try? await weatherService.weather(for: location, including: weatherFilter).first {
-                    launch.weather = WeatherModel(hourWeather: weather)
+                let daysUntilLaunch = Calendar.current.dateComponents([.day], from: Date(), to: launch.net).day ?? 0
+                if daysUntilLaunch <= 10 {
+                    let location = CLLocation(latitude: launch.location.latitude, longitude: launch.location.longitude)
+                    let oneHourAfterLaunch = launch.net.addingTimeInterval(3600)
+                    let weatherFilter: WeatherQuery = .hourly(startDate: launch.net, endDate: oneHourAfterLaunch)
+                    if let weather = try? await weatherService.weather(for: location, including: weatherFilter).first {
+                        launch.weather = WeatherModel(hourWeather: weather)
+                    }
                 }
 
                 logger.debug("Inserting \(launch)")
