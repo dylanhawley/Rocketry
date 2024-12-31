@@ -123,9 +123,27 @@ extension LaunchResultCollection: CustomStringConvertible {
 extension LaunchResultCollection {
     /// Gets and decodes the latest launch data from the server.
     static func fetchResults() async throws -> LaunchResultCollection {
-        let url = URL(string: "https://ll.thespacedevs.com/2.2.0/launch/upcoming/")!
+        guard let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date()) else {
+            throw DownloadError.missingData
+        }
+
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let oneWeekAgoString = isoFormatter.string(from: oneWeekAgo)
+
+        var components = URLComponents(string: "https://ll.thespacedevs.com/2.2.0/launch/")!
+        components.queryItems = [
+            URLQueryItem(name: "net__gte", value: oneWeekAgoString)
+        ]
+
+        guard let url = components.url else {
+            throw DownloadError.missingData
+        }
+
+        let request = URLRequest(url: url)
+
         let session = URLSession.shared
-        let (data, response) = try await session.data(from: url)
+        let (data, response) = try await session.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw DownloadError.invalidResponse
