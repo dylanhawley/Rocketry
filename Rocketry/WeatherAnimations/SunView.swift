@@ -20,12 +20,12 @@ struct SunView: View {
                 Image("halo")
                     .blur(radius: 3)
                     .scaleEffect(haloScale)
-                    .opacity(sin(progress * .pi) * 3 - 2)
+                    .opacity((-9)*sin(progress * .pi)*sin(progress * .pi) + 18*sin(progress * .pi) - 8)
 
                 Image("sun")
                     .blur(radius: 2)
                     .rotationEffect(.degrees(sunRotation))
-                    .opacity(sin(progress * .pi) * 3 - 2)
+                    .opacity((-9)*sin(progress * .pi)*sin(progress * .pi) + 18*sin(progress * .pi) - 8)
 
                 VStack {
                     Spacer()
