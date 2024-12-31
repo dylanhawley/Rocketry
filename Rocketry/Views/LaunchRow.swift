@@ -23,7 +23,7 @@ struct LaunchRow: View {
             HStack {
                 Text(launch.mission.removingParenthesizedText())
                     .font(.system(size: 18, weight: .semibold))
-                    .shadow(color: .black.opacity(0.9), radius: 4)
+                    .shadow(color: .black.opacity(0.7), radius: 2)
                 Spacer()
                 if viewModel.isGoodViewingConditions {
                     Image(systemName: "eye.fill")
@@ -43,7 +43,7 @@ struct LaunchRow: View {
         }
         .padding()
         .frame(height: 120)
-        .background(WeatherAnimationView(launch: launch))
+        .background(SmallWeatherAnimationView(launch: launch))
         .cornerRadius(15)
     }
 }
@@ -70,7 +70,18 @@ struct FormattedDateView: View {
         HStack {
             Text(Self.dateFormatter(for: timeZone).string(from: date))
             Spacer()
-            Text(Self.timeFormatter(for: timeZone).string(from: date))
+//            Text(Self.timeFormatter(for: timeZone).string(from: date))
+            let timeString = Self.timeFormatter(for: timeZone).string(from: date)
+            if let amPmRange = timeString.range(of: "AM") ?? timeString.range(of: "PM") {
+                let timeWithoutAmPm = timeString[..<amPmRange.lowerBound]
+                let amPm = timeString[amPmRange.lowerBound...]
+
+                Text(timeWithoutAmPm) +
+                Text(amPm)
+                    .font(.system(size: 12))
+            } else {
+                Text(timeString)
+            }
         }
     }
 }
