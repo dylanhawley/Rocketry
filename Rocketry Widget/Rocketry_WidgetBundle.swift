@@ -12,7 +12,7 @@ import SwiftUI
 struct Rocketry_WidgetBundle: WidgetBundle {
     var body: some Widget {
         Rocketry_Widget()
-        Rocketry_Widget2()
-        Rocketry_WidgetLiveActivity()
+//        Rocketry_Widget2()
+//        Rocketry_WidgetLiveActivity()
     }
 }
