@@ -14,7 +14,7 @@ struct MissionDetailsView: View {
         
     init(launch: Launch) {
         self.launch = launch
-        _viewModel = StateObject(wrappedValue: WeatherViewModel(weather: launch.weather ))
+        _viewModel = StateObject(wrappedValue: WeatherViewModel(weather: launch.weather))
     }
     
     var body: some View {

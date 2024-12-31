@@ -13,7 +13,6 @@ struct GoodToWatchView: View {
         .foregroundColor(.green)
         .frame(maxWidth: .infinity, alignment: .leading)
         .imageScale(.small)
-        .shadow(color: .black.opacity(0.9), radius: 4)
     }
 }
 
