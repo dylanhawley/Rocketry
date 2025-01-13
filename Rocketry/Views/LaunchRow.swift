@@ -11,11 +11,19 @@ import Solar
 struct LaunchRow: View {
     var launch: Launch
     @AppStorage("usePadTimeZone") private var usePadTimeZone: Bool = false
-    @StateObject private var viewModel: WeatherViewModel
-        
-    init(launch: Launch) {
-        self.launch = launch
-        _viewModel = StateObject(wrappedValue: WeatherViewModel(weather: launch.weather))
+    
+    @AppStorage("cloudCoverFilterEnabledKey") private var cloudCoverFilterEnabled: Bool = true
+    @AppStorage("maxCloudCoverKey") private var maxCloudCover: Double = 25
+    @AppStorage("visibilityFilterEnabledKey") private var visibilityFilterEnabled: Bool = true
+    @AppStorage("minVisibilityKey") private var minVisibility: Double = 13
+    @AppStorage("precipitationFilterEnabledKey") private var precipitationFilterEnabled: Bool = true
+    @AppStorage("maxPrecipitationChanceKey") private var maxPrecipitationChance: Double = 5
+    var isGoodViewingConditions: Bool {
+        guard let weather = launch.weather else { return false }
+        if cloudCoverFilterEnabled, weather.cloudCover > (maxCloudCover / 100.0) { return false }
+        if visibilityFilterEnabled, weather.visibility < minVisibility { return false }
+        if precipitationFilterEnabled, weather.precipitationChance > (maxPrecipitationChance / 100.0) { return false }
+        return true
     }
 
     var body: some View {
@@ -25,7 +33,7 @@ struct LaunchRow: View {
                     .font(.system(size: 18, weight: .semibold))
                     .shadow(color: .black.opacity(0.7), radius: 2)
                 Spacer()
-                if viewModel.isGoodViewingConditions {
+                if isGoodViewingConditions {
                     Image(systemName: "eye.fill")
                         .imageScale(.small)
                 }
