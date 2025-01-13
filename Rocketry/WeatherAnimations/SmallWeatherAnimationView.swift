@@ -34,6 +34,17 @@ struct SmallWeatherAnimationView: View {
             if let daylight = weather?.isDaylight, !daylight { StarsView() }
             if let weather = weather, !cloudTopStops.isEmpty, !cloudBottomStops.isEmpty {
                 CloudsView(thickness: weather.cloudThickness, topTint: cloudTopStops.interpolated(amount: normalizedTimeOfDay), bottomTint: cloudTopStops.interpolated(amount: normalizedTimeOfDay))
+                
+                if weather.isDaylight {
+                    switch weather.cloudThickness {
+                    case .regular, .thick, .ultra:
+                        Color.black.opacity(0.15)
+                    case .light:
+                        Color.black.opacity(0.1)
+                    default:
+                        EmptyView()
+                    }
+                }
             }
         }
         .onAppear { computeGradientStops() }

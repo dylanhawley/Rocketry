@@ -23,9 +23,11 @@ struct LaunchDetailView: View {
                         .bold()
                         .lineLimit(1)
                         .minimumScaleFactor(0.6)
+                         .shadow(color: .black.opacity(0.2), radius: 2)
                     FormattedDateView(date: launch.net, timeZone: usePadTimeZone
                       ? TimeZone(identifier: launch.timezone_name) ?? .current
                       : .current)
+                     .shadow(color: .black.opacity(0.2), radius: 2)
                 }
                 
                 // Launch details
