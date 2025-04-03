@@ -24,14 +24,24 @@ struct SmallWeatherAnimationView: View {
     }
     
     @State private var normalizedTimeOfDay: Double = 0
+    @State private var astroDawn: Double = 0
+    @State private var astroDusk: Double = 0
     @State private var cloudTopStops: [Gradient.Stop] = []
     @State private var cloudBottomStops: [Gradient.Stop] = []
     
     var body: some View {
         ZStack {
             SmallSkyView(date: date, location: location, timezone_name: timezone.identifier)
-            SunView(progress: normalizedTimeOfDay)
-            if let daylight = weather?.isDaylight, !daylight { StarsView() }
+            if let weather = weather, [.regular, .thick, .ultra].contains(weather.cloudThickness) {
+                if weather.isDaylight {
+                    Color(hue: 0.58, saturation: 0.15, brightness: 0.74)
+                } else {
+                    Color(hue: 0.62, saturation: 0.33, brightness: 0.24)
+                }
+            } else {
+                SunView(progress: normalizedTimeOfDay)
+            }
+            if normalizedTimeOfDay < astroDawn || normalizedTimeOfDay > astroDusk { StarsView() }
             if let weather = weather, !cloudTopStops.isEmpty, !cloudBottomStops.isEmpty {
                 CloudsView(thickness: weather.cloudThickness, topTint: cloudTopStops.interpolated(amount: normalizedTimeOfDay), bottomTint: cloudTopStops.interpolated(amount: normalizedTimeOfDay))
                 
@@ -72,6 +82,8 @@ struct SmallWeatherAnimationView: View {
         let sunriseNormalized: Double = solar?.sunrise.map{normalizeTimeOfDay($0, timezone)} ?? 0.33
         let sunsetNormalized: Double = solar?.sunset.map{normalizeTimeOfDay($0, timezone)} ?? 0.78
         
+        self.astroDawn = astronomicalDawnNormalized
+        self.astroDusk = astronomicalDuskNormalized
         self.cloudTopStops = [
             .init(color: .darkCloudStart, location: 0),
             .init(color: .darkCloudStart, location: astronomicalDawnNormalized),

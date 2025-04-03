@@ -25,6 +25,11 @@ struct LaunchRow: View {
         if precipitationFilterEnabled, weather.precipitationChance > (maxPrecipitationChance / 100.0) { return false }
         return true
     }
+    
+    var shouldUseOverlayBlendMode: Bool {
+        guard let weather = launch.weather else { return false }
+        return !weather.isDaylight || [.none, .thin].contains(weather.cloudThickness)
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -47,7 +52,7 @@ struct LaunchRow: View {
                   : .current)
             }
             .font(.system(size: 14, weight: .medium))
-            .opacity(0.8)
+            .opacity(shouldUseOverlayBlendMode ? 0.8 : 1)
         }
         .padding()
         .frame(height: 120)
@@ -78,7 +83,6 @@ struct FormattedDateView: View {
         HStack {
             Text(Self.dateFormatter(for: timeZone).string(from: date))
             Spacer()
-//            Text(Self.timeFormatter(for: timeZone).string(from: date))
             let timeString = Self.timeFormatter(for: timeZone).string(from: date)
             if let amPmRange = timeString.range(of: "AM") ?? timeString.range(of: "PM") {
                 let timeWithoutAmPm = timeString[..<amPmRange.lowerBound]

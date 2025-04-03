@@ -128,7 +128,15 @@ struct Rocketry_Widget: Widget {
             Rocketry_WidgetEntryView(entry: entry)
                 .containerBackground(for: .widget) {
                     if let launch = entry.launch {
-                        SkyView(date: launch.net, location: launch.location.coordinate, timezone_name: launch.timezone_name)
+                        if let weather = launch.weather, [.regular, .thick, .ultra].contains(weather.cloudThickness) {
+                            if weather.isDaylight {
+                                Color(hue: 0.58, saturation: 0.15, brightness: 0.74)
+                            } else {
+                                Color(hue: 0.62, saturation: 0.33, brightness: 0.24)
+                            }
+                        } else {
+                            SkyView(date: launch.net, location: launch.location.coordinate, timezone_name: launch.timezone_name)
+                        }
                     } else {
                         Color.black
                     }
